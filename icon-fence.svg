@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" role="img" aria-labelledby="fenceIconTitle">
+  <title id="fenceIconTitle">Fence building icon</title>
+  <rect width="140" height="140" rx="28" fill="#eef7e9"/>
+  <path d="M38 112V42m28 70V42m28 70V42m28 70V42" stroke="#4b7e4d" stroke-width="10" stroke-linecap="round"/>
+  <path d="M30 62h80" stroke="#7bb979" stroke-width="16" stroke-linecap="round"/>
+  <path d="M30 82h80" stroke="#7bb979" stroke-width="16" stroke-linecap="round"/>
+  <path d="M40 52l20-18 20 18" fill="none" stroke="#4b7e4d" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" role="img" aria-labelledby="lawnIconTitle">
+  <title id="lawnIconTitle">Lawn care icon</title>
+  <rect width="140" height="140" rx="28" fill="#eaf8e9"/>
+  <path d="M40 102c0-18 16-32 36-32s36 14 36 32" fill="#7cc37e"/>
+  <path d="M57 56c3-16 14-26 24-26s21 10 24 26" fill="#4a8d56"/>
+  <path d="M47 88c8-26 33-34 46-22 13 12 7 26-11 38-17 11-32 11-47-4" fill="#6bbf7f" opacity="0.92"/>
+  <path d="M70 78l-8-16 16 0-8 16z" fill="#28593d"/>
+</svg>

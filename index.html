@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Lawn Care, Packing & Moving & Fence Building Services IN Calgary</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: #f4f6fb;
+      color: #1c2b4a;
+    }
+
+    /* ── NAV ── */
+    .mv-header {
+      background: #0d1b35;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+    .mv-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 1rem;
+    }
+    .mv-logo {
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .mv-logo span { color: #4fc3f7; }
+    .mv-nav-links {
+      display: flex;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .mv-nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 0.55rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .mv-nav-links a:hover { color: #4fc3f7; }
+    .mv-nav-phone {
+      background: #1e88e5;
+      color: white;
+      padding: 0.55rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .mv-nav-phone:hover { background: #1565c0; transform: translateY(-1px); }
+    .mv-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .mv-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: transform 0.25s;
+    }
+
+    /* ── HERO ── */
+    .mv-hero {
+      background: linear-gradient(135deg, rgba(13,27,53,0.45) 0%, rgba(26,47,90,0.35) 55%, rgba(10,32,64,0.50) 100%), url('hero-bg.png') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 1.5rem 4.5rem;
+    }
+    .mv-hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(30,136,229,0.07);
+      pointer-events: none;
+    }
+    .mv-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: rgba(79,195,247,0.05);
+      pointer-events: none;
+    }
+    .mv-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .mv-hero-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.2rem;
+      justify-content: center;
+    }
+    .mv-hero-rating .stars { color: #ffc107; letter-spacing: 1px; }
+    .mv-hero-rating span { color: rgba(255,255,255,0.8); font-size: 0.85rem; }
+    .mv-hero-eyebrow {
+      color: #4fc3f7;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin: 0 0 0.7rem;
+    }
+    .mv-hero h1 {
+      font-size: clamp(1.9rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      color: #fff;
+      margin: 0 0 1.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .mv-hero h1 span { color: #4fc3f7; }
+    .mv-hero-desc {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.03rem;
+      line-height: 1.75;
+      margin: 0 auto 1.8rem;
+      max-width: 720px;
+    }
+    .mv-hero-stats {
+      display: flex;
+      gap: 2.2rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .mv-hero-stat strong {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+    .mv-hero-stat span { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+    .mv-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .mv-btn-primary {
+      background: #1e88e5;
+      color: #fff;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .mv-btn-primary:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(30,136,229,0.4); }
+    .mv-btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.28);
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .mv-btn-outline:hover { border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.06); transform: translateY(-2px); }
+
+    /* ── QUOTE FORM ── */
+    .mv-quote-form {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.28);
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .mv-quote-form h3 { margin: 0 0 0.25rem; font-size: 1.25rem; color: #0d1b35; }
+    .mv-quote-form > p { margin: 0 0 1.3rem; color: #777; font-size: 0.88rem; }
+    .mv-step-pills { display: flex; gap: 0.4rem; margin-bottom: 1.4rem; }
+    .mv-step-pill { flex: 1; height: 4px; border-radius: 2px; background: #e5eaf4; transition: background 0.3s; }
+    .mv-step-pill.active { background: #1e88e5; }
+    .mv-form-step { display: block; }
+    .mv-form-step.hidden { display: none; }
+    .mv-fg { margin-bottom: 0.9rem; }
+    .mv-fg label { display: block; font-size: 0.75rem; font-weight: 700; color: #555; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .mv-fg input, .mv-fg select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid #dde3ef;
+      border-radius: 8px;
+      font-size: 0.93rem;
+      color: #1c2b4a;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fff;
+    }
+    .mv-fg input:focus, .mv-fg select:focus { border-color: #1e88e5; box-shadow: 0 0 0 3px rgba(30,136,229,0.12); }
+    .mv-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+    .mv-form-submit {
+      width: 100%;
+      padding: 0.88rem;
+      background: #1e88e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.97rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 0.3rem;
+    }
+    .mv-form-submit:hover { background: #1565c0; transform: translateY(-1px); }
+    .mv-form-note { text-align: center; font-size: 0.78rem; color: #aaa; margin-top: 0.7rem; margin-bottom: 0; }
+
+    /* ── TRUST BAR ── */
+    .mv-trust-bar { background: #fff; border-bottom: 1px solid #e5eaf4; padding: 1.1rem 1.5rem; }
+    .mv-trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .mv-trust-item { display: flex; align-items: center; gap: 0.55rem; font-size: 0.88rem; font-weight: 600; color: #1c2b4a; }
+    .mv-trust-item .ti { font-size: 1.25rem; }
+
+    /* ── SECTION BASE ── */
+    .mv-sec { padding: 4.5rem 1.5rem; }
+    .mv-sec-in { max-width: 1200px; margin: 0 auto; }
+    .mv-label { color: #1e88e5; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin: 0 0 0.5rem; }
+    .mv-title { font-size: clamp(1.65rem, 3vw, 2.45rem); color: #0d1b35; margin: 0 0 0.75rem; line-height: 1.15; font-weight: 800; }
+    .mv-sub { color: #607585; font-size: 1.02rem; line-height: 1.75; max-width: 620px; margin: 0 0 2.5rem; }
+
+    /* ── SERVICES ── */
+    .mv-sec-services { background: #f4f6fb; }
+    .mv-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+    .mv-sc {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(13,27,53,0.06);
+      border: 1px solid #e5eaf4;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .mv-sc:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(13,27,53,0.13); }
+    .mv-sc-icon {
+      width: 62px; height: 62px;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      margin: 0 auto 1.1rem;
+    }
+    .mv-sc h3 { font-size: 1.05rem; color: #0d1b35; margin: 0 0 0.6rem; font-weight: 700; }
+    .mv-sc p { color: #607585; font-size: 0.88rem; line-height: 1.7; margin: 0; }
+
+    /* ── BENEFITS ── */
+    .mv-sec-benefits { background: linear-gradient(135deg, #0d1b35, #1a2f5a); }
+    .mv-benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+    .mv-ben-icon { font-size: 2.4rem; margin-bottom: 0.75rem; display: block; }
+    .mv-ben h3 { color: #fff; font-size: 1.1rem; margin: 0 0 0.45rem; font-weight: 700; }
+    .mv-ben p { color: rgba(255,255,255,0.62); font-size: 0.88rem; line-height: 1.65; margin: 0; }
+
+    /* ── HOW WE WORK ── */
+    .mv-sec-how { background: #fff; }
+    .mv-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .mv-steps::before {
+      content: '';
+      position: absolute;
+      top: 31px;
+      left: calc(12.5% + 28px);
+      right: calc(12.5% + 28px);
+      height: 2px;
+      background: linear-gradient(90deg, #1e88e5, #4fc3f7);
+    }
+    .mv-step { text-align: center; padding: 0 1.2rem; position: relative; }
+    .mv-step-num {
+      width: 62px; height: 62px;
+      background: linear-gradient(135deg, #1e88e5, #42a5f5);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 900; color: white;
+      margin: 0 auto 1.2rem;
+      box-shadow: 0 8px 22px rgba(30,136,229,0.35);
+      position: relative; z-index: 1;
+    }
+    .mv-step h3 { font-size: 1.02rem; color: #0d1b35; margin: 0 0 0.45rem; font-weight: 700; }
+    .mv-step p { color: #607585; font-size: 0.87rem; line-height: 1.65; margin: 0; }
+
+    /* ── GALLERY ── */
+    .mv-sec-gallery { background: #f4f6fb; }
+    .mv-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .mv-gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #dbeeff, #c3dcf5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem;
+      transition: transform 0.3s;
+      cursor: default;
+    }
+    .mv-gallery-item:hover { transform: scale(1.04); }
+
+    /* ── PACKAGES ── */
+    .mv-sec-packages { background: #fff; }
+    .mv-packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .mv-pkg {
+      border: 2px solid #e5eaf4;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .mv-pkg:hover { border-color: #1e88e5; transform: translateY(-5px); box-shadow: 0 14px 32px rgba(30,136,229,0.1); }
+    .mv-pkg.feat { background: linear-gradient(135deg, #0d1b35, #1a2f5a); border-color: #1e88e5; color: white; }
+    .mv-pkg h3 { font-size: 1.15rem; margin: 0 0 0.5rem; color: #0d1b35; }
+    .mv-pkg.feat h3 { color: white; }
+    .mv-pkg-tag {
+      display: inline-block;
+      background: #e3f2fd; color: #1e88e5;
+      padding: 0.18rem 0.7rem; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 1.1rem;
+    }
+    .mv-pkg.feat .mv-pkg-tag { background: rgba(30,136,229,0.3); color: #4fc3f7; }
+    .mv-pkg-list { list-style: none; padding: 0; margin: 0.8rem 0 1.4rem; display: grid; gap: 0.55rem; }
+    .mv-pkg-list li { padding-left: 1.4rem; position: relative; color: #607585; font-size: 0.88rem; line-height: 1.6; }
+    .mv-pkg.feat .mv-pkg-list li { color: rgba(255,255,255,0.72); }
+    .mv-pkg-list li::before { content: '✓'; position: absolute; left: 0; color: #1e88e5; font-weight: 700; }
+    .mv-pkg.feat .mv-pkg-list li::before { color: #4fc3f7; }
+    .mv-pkg-btn {
+      display: block; text-align: center;
+      padding: 0.78rem; border-radius: 8px;
+      font-weight: 700; text-decoration: none;
+      font-size: 0.92rem;
+      background: #e3f2fd; color: #1e88e5;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .mv-pkg-btn:hover { background: #bbdefb; transform: translateY(-1px); }
+    .mv-pkg.feat .mv-pkg-btn { background: #1e88e5; color: white; }
+    .mv-pkg.feat .mv-pkg-btn:hover { background: #42a5f5; }
+
+    /* ── MATERIALS ── */
+    .mv-sec-materials { background: #f4f6fb; }
+    .mv-materials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+    .mv-mat {
+      background: #fff; border-radius: 12px; padding: 1.4rem;
+      border: 1px solid #e5eaf4;
+      display: flex; gap: 0.9rem; align-items: flex-start;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .mv-mat:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(13,27,53,0.08); }
+    .mv-mat-icon { font-size: 1.7rem; min-width: 44px; text-align: center; }
+    .mv-mat h4 { margin: 0 0 0.28rem; font-size: 0.97rem; color: #0d1b35; }
+    .mv-mat p { margin: 0; color: #607585; font-size: 0.84rem; line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .mv-sec-faq { background: #fff; }
+    .mv-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .mv-faq-item { border: 1.5px solid #e5eaf4; border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .mv-faq-item:has(details[open]) { border-color: #1e88e5; }
+    .mv-faq-item details summary {
+      list-style: none;
+      padding: 1.1rem 1.2rem;
+      cursor: pointer;
+      font-weight: 700;
+      color: #0d1b35;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.93rem;
+    }
+    .mv-faq-item details summary::-webkit-details-marker { display: none; }
+    .mv-faq-item details summary::after { content: '+'; font-size: 1.2rem; color: #1e88e5; min-width: 18px; text-align: center; }
+    .mv-faq-item details[open] summary::after { content: '−'; }
+    .mv-faq-item details[open] summary { color: #1e88e5; }
+    .mv-faq-body { padding: 0 1.2rem 1.1rem; color: #607585; font-size: 0.88rem; line-height: 1.75; }
+
+    /* ── TESTIMONIALS ── */
+    .mv-sec-trust { background: linear-gradient(135deg, #0d1b35, #1a2f5a); text-align: center; }
+    .mv-trust-stars { font-size: 2rem; color: #ffc107; letter-spacing: 4px; margin-bottom: 1rem; }
+    .mv-sec-trust .mv-title { color: #fff; }
+    .mv-sec-trust .mv-sub { color: rgba(255,255,255,0.67); margin: 0 auto 2.5rem; }
+    .mv-testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 0; }
+    .mv-testi {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 16px; padding: 1.5rem; text-align: left;
+      transition: background 0.2s;
+    }
+    .mv-testi:hover { background: rgba(255,255,255,0.12); }
+    .mv-testi .ts { color: #ffc107; font-size: 0.88rem; margin-bottom: 0.7rem; }
+    .mv-testi p { color: rgba(255,255,255,0.78); font-size: 0.88rem; line-height: 1.7; margin: 0 0 1rem; }
+    .mv-testi .ta { color: rgba(255,255,255,0.48); font-size: 0.78rem; font-weight: 600; }
+
+    /* ── OTHER SERVICES ── */
+    .mv-sec-other { background: #f4f6fb; }
+    .mv-other-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .mv-oc {
+      background: #fff; border-radius: 16px; padding: 2rem;
+      border: 1px solid #e5eaf4;
+      text-decoration: none; display: block;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .mv-oc:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(13,27,53,0.1); border-color: #1e88e5; }
+    .mv-oc .oi { font-size: 2rem; display: block; margin-bottom: 0.9rem; }
+    .mv-oc h3 { font-size: 1.07rem; color: #0d1b35; margin: 0 0 0.45rem; font-weight: 700; }
+    .mv-oc p { color: #607585; font-size: 0.87rem; line-height: 1.65; margin: 0; }
+
+    /* ── AWARDS ── */
+    .mv-sec-awards { background: #fff; text-align: center; }
+    .mv-awards { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+    .mv-badge {
+      background: #f4f6fb; border: 1.5px solid #e5eaf4;
+      border-radius: 12px; padding: 1.1rem 1.6rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.45rem; min-width: 130px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .mv-badge:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(13,27,53,0.08); }
+    .mv-badge .bi { font-size: 1.9rem; }
+    .mv-badge span { font-size: 0.73rem; font-weight: 600; color: #607585; text-align: center; }
+
+    /* ── CTA ── */
+    .mv-cta { background: linear-gradient(135deg, #1e88e5, #1565c0); text-align: center; padding: 4.5rem 1.5rem; }
+    .mv-cta-in { max-width: 680px; margin: 0 auto; }
+    .mv-cta h2 { font-size: clamp(1.75rem, 3vw, 2.4rem); color: #fff; margin: 0 0 1rem; font-weight: 800; }
+    .mv-cta p { color: rgba(255,255,255,0.83); font-size: 1.03rem; margin: 0 0 2rem; line-height: 1.7; }
+    .mv-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .mv-btn-white { background: #fff; color: #1e88e5; padding: 0.88rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.97rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .mv-btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.18); }
+    .mv-btn-ow { background: transparent; color: #fff; padding: 0.88rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.97rem; border: 2px solid rgba(255,255,255,0.45); transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+    .mv-btn-ow:hover { border-color: #fff; background: rgba(255,255,255,0.09); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    .mv-footer { background: #060f1e; color: rgba(255,255,255,0.65); padding: 3rem 1.5rem 2rem; }
+    .mv-footer-in { max-width: 1200px; margin: 0 auto; }
+    .mv-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mv-footer-brand .mv-logo { display: inline-flex; margin-bottom: 0.9rem; }
+    .mv-footer-brand p { font-size: 0.88rem; line-height: 1.7; margin: 0 0 1.1rem; }
+    .mv-social { display: flex; gap: 0.65rem; }
+    .mv-social a {
+      width: 35px; height: 35px; border-radius: 7px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.82rem; font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mv-social a:hover { background: #1e88e5; color: white; }
+    .mv-fc h4 { color: #fff; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1.1rem; }
+    .mv-fc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+    .mv-fc ul li a { color: rgba(255,255,255,0.58); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
+    .mv-fc ul li a:hover { color: #4fc3f7; }
+    .mv-ci { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; font-size: 0.87rem; align-items: flex-start; }
+    .mv-ci .ci { min-width: 16px; }
+    .mv-ci a { color: rgba(255,255,255,0.58); text-decoration: none; transition: color 0.2s; }
+    .mv-ci a:hover { color: #4fc3f7; }
+    .mv-footer-bot { padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .mv-footer-bot p { margin: 0; font-size: 0.83rem; }
+    .mv-footer-bot-links { display: flex; gap: 1.5rem; }
+    .mv-footer-bot-links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    .mv-footer-bot-links a:hover { color: #4fc3f7; }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fu {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.62s ease, transform 0.62s ease;
+    }
+    .fu.vis { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.4s; }
+
+    /* ── PULSE ── */
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(30,136,229,0.45); }
+      70% { box-shadow: 0 0 0 12px rgba(30,136,229,0); }
+      100% { box-shadow: 0 0 0 0 rgba(30,136,229,0); }
+    }
+    .pulse { animation: pulse-ring 2.5s infinite; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .mv-services-grid, .mv-benefits-grid, .mv-steps { grid-template-columns: repeat(2, 1fr); }
+      .mv-steps::before { display: none; }
+      .mv-gallery { grid-template-columns: repeat(2, 1fr); }
+      .mv-hero-inner { grid-template-columns: 1fr; }
+      .mv-quote-form { max-width: 520px; margin: 0 auto; }
+      .mv-footer-grid { grid-template-columns: 1fr 1fr; }
+      .mv-testi-grid, .mv-other-grid, .mv-packages { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .mv-nav-links { display: none; }
+      .mv-nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 68px; left: 0; right: 0;
+        background: #0d1b35; padding: 1rem 1.5rem 1.5rem;
+        z-index: 99; border-top: 1px solid rgba(255,255,255,0.07);
+      }
+      .mv-nav-links.open li { padding: 0.2rem 0; }
+      .mv-mobile-toggle { display: flex; }
+      .mv-services-grid, .mv-benefits-grid, .mv-materials, .mv-faq-grid, .mv-testi-grid, .mv-other-grid, .mv-packages { grid-template-columns: 1fr; }
+      .mv-footer-grid { grid-template-columns: 1fr; }
+      .mv-footer-bot { flex-direction: column; text-align: center; }
+      .mv-trust-bar-inner { justify-content: flex-start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="mv-header">
+  <nav class="mv-nav">
+    <a class="mv-logo" href="index.html">Lawn care</a>
+    <ul class="mv-nav-links" id="mvNavLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Lawn Care</a></li>
+      <li><a href="#">Packing &amp; Moving</a></li>
+      <li><a href="#">Fence Building</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">How We Work</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="mv-nav-phone" href="tel:5879621919">📞 587-962-1919</a>
+    <button class="mv-mobile-toggle" id="mvToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="mv-hero">
+  <div class="mv-hero-inner">
+    <div class="mv-hero-copy">
+      <div class="mv-hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9/5 Google Rating</span>
+      </div>
+      <p class="mv-hero-eyebrow"> Provide Professional Services</p>
+      <h1>Professional Lawn Care, Packing & Moving & Fence Building Services IN <span>Calgary</span></h1>
+      <p class="mv-hero-desc">Affordable and reliable lawn maintenance, moving assistance, and fence installation services for residential and commercial properties.</p>
+      <div class="mv-hero-stats">
+        <div class="mv-hero-stat">
+          <strong class="counter" data-target="355000">355K+</strong>
+          <span>Happy Customers</span>
+        </div>
+        <div class="mv-hero-stat">
+          <strong class="counter" data-target="15">15+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="mv-hero-stat">
+          <strong class="counter" data-target="98">98%</strong>
+          <span>Satisfaction Rate</span>
+        </div>
+      </div>
+      <div class="mv-hero-actions">
+        <a href="#" class="mv-btn-primary pulse">🌿 Lawn Care</a>
+        <a href="#" class="mv-btn-outline">📦 Packing &amp; Moving</a>
+        <a href="#" class="mv-btn-outline">🪵 Fence Building</a>
+      </div>
+    </div>
+
+    <!-- QUOTE FORM -->
+    <!--
+    <div id="quote">
+      <div class="mv-quote-form">
+        <h3>Get Your Free Quote</h3>
+        <p>Quick 2-step process — takes under 60 seconds</p>
+        <div class="mv-step-pills">
+          <div class="mv-step-pill active" id="pill1"></div>
+          <div class="mv-step-pill" id="pill2"></div>
+        </div>
+
+        <div class="mv-form-step" id="formStep1">
+          <div class="mv-fg">
+            <label>Moving From</label>
+            <input type="text" placeholder="Enter your current address" />
+          </div>
+          <div class="mv-fg">
+            <label>Moving To</label>
+            <input type="text" placeholder="Enter your destination address" />
+          </div>
+          <div class="mv-form-row">
+            <div class="mv-fg">
+              <label>Move Type</label>
+              <select>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Storage</option>
+              </select>
+            </div>
+            <div class="mv-fg">
+              <label>Moving Date</label>
+              <input type="date" />
+            </div>
+          </div>
+          <button class="mv-form-submit" onclick="nextStep()">Next Step →</button>
+        </div>
+
+        <div class="mv-form-step hidden" id="formStep2">
+          <div class="mv-form-row">
+            <div class="mv-fg">
+              <label>First Name</label>
+              <input type="text" placeholder="John" />
+            </div>
+            <div class="mv-fg">
+              <label>Last Name</label>
+              <input type="text" placeholder="Doe" />
+            </div>
+          </div>
+          <div class="mv-fg">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(403) 555-0100" />
+          </div>
+          <div class="mv-fg">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@example.com" />
+          </div>
+          <div class="mv-form-row">
+            <div class="mv-fg">
+              <label>Home Size</label>
+              <select>
+                <option>Studio</option>
+                <option>1 Bedroom</option>
+                <option>2 Bedrooms</option>
+                <option>3 Bedrooms</option>
+                <option>4+ Bedrooms</option>
+              </select>
+            </div>
+            <div class="mv-fg">
+              <label>Sq. Footage</label>
+              <input type="number" placeholder="e.g. 1200" />
+            </div>
+          </div>
+          <button class="mv-form-submit">Get My Free Quote</button>
+        </div>
+
+        <p class="mv-form-note">🔒 Your info is safe with us. No spam, ever.</p>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="mv-trust-bar">
+  <div class="mv-trust-bar-inner">
+    <div class="mv-trust-item"><span class="ti">✅</span> Licensed &amp; Insured</div>
+    <div class="mv-trust-item"><span class="ti">🏆</span> Award Winning Service</div>
+    <div class="mv-trust-item"><span class="ti">📦</span> Premium Packing Materials</div>
+    <div class="mv-trust-item"><span class="ti">⏰</span> On-Time Guarantee</div>
+    <div class="mv-trust-item"><span class="ti">💰</span> No Hidden Costs</div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="mv-sec mv-sec-services" id="services">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">Our Services</p>
+    <h2 class="mv-title fu d1">Lawn Care, Packing & Moving & Fence Building Services</h2>
+    <p class="mv-sub fu d2">Professional residential and commercial services including lawn maintenance, moving assistance, and custom fence installation.</p>
+    <div class="mv-services-grid">
+      <div class="mv-sc fu d1">
+        <div class="mv-sc-icon">🌿</div>
+        <h3>Professional Lawn Care</h3>
+        <p>Keep your lawn healthy, clean, and beautifully maintained with our expert landscaping and lawn maintenance services.</p>
+      </div>
+      <div class="mv-sc fu d2">
+        <div class="mv-sc-icon">📦</div>
+        <h3>Stress-Free Moving Services</h3>
+        <p>Reliable and stress-free packing and moving services for residential and commercial properties across Calgary.</p>
+      </div>
+      <div class="mv-sc fu d3">
+        <div class="mv-sc-icon">🪵</div>
+        <h3>Custom Fence Installation</h3>
+        <p>Custom fence installation for homes and businesses — wood, vinyl, or chain-link, built to last with quality craftsmanship.</p>
+      </div>
+      <div class="mv-sc fu d4">
+        <div class="mv-sc-icon">⭐</div>
+        <h3>Free Estimates</h3>
+        <p>Get a free, no-obligation quote for any of our services. Fast response, transparent pricing, and no hidden fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFITS ═══ -->
+<section class="mv-sec mv-sec-benefits">
+  <div class="mv-sec-in">
+    <div class="mv-benefits-grid">
+      <div class="mv-ben fu">
+        <span class="mv-ben-icon"><img src="icon-lawn.jpg" alt="Lawn Care" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" /></span>
+        <h3>Lawn Care Experts</h3>
+        <p>Our trained landscaping team keeps your lawn healthy, green, and well-maintained all season long.</p>
+      </div>
+      <div class="mv-ben fu d1">
+        <span class="mv-ben-icon"><img src="icon-moving.jpg" alt="Packing & Moving" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" /></span>
+        <h3>Stress-Free Moving</h3>
+        <p>We handle packing, loading, and delivery with care — so your move is smooth and damage-free.</p>
+      </div>
+      <div class="mv-ben fu d2">
+        <span class="mv-ben-icon"><img src="icon-fence.jpg" alt="Fence Building" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" /></span>
+        <h3>Quality Fence Building</h3>
+        <p>Durable, custom-built fences using premium materials — installed professionally for lasting results.</p>
+      </div>
+      <div class="mv-ben fu d3">
+        <span class="mv-ben-icon"><img src="icon-no-hidden-cost.jpg" alt="No Hidden Costs" style="width:60px;height:60px;object-fit:cover;border-radius:50%;" /></span>
+        <h3>No Hidden Costs</h3>
+        <p>Transparent pricing with free estimates. What we quote is what you pay — no surprises, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW WE WORK ═══ -->
+<section class="mv-sec mv-sec-how" id="how-it-works">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">Simple Process</p>
+    <h2 class="mv-title fu d1">How We Work</h2>
+    <p class="mv-sub fu d2">A simple 4-step process to get your lawn, move, or fence project done quickly and professionally.</p>
+    <div class="mv-steps">
+      <div class="mv-step fu">
+        <div class="mv-step-num">1</div>
+        <h3>Contact Us</h3>
+        <p>Reach out by phone or online. Tell us about your lawn care, moving, or fence building needs and we'll get back to you quickly.</p>
+      </div>
+      <div class="mv-step fu d1">
+        <div class="mv-step-num">2</div>
+        <h3>Free Estimate</h3>
+        <p>We visit your property, assess the job, and provide a detailed free quote with no hidden fees — you decide with no pressure.</p>
+      </div>
+      <div class="mv-step fu d2">
+        <div class="mv-step-num">3</div>
+        <h3>Schedule Your Service</h3>
+        <p>Pick a date and time that works for you. We confirm your booking and send a reminder before the appointment.</p>
+      </div>
+      <div class="mv-step fu d3">
+        <div class="mv-step-num">4</div>
+        <h3>Job Done Right</h3>
+        <p>Our professional team arrives on time, completes the work to the highest standard, and leaves your property clean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<!--
+<section class="mv-sec mv-sec-gallery">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">Our Work</p>
+    <h2 class="mv-title fu d1">Our Recent Projects in Calgary</h2>
+    <p class="mv-sub fu d2">Browse our recent lawn care, packing & moving, and fence building projects across Calgary.</p>
+    <div class="mv-gallery">
+      <div class="mv-gallery-item fu">🌿</div>
+      <div class="mv-gallery-item fu d1">✂️</div>
+      <div class="mv-gallery-item fu d2">📦</div>
+      <div class="mv-gallery-item fu d3">🚚</div>
+      <div class="mv-gallery-item fu">🪵</div>
+      <div class="mv-gallery-item fu d1">🏡</div>
+      <div class="mv-gallery-item fu d2">🔨</div>
+      <div class="mv-gallery-item fu d3">⭐</div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ═══ PACKAGES ═══ -->
+<section class="mv-sec mv-sec-packages">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">Our Packages</p>
+    <h2 class="mv-title fu d1">Choose Your Service Package</h2>
+    <p class="mv-sub fu d2">Affordable packages for lawn care, packing & moving, and fence building — tailored to your needs.</p>
+    <div class="mv-packages">
+      <div class="mv-pkg fu">
+        <h3>🌿 Lawn Care</h3>
+        <span class="mv-pkg-tag">Basic</span>
+        <ul class="mv-pkg-list">
+          <li>Lawn mowing &amp; edging</li>
+          <li>Weed removal</li>
+          <li>Leaf &amp; debris cleanup</li>
+          <li>Seasonal maintenance</li>
+          <li>Free site assessment</li>
+        </ul>
+        <a href="lawn-care.html" class="mv-pkg-btn">Get This Package</a>
+      </div>
+      <div class="mv-pkg feat fu d1">
+        <h3>📦 Packing &amp; Moving</h3>
+        <span class="mv-pkg-tag">Most Popular</span>
+        <ul class="mv-pkg-list">
+          <li>Full home packing service</li>
+          <li>Loading &amp; unloading</li>
+          <li>Furniture disassembly &amp; assembly</li>
+          <li>Premium packing materials included</li>
+          <li>On-time delivery guarantee</li>
+          <li>Licensed &amp; insured team</li>
+        </ul>
+        <a href="packing-moving.html" class="mv-pkg-btn">Get This Package</a>
+      </div>
+      <div class="mv-pkg fu d2">
+        <h3>🪵 Fence Building</h3>
+        <span class="mv-pkg-tag">Custom</span>
+        <ul class="mv-pkg-list">
+          <li>Wood, vinyl, or chain-link</li>
+          <li>Custom design &amp; sizing</li>
+          <li>Professional installation</li>
+          <li>Post &amp; panel warranty</li>
+          <li>Property cleanup after job</li>
+          <li>Free estimate included</li>
+        </ul>
+        <a href="fence-building.html" class="mv-pkg-btn">Get This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MATERIALS ═══ -->
+<section class="mv-sec mv-sec-materials">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">What We Use</p>
+    <h2 class="mv-title fu d1">Professional Tools &amp; Equipment</h2>
+    <p class="mv-sub fu d2">We use quality tools and materials for every job — lawn care, moving, or fence building.</p>
+    <div class="mv-materials">
+      <div class="mv-mat fu">
+        <div class="mv-mat-icon">🚜</div>
+        <div>
+          <h4>Lawn Mowers &amp; Trimmers</h4>
+          <p>Commercial-grade mowers and trimmers to keep your lawn neat, clean, and perfectly edged every time.</p>
+        </div>
+      </div>
+      <div class="mv-mat fu d1">
+        <div class="mv-mat-icon">🌱</div>
+        <div>
+          <h4>Fertilizers &amp; Treatments</h4>
+          <p>Premium lawn treatments and fertilizers to keep your grass green, healthy, and weed-free all season.</p>
+        </div>
+      </div>
+      <div class="mv-mat fu d2">
+        <div class="mv-mat-icon">📦</div>
+        <div>
+          <h4>Packing Boxes &amp; Wrap</h4>
+          <p>High-quality moving boxes, bubble wrap, and shrink wrap to protect all your belongings during the move.</p>
+        </div>
+      </div>
+      <div class="mv-mat fu d1">
+        <div class="mv-mat-icon">🚚</div>
+        <div>
+          <h4>Moving Trucks</h4>
+          <p>Fully equipped moving vehicles in various sizes to safely transport your items across Calgary.</p>
+        </div>
+      </div>
+      <div class="mv-mat fu d2">
+        <div class="mv-mat-icon">🪵</div>
+        <div>
+          <h4>Premium Fence Materials</h4>
+          <p>Wood, vinyl, and chain-link fencing materials sourced for durability, strength, and lasting appearance.</p>
+        </div>
+      </div>
+      <div class="mv-mat fu d3">
+        <div class="mv-mat-icon">🔨</div>
+        <div>
+          <h4>Professional Installation Tools</h4>
+          <p>Industry-grade tools and equipment for precise, secure fence post setting and panel installation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="mv-sec mv-sec-faq" id="faq">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">Common Questions</p>
+    <h2 class="mv-title fu d1">Frequently Asked Questions</h2>
+    <p class="mv-sub fu d2">Everything you need to know about our lawn care, packing & moving, and fence building services in Calgary.</p>
+    <div class="mv-faq-grid">
+      <div class="mv-faq-item fu">
+        <details>
+          <summary>What lawn care services do you offer?</summary>
+          <div class="mv-faq-body">We offer full lawn maintenance including mowing, edging, weed removal, fertilizing, leaf cleanup, and seasonal treatments. Whether it's a one-time clean-up or regular maintenance, we've got you covered.</div>
+        </details>
+      </div>
+      <div class="mv-faq-item fu d1">
+        <details>
+          <summary>How often should I get my lawn maintained?</summary>
+          <div class="mv-faq-body">We recommend weekly or bi-weekly mowing during the growing season and monthly visits in fall. Our team will suggest the best schedule based on your lawn type and property size.</div>
+        </details>
+      </div>
+      <div class="mv-faq-item fu d2">
+        <details>
+          <summary>Do you supply all packing materials for moving?</summary>
+          <div class="mv-faq-body">Yes! We bring everything — boxes, bubble wrap, shrink wrap, packing tape, and furniture covers. All materials are included in your quote so there are no surprise costs.</div>
+        </details>
+      </div>
+      <div class="mv-faq-item fu d3">
+        <details>
+          <summary>How long does a home move take?</summary>
+          <div class="mv-faq-body">Most residential moves are completed in a single day. A 1–2 bedroom home typically takes 3–5 hours, while a 4+ bedroom home may take 8–10 hours depending on distance and volume of items.</div>
+        </details>
+      </div>
+      <div class="mv-faq-item fu">
+        <details>
+          <summary>What types of fences do you build?</summary>
+          <div class="mv-faq-body">We build wood, vinyl, and chain-link fences for residential and commercial properties. All fences are custom-built to your specifications and installed by our experienced team.</div>
+        </details>
+      </div>
+      <div class="mv-faq-item fu d1">
+        <details>
+          <summary>How long does fence installation take?</summary>
+          <div class="mv-faq-body">Most standard fence installations are completed in 1–2 days depending on the length and type. We'll give you a clear timeline during your free estimate visit.</div>
+        </details>
+      </div>
+      <div class="mv-faq-item fu d2">
+        <details>
+          <summary>Are your services licensed and insured?</summary>
+          <div class="mv-faq-body">Yes, we are fully licensed and insured for all services — lawn care, packing & moving, and fence building. You can have complete peace of mind when our team is working on your property.</div>
+        </details>
+      </div>
+      <div class="mv-faq-item fu d3">
+        <details>
+          <summary>How do I get a free quote?</summary>
+          <div class="mv-faq-body">Simply call us at 587-962-1919 or fill out our contact form. We'll visit your property, assess the job, and provide a detailed, no-obligation quote — completely free of charge.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="mv-sec mv-sec-trust">
+  <div class="mv-sec-in" style="max-width:900px; margin:0 auto;">
+    <div class="mv-trust-stars fu">★★★★★</div>
+    <h2 class="mv-title fu d1">Clients Love Our Service</h2>
+    <p class="mv-sub fu d2">Over 355,000 happy customers trust us with their most valuable belongings. Here's what they say.</p>
+    <div class="mv-testi-grid">
+      <div class="mv-testi fu">
+        <div class="ts">★★★★★</div>
+        <p>"The team arrived on time, packed everything perfectly, and nothing was damaged. Best moving experience I've ever had in Calgary!"</p>
+        <span class="ta">— Sarah M., Calgary</span>
+      </div>
+      <div class="mv-testi fu d1">
+        <div class="ts">★★★★★</div>
+        <p>"They packed our entire 4-bedroom house in one day. Very professional, careful with our furniture, and extremely efficient."</p>
+        <span class="ta">— James T., Calgary NW</span>
+      </div>
+      <div class="mv-testi fu d2">
+        <div class="ts">★★★★★</div>
+        <p>"Honest pricing, no surprise charges, and the packers were incredibly thorough. Would recommend to anyone moving in Calgary."</p>
+        <span class="ta">— Priya K., SE Calgary</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OTHER SERVICES ═══ -->
+<!--
+<section class="mv-sec mv-sec-other">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">More Services</p>
+    <h2 class="mv-title fu d1">Complete Moving Solutions</h2>
+    <p class="mv-sub fu d2">Beyond packing, we offer a full range of moving and relocation services across Calgary.</p>
+    <div class="mv-other-grid">
+      <a class="mv-oc fu" href="index.html">
+        <span class="oi">🏡</span>
+        <h3>Residential Moving</h3>
+        <p>Full-service home moves handled with care, from single apartments to large family homes across Calgary.</p>
+      </a>
+      <a class="mv-oc fu d1" href="index.html">
+        <span class="oi">🏢</span>
+        <h3>Commercial Moving</h3>
+        <p>Office relocations planned and executed to minimize downtime and keep your business running smoothly.</p>
+      </a>
+      <a class="mv-oc fu d2" href="index.html">
+        <span class="oi">🏪</span>
+        <h3>Storage Services</h3>
+        <p>Secure, climate-controlled storage solutions for short-term or long-term needs during your transition.</p>
+      </a>
+      <a class="mv-oc fu" href="index.html">
+        <span class="oi">🗑️</span>
+        <h3>Junk Removal</h3>
+        <p>We'll remove unwanted items, furniture, and debris before or after your move — quickly and responsibly.</p>
+      </a>
+      <a class="mv-oc fu d1" href="index.html">
+        <span class="oi">🎹</span>
+        <h3>Specialty Moving</h3>
+        <p>Pianos, artwork, antiques, and high-value items handled with specialized equipment and expertise.</p>
+      </a>
+      <a class="mv-oc fu d2" href="lawn-care.html">
+        <span class="oi">🌿</span>
+        <h3>Lawn Care Services</h3>
+        <p>Professional lawn maintenance and landscaping to keep your new property looking its best.</p>
+      </a>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ═══ AWARDS ═══ -->
+<section class="mv-sec mv-sec-awards">
+  <div class="mv-sec-in">
+    <p class="mv-label fu">Recognition</p>
+    <h2 class="mv-title fu d1">Awards &amp; Certifications</h2>
+    <p class="mv-sub fu d2" style="margin:0 auto 0.5rem;">Recognized by leading industry organizations for excellence in service quality.</p>
+    <div class="mv-awards">
+      <div class="mv-badge fu"><span class="bi">🏅</span><span>Canadian Association of Movers</span></div>
+      <div class="mv-badge fu d1"><span class="bi">🌟</span><span>Best of Calgary 2024</span></div>
+      <div class="mv-badge fu d2"><span class="bi">🤝</span><span>Canadian Franchise Association</span></div>
+      <div class="mv-badge fu d3"><span class="bi">✅</span><span>BBB Accredited Business</span></div>
+      <div class="mv-badge fu d4"><span class="bi">🏆</span><span>Consumer Choice Award</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="mv-cta" id="contact">
+  <div class="mv-cta-in">
+    <h2 class="fu">Ready for a Stress-Free Move?</h2>
+    <p class="fu d1">Get your free, no-obligation packing quote today. Our team is standing by to help you plan the perfect move.</p>
+    <div class="mv-cta-btns fu d2">
+      <a href="#quote" class="mv-btn-white">Get Free Quote</a>
+      <a href="tel:5879621919" class="mv-btn-ow">📞 587-962-1919</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="mv-footer">
+  <div class="mv-footer-in">
+    <div class="mv-footer-grid">
+      <div class="mv-footer-brand">
+        <a class="mv-logo" href="index.html">Lawn care</a>
+        <p>Calgary's most trusted packing and moving service. Licensed, insured, and committed to making your move as smooth as possible.</p>
+        <div class="mv-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="Twitter">tw</a>
+          <a href="#" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div class="mv-fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">How We Work</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="mv-fc">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="lawn-care.html">Lawn Care</a></li>
+          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+          <li><a href="fence-building.html">Fence Building</a></li>
+        </ul>
+      </div>
+      <div class="mv-fc">
+        <h4>Contact Us</h4>
+        <div class="mv-ci"><span class="ci">📞</span><a href="tel:5879621919">587-962-1919</a></div>
+        <div class="mv-ci"><span class="ci">✉️</span><a href="mailto:calgary@letsgetmoving.ca">calgary@letsgetmoving.ca</a></div>
+        <div class="mv-ci"><span class="ci">📍</span><span>1212 34 Ave SE, Calgary, AB T2G 1V7</span></div>
+        <div class="mv-ci"><span class="ci">🕐</span>
+          <div>
+            <div>Mon–Fri: 6am – 9pm</div>
+            <div>Sat–Sun: 8am – 5pm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mv-footer-bot">
+      <p>© 2025 Let's Move Calgary. All rights reserved.</p>
+      <div class="mv-footer-bot-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── 2-step form
+  function nextStep() {
+    document.getElementById('formStep1').classList.add('hidden');
+    document.getElementById('formStep2').classList.remove('hidden');
+    document.getElementById('pill2').classList.add('active');
+  }
+
+  // ── Mobile nav
+  const mvToggle = document.getElementById('mvToggle');
+  const mvNav = document.getElementById('mvNavLinks');
+  if (mvToggle) {
+    mvToggle.addEventListener('click', () => mvNav.classList.toggle('open'));
+  }
+
+  // ── Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(el => observer.observe(el));
+
+  // ── Counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const dur = 1800;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(eased * target);
+      if (target >= 10000) el.textContent = Math.round(val / 1000) + 'K+';
+      else if (target >= 90) el.textContent = val + '%';
+      else el.textContent = val + '+';
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const cObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCounter(e.target); cObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(el => cObs.observe(el));
+</script>
+</body>
+</html>
