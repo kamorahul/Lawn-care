@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Packing Services in Calgary | Let's Move Calgary</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1c2b4a;
+      background: #f4f6fb;
+      line-height: 1.6;
+    }
+
+    /* ══════════════════════════════
+       NAV
+    ══════════════════════════════ */
+    .lc-header {
+      background: #0d1b35;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+    .lc-nav {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 1rem;
+    }
+    .lc-logo { color: #fff; font-size: 1.35rem; font-weight: 800; text-decoration: none; }
+    .lc-logo span { color: #4fc3f7; }
+    .lc-nav-links { display: flex; gap: 0; list-style: none; margin: 0; padding: 0; }
+    .lc-nav-links a {
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      padding: 0.55rem 1rem; font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .lc-nav-links a:hover, .lc-nav-links a.active { color: #4fc3f7; }
+    .lc-nav-phone {
+      background: #1e88e5; color: white;
+      padding: 0.55rem 1.2rem; border-radius: 6px;
+      font-weight: 700; text-decoration: none; font-size: 0.9rem;
+      white-space: nowrap; transition: background 0.2s, transform 0.2s;
+    }
+    .lc-nav-phone:hover { background: #1565c0; transform: translateY(-1px); }
+    .lc-mob-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .lc-mob-toggle span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: transform 0.25s; }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .lc-hero {
+      background:
+        linear-gradient(135deg, rgba(13,27,53,0.65) 0%, rgba(26,47,90,0.55) 55%, rgba(10,32,64,0.70) 100%),
+        url('packing-moving-hero.png') center/cover no-repeat;
+      min-height: 580px;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 4rem 1.5rem;
+    }
+    .lc-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 75% 50%, rgba(30,136,229,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .lc-hero-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 420px; gap: 3rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .lc-hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px; padding: 0.35rem 0.9rem;
+      color: rgba(255,255,255,0.9); font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .lc-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 900; color: #fff;
+      line-height: 1.08; margin-bottom: 0.9rem;
+      text-transform: uppercase;
+    }
+    .lc-hero h1 em { font-style: normal; color: #4fc3f7; text-transform: none; }
+    .lc-hero-rating {
+      display: flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 1.4rem;
+    }
+    .lc-hero-rating .stars { color: #fbbf24; font-size: 1.1rem; }
+    .lc-hero-rating span { color: rgba(255,255,255,0.85); font-size: 0.92rem; font-weight: 600; }
+    .lc-hero-customers {
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+    .lc-hero-customers .avatars {
+      display: flex;
+    }
+    .lc-hero-customers .avatars span {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, #1e88e5, #4fc3f7);
+      border: 2px solid rgba(255,255,255,0.4);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.75rem; font-weight: 700;
+      margin-left: -8px;
+    }
+    .lc-hero-customers .avatars span:first-child { margin-left: 0; }
+    .lc-hero-customers p { color: rgba(255,255,255,0.85); font-size: 0.88rem; }
+    .lc-hero-customers strong { color: #4fc3f7; }
+    .lc-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .lc-btn-hero {
+      background: #1e88e5; color: #fff;
+      padding: 0.9rem 2rem; border-radius: 9px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+    .lc-btn-hero:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30,136,229,0.4); }
+    .lc-btn-hero-outline {
+      background: transparent; color: #fff;
+      padding: 0.9rem 2rem; border-radius: 9px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .lc-btn-hero-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.07); }
+
+    /* Quote form */
+    .lc-quote-card {
+      background: rgba(0,0,0,0.45); border-radius: 16px;
+      padding: 2rem; box-shadow: none;
+    }
+    .lc-quote-card h3 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem; }
+    .lc-quote-card p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 1.4rem; }
+    .lc-form-group { margin-bottom: 1rem; }
+    .lc-form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .lc-form-group input, .lc-form-group select {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid #e2e8f0; border-radius: 8px;
+      font-size: 0.9rem; color: #1c2b4a; font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fff;
+    }
+    .lc-form-group input:focus, .lc-form-group select:focus {
+      outline: none; border-color: #1e88e5;
+      box-shadow: 0 0 0 3px rgba(30,136,229,0.1);
+    }
+    .lc-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .lc-form-submit {
+      width: 100%; padding: 0.9rem; border-radius: 9px;
+      background: #1e88e5; color: white;
+      font-size: 1rem; font-weight: 700; font-family: inherit;
+      border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 0.3rem;
+    }
+    .lc-form-submit:hover { background: #1565c0; transform: translateY(-1px); }
+    .lc-form-note { font-size: 0.75rem; color: #94a3b8; text-align: center; margin-top: 0.7rem; }
+
+    /* ══════════════════════════════
+       STATS BANNER
+    ══════════════════════════════ */
+    .lc-stats-bar { background: #0d1b35; padding: 1.1rem 1.5rem; }
+    .lc-stats-bar-in {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-around;
+      gap: 1.5rem; flex-wrap: wrap;
+    }
+    .lc-stat-item { display: flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,0.9); }
+    .lc-stat-item strong { font-size: 1.5rem; font-weight: 900; color: #4fc3f7; }
+    .lc-stat-item span { font-size: 0.88rem; color: rgba(255,255,255,0.72); max-width: 180px; line-height: 1.4; }
+
+    /* ══════════════════════════════
+       SECTION LAYOUT
+    ══════════════════════════════ */
+    .lc-sec { padding: 5rem 1.5rem; }
+    .lc-sec-in { max-width: 1200px; margin: 0 auto; }
+    .lc-sec-light { background: #f4f6fb; }
+    .lc-sec-dark { background: #0d1b35; }
+    .lc-sec-blue { background: linear-gradient(135deg, #1e88e5, #1565c0); }
+    .lc-label { color: #1e88e5; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .lc-title { font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 800; color: #0d1b35; line-height: 1.15; margin-bottom: 0.8rem; }
+    .lc-title-white { color: #fff; }
+    .lc-sub { color: #64748b; font-size: 1.02rem; line-height: 1.75; max-width: 600px; margin-bottom: 3rem; }
+    .lc-sub-white { color: rgba(255,255,255,0.72); }
+    .lc-center { text-align: center; }
+    .lc-center .lc-sub { margin-left: auto; margin-right: auto; }
+
+    /* ══════════════════════════════
+       BENEFIT PILLS (top 4 quick benefits)
+    ══════════════════════════════ */
+    .lc-benefits-bar { background: #fff; padding: 1.5rem; border-bottom: 1px solid #e8edf2; }
+    .lc-benefits-bar-in {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-around;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .lc-benefit-item {
+      display: flex; align-items: center; gap: 0.7rem;
+      color: #0d1b35; font-weight: 600; font-size: 0.9rem;
+    }
+    .lc-benefit-item .bi { font-size: 1.5rem; }
+
+    /* ══════════════════════════════
+       CORE SERVICES (4 cards)
+    ══════════════════════════════ */
+    .lc-core-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .lc-core-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 2rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .lc-core-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #4fc3f7, #1e88e5);
+    }
+    .lc-core-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.09); border-color: #90caf9; }
+    .lc-core-icon { font-size: 2.6rem; margin-bottom: 1rem; display: block; }
+    .lc-core-card h3 { font-size: 1.05rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.5rem; }
+    .lc-core-card p { color: #64748b; font-size: 0.87rem; line-height: 1.7; }
+
+    /* ══════════════════════════════
+       HOW WE WORK (4 steps)
+    ══════════════════════════════ */
+    .lc-how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .lc-how-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 2rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .lc-how-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #4fc3f7, #1e88e5);
+    }
+    .lc-how-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.09); }
+    .lc-how-num {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: #e3f2fd; color: #1e88e5;
+      font-size: 1.1rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+    .lc-how-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .lc-how-card h3 { font-size: 1.05rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.4rem; }
+    .lc-how-card p { color: #64748b; font-size: 0.87rem; line-height: 1.7; }
+    .lc-how-card .hw-note { font-size: 0.8rem; color: #94a3b8; font-style: italic; margin-top: 0.6rem; display: block; }
+
+    /* ══════════════════════════════
+       MATERIALS SECTION
+    ══════════════════════════════ */
+    .lc-mat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; }
+    .lc-mat-card {
+      background: #fff; border: 1.5px solid #e8edf2;
+      border-radius: 14px; padding: 1.6rem 1.2rem; text-align: center;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .lc-mat-card:hover { border-color: #1e88e5; transform: translateY(-4px); box-shadow: 0 10px 28px rgba(30,136,229,0.1); }
+    .lc-mat-icon { font-size: 2.4rem; display: block; margin-bottom: 0.8rem; }
+    .lc-mat-card h3 { font-size: 0.92rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.4rem; }
+    .lc-mat-card p { font-size: 0.8rem; color: #64748b; line-height: 1.6; }
+
+    /* ══════════════════════════════
+       WHY CHOOSE US (4 cards)
+    ══════════════════════════════ */
+    .lc-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .lc-why-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 2rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .lc-why-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+    .lc-why-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .lc-why-card h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+    .lc-why-card p { color: rgba(255,255,255,0.68); font-size: 0.87rem; line-height: 1.7; }
+
+    /* ══════════════════════════════
+       ADDITIONAL SERVICES
+    ══════════════════════════════ */
+    .lc-add-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-add-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .lc-add-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); border-color: #90caf9; }
+    .lc-add-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .lc-add-card h3 { font-size: 1.05rem; font-weight: 700; color: #1b2432; margin-bottom: 0.5rem; }
+    .lc-add-card p { color: #64748b; font-size: 0.87rem; line-height: 1.7; }
+    .lc-add-link { display: inline-block; color: #1e88e5; font-size: 0.85rem; font-weight: 700; text-decoration: none; margin-top: 0.8rem; }
+    .lc-add-link:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════ */
+    .lc-review-strip { overflow: hidden; position: relative; }
+    .lc-review-track {
+      display: flex; gap: 1.2rem;
+      animation: scroll-reviews 40s linear infinite;
+      width: max-content;
+    }
+    .lc-review-track:hover { animation-play-state: paused; }
+    @keyframes scroll-reviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .lc-review-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 1.5rem;
+      width: 300px; flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .lc-review-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem; }
+    .lc-review-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, #0d1b35, #1e88e5);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+    .lc-review-meta { flex: 1; min-width: 0; }
+    .lc-review-name { font-weight: 700; font-size: 0.9rem; color: #1b2432; }
+    .lc-review-tag { font-size: 0.72rem; color: #94a3b8; font-weight: 500; }
+    .lc-review-stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 0.6rem; }
+    .lc-review-text { color: #475569; font-size: 0.85rem; line-height: 1.7; }
+
+    /* ══════════════════════════════
+       FAQ
+    ══════════════════════════════ */
+    .lc-faq-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .lc-faq-tab {
+      padding: 0.55rem 1.2rem; border-radius: 50px;
+      background: #f1f5f9; color: #475569; font-size: 0.88rem; font-weight: 600;
+      border: none; cursor: pointer; font-family: inherit;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lc-faq-tab.active { background: #1e88e5; color: #fff; }
+    .lc-faq-panel { display: none; }
+    .lc-faq-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+    .lc-faq-item { border: 1.5px solid #e8edf2; border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .lc-faq-item:has(details[open]) { border-color: #1e88e5; }
+    .lc-faq-item details summary {
+      list-style: none; padding: 1.1rem 1.3rem;
+      cursor: pointer; font-weight: 700; font-size: 0.92rem; color: #1b2432;
+      display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;
+    }
+    .lc-faq-item details summary::-webkit-details-marker { display: none; }
+    .lc-faq-item details summary::after { content: '+'; font-size: 1.2rem; color: #1e88e5; min-width: 18px; text-align: center; }
+    .lc-faq-item details[open] summary::after { content: '−'; }
+    .lc-faq-item details[open] summary { color: #1e88e5; }
+    .lc-faq-body { padding: 0 1.3rem 1.1rem; color: #607585; font-size: 0.88rem; line-height: 1.75; }
+    .lc-faq-body strong { color: #1e88e5; }
+
+    /* ══════════════════════════════
+       TRUST BADGES
+    ══════════════════════════════ */
+    .lc-trust-strip { background: #f4f6fb; padding: 2rem 1.5rem; border-top: 1px solid #e8edf2; border-bottom: 1px solid #e8edf2; }
+    .lc-trust-in {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .lc-trust-badge {
+      display: flex; align-items: center; gap: 0.6rem;
+      color: #475569; font-size: 0.85rem; font-weight: 600;
+    }
+    .lc-trust-badge .tb-icon { font-size: 1.5rem; }
+
+    /* ══════════════════════════════
+       CTA
+    ══════════════════════════════ */
+    .lc-cta { padding: 5rem 1.5rem; text-align: center; }
+    .lc-cta-in { max-width: 680px; margin: 0 auto; }
+    .lc-cta h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
+    .lc-cta p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.2rem; }
+    .lc-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .lc-cta-white { background: #fff; color: #1e88e5; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .lc-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .lc-cta-ghost { background: transparent; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; }
+    .lc-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .lc-footer { background: #0f1923; color: rgba(255,255,255,0.65); padding: 3.5rem 1.5rem 2rem; }
+    .lc-footer-in { max-width: 1200px; margin: 0 auto; }
+    .lc-footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .lc-footer-brand .lc-logo { display: inline-block; font-size: 1.3rem; margin-bottom: 0.9rem; }
+    .lc-footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .lc-footer-social { display: flex; gap: 0.6rem; }
+    .lc-footer-social a {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lc-footer-social a:hover { background: #1e88e5; color: white; }
+    .lc-fc h4 { color: #fff; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
+    .lc-fc ul { list-style: none; display: grid; gap: 0.5rem; }
+    .lc-fc ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
+    .lc-fc ul li a:hover { color: #4fc3f7; }
+    .lc-fc-contact { display: flex; flex-direction: column; gap: 0.7rem; }
+    .lc-ci { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.87rem; }
+    .lc-ci .ci { min-width: 18px; }
+    .lc-ci a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .lc-ci a:hover { color: #4fc3f7; }
+    .lc-footer-bot { padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .lc-footer-bot p { font-size: 0.82rem; }
+    .lc-footer-bot-links { display: flex; gap: 1.5rem; }
+    .lc-footer-bot-links a { color: rgba(255,255,255,0.42); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+    .lc-footer-bot-links a:hover { color: #4fc3f7; }
+
+    /* ══════════════════════════════
+       SCROLL ANIMATIONS
+    ══════════════════════════════ */
+    .fu { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fu.vis { opacity: 1; transform: translateY(0); }
+    .fd1 { transition-delay: 0.1s; } .fd2 { transition-delay: 0.2s; }
+    .fd3 { transition-delay: 0.3s; } .fd4 { transition-delay: 0.4s; }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 1024px) {
+      .lc-hero-inner { grid-template-columns: 1fr; }
+      .lc-quote-card { max-width: 520px; }
+      .lc-core-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-how-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-mat-grid { grid-template-columns: repeat(3, 1fr); }
+      .lc-why-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-add-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .lc-nav-links { display: none; }
+      .lc-nav-phone { display: none; }
+      .lc-mob-toggle { display: flex; }
+      .lc-nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 68px; left: 0; right: 0;
+        background: #0d1b35; padding: 1rem 1.5rem 1.5rem;
+        z-index: 99; border-top: 1px solid rgba(255,255,255,0.07);
+      }
+      .lc-nav-links.open li { padding: 0.2rem 0; }
+      .lc-core-grid, .lc-how-grid, .lc-why-grid, .lc-add-grid { grid-template-columns: 1fr; }
+      .lc-mat-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-faq-panel.active { grid-template-columns: 1fr; }
+      .lc-footer-grid { grid-template-columns: 1fr; }
+      .lc-footer-bot { flex-direction: column; text-align: center; }
+      .lc-form-row { grid-template-columns: 1fr; }
+      .lc-benefits-bar-in { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="lc-header">
+  <nav class="lc-nav">
+    <a class="lc-logo" href="index.html">Lawn care</a>
+    <ul class="lc-nav-links" id="lcNavLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lawn-care.html">Lawn Care</a></li>
+      <li><a href="packing-moving.html" class="active">Packing &amp; Moving</a></li>
+      <li><a href="fence-building.html">Fence Building</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How We Work</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="lc-nav-phone" href="tel:5879621919">📞 587-962-1919</a>
+    <button class="lc-mob-toggle" id="lcToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="lc-hero">
+  <div class="lc-hero-inner">
+    <div>
+      <div class="lc-hero-badge">📦 #1 Rated Packing Service in Calgary</div>
+      <h1>PROFESSIONAL<br>PACKING SERVICES<br>IN <em>Calgary</em></h1>
+      <div class="lc-hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9/5 on Google · Trusted by Calgarians</span>
+      </div>
+      <div class="lc-hero-customers">
+        <div class="avatars">
+          <span>A</span><span>J</span><span>S</span><span>R</span>
+        </div>
+        <p>Join <strong>355K+</strong> Happy Customers across Calgary</p>
+      </div>
+      <div class="lc-hero-actions">
+        <a href="#quote" class="lc-btn-hero">Get a Free Quote</a>
+        <a href="tel:5879621919" class="lc-btn-hero-outline">📞 587-962-1919</a>
+      </div>
+    </div>
+
+    <!-- Quote Form -->
+    <div class="lc-quote-card" id="quote">
+      <h3>Get Your Free Packing Quote</h3>
+      <p>Fast, no-obligation quote — we respond within the hour.</p>
+      <div class="lc-form-group">
+        <label>Pick-up Address</label>
+        <input type="text" placeholder="Enter your current address" />
+      </div>
+      <div class="lc-form-group">
+        <label>Move Type</label>
+        <select>
+          <option value="">Select move type...</option>
+          <option>Residential – House</option>
+          <option>Residential – Condo / Apartment</option>
+          <option>Commercial / Office</option>
+          <option>Packing Only (no move)</option>
+          <option>Storage</option>
+        </select>
+      </div>
+      <div class="lc-form-row">
+        <div class="lc-form-group">
+          <label>Move Date</label>
+          <input type="date" />
+        </div>
+        <div class="lc-form-group">
+          <label>Home Size</label>
+          <select>
+            <option value="">Select size...</option>
+            <option>Studio / 1 Bed</option>
+            <option>2 Bedrooms</option>
+            <option>3 Bedrooms</option>
+            <option>4+ Bedrooms</option>
+          </select>
+        </div>
+      </div>
+      <div class="lc-form-row">
+        <div class="lc-form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name" />
+        </div>
+        <div class="lc-form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="587-xxx-xxxx" />
+        </div>
+      </div>
+      <button class="lc-form-submit" onclick="alert('Thank you! We will contact you shortly.')">Get My Free Quote →</button>
+      <p class="lc-form-note">🔒 No spam, no obligation. We respect your privacy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFIT PILLS ═══ -->
+<div class="lc-benefits-bar">
+  <div class="lc-benefits-bar-in">
+    <div class="lc-benefit-item"><span class="bi">⚡</span> Packing in 1 Day</div>
+    <div class="lc-benefit-item"><span class="bi">📦</span> Premium Materials</div>
+    <div class="lc-benefit-item"><span class="bi">📅</span> Easy Booking</div>
+    <div class="lc-benefit-item"><span class="bi">👷</span> Trained Packers</div>
+    <div class="lc-benefit-item"><span class="bi">💰</span> No Hidden Costs</div>
+    <div class="lc-benefit-item"><span class="bi">⭐</span> 4.9/5 Rating</div>
+  </div>
+</div>
+
+<!-- ═══ STATS BANNER ═══ -->
+<div class="lc-stats-bar">
+  <div class="lc-stats-bar-in">
+    <div class="lc-stat-item">
+      <strong class="counter" data-target="355000">355K+</strong>
+      <span>happy customers across Calgary</span>
+    </div>
+    <div class="lc-stat-item">
+      <strong>10+</strong>
+      <span>years of professional moving experience</span>
+    </div>
+    <div class="lc-stat-item">
+      <strong>4.9/5</strong>
+      <span>average Google rating from verified reviews</span>
+    </div>
+    <div class="lc-stat-item">
+      <strong>100%</strong>
+      <span>satisfaction guarantee on every job</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CORE PACKING SERVICES ═══ -->
+<section class="lc-sec" id="services">
+  <div class="lc-sec-in">
+    <p class="lc-label fu lc-center" style="text-align:center;">What we pack</p>
+    <h2 class="lc-title fu fd1 lc-center" style="text-align:center;">Professional Packing Services</h2>
+    <p class="lc-sub fu fd2 lc-center" style="text-align:center; margin:0 auto 3rem;">Customizable packing solutions for every home and budget — from a single room to a full house.</p>
+    <div class="lc-core-grid">
+      <div class="lc-core-card fu fd1">
+        <span class="lc-core-icon">📦</span>
+        <h3>Full &amp; Partial Packing</h3>
+        <p>Whether you need everything packed or just a few rooms, we customize our service to your exact needs. Premium supplies included for all items.</p>
+      </div>
+      <div class="lc-core-card fu fd2">
+        <span class="lc-core-icon">🛋️</span>
+        <h3>Furniture Disassembly &amp; Assembly</h3>
+        <p>Expert disassembly of beds, wardrobes, and large furniture before your move. Full reassembly at your new home — hardware bagged and labeled.</p>
+      </div>
+      <div class="lc-core-card fu fd3">
+        <span class="lc-core-icon">🍽️</span>
+        <h3>Delicate Item Packing</h3>
+        <p>Specialized wrapping and boxing for electronics, kitchenware, glassware, and fragile collectibles. Every piece treated with exceptional care.</p>
+      </div>
+      <div class="lc-core-card fu fd4">
+        <span class="lc-core-icon">🏋️</span>
+        <h3>Bulky Item Packing</h3>
+        <p>Professional handling and wrapping of mattresses, gym equipment, large appliances, and oversized items that need extra protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW WE WORK ═══ -->
+<section class="lc-sec lc-sec-light" id="how">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Simple process</p>
+    <h2 class="lc-title fu fd1">How We Work</h2>
+    <p class="lc-sub fu fd2">Getting packed has never been easier. Our streamlined 4-step process keeps everything stress-free from start to finish.</p>
+    <div class="lc-how-grid">
+      <div class="lc-how-card fu fd1">
+        <div class="lc-how-icon">📞</div>
+        <div class="lc-how-num">1</div>
+        <h3>Initial Consultation</h3>
+        <p>We assess your packing needs — inventory size, special items, timeline, and any specific requirements. Available by phone or in person.</p>
+        <span class="hw-note">Same-day response</span>
+      </div>
+      <div class="lc-how-card fu fd2">
+        <div class="lc-how-icon">💰</div>
+        <div class="lc-how-num">2</div>
+        <h3>Get a Quote</h3>
+        <p>Receive a detailed, transparent quote based on your exact inventory. No guesswork — you'll know exactly what you're paying before we start.</p>
+        <span class="hw-note">Free, no obligation</span>
+      </div>
+      <div class="lc-how-card fu fd3">
+        <div class="lc-how-icon">📅</div>
+        <div class="lc-how-num">3</div>
+        <h3>Booking &amp; Scheduling</h3>
+        <p>Choose a date and time that works for you. We arrive with all premium packing supplies ready — boxes, tape, bubble wrap, and more.</p>
+        <span class="hw-note">Flexible timing</span>
+      </div>
+      <div class="lc-how-card fu fd4">
+        <div class="lc-how-icon">📦</div>
+        <div class="lc-how-num">4</div>
+        <h3>Professional Packing</h3>
+        <p>Our specialized team carefully packs, labels, and organizes every item. Everything is move-ready and protected for safe transport.</p>
+        <span class="hw-note">Done in 1 day</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PACKING MATERIALS ═══ -->
+<section class="lc-sec" id="materials">
+  <div class="lc-sec-in">
+    <p class="lc-label fu lc-center" style="text-align:center;">What we use</p>
+    <h2 class="lc-title fu fd1 lc-center" style="text-align:center;">Premium Packing Materials</h2>
+    <p class="lc-sub fu fd2 lc-center" style="text-align:center; margin:0 auto 3rem;">We bring everything — all the right materials for every item type. Nothing gets packed without proper protection.</p>
+    <div class="lc-mat-grid">
+      <div class="lc-mat-card fu fd1">
+        <span class="lc-mat-icon">🛏️</span>
+        <h3>Mattress &amp; Chair Covers</h3>
+        <p>Heavy-duty covers in all sizes to protect mattresses and upholstered furniture from dirt and damage.</p>
+      </div>
+      <div class="lc-mat-card fu fd2">
+        <span class="lc-mat-icon">📦</span>
+        <h3>Moving Boxes</h3>
+        <p>Double-walled boxes from 1.5 to 6.0 cu.ft. for every item size — from books to large household goods.</p>
+      </div>
+      <div class="lc-mat-card fu fd3">
+        <span class="lc-mat-icon">🫧</span>
+        <h3>Wrapping Materials</h3>
+        <p>Bubble wrap, shrink wrap, packing paper, and specialty TV boxes for full protection of fragile items.</p>
+      </div>
+      <div class="lc-mat-card fu fd4">
+        <span class="lc-mat-icon">🎁</span>
+        <h3>Moving Kits</h3>
+        <p>Pre-assembled supply kits sized for studio to 4-bedroom homes — everything you need in one bundle.</p>
+      </div>
+      <div class="lc-mat-card fu fd1">
+        <span class="lc-mat-icon">🌿</span>
+        <h3>Eco-Friendly Materials</h3>
+        <p>Recycled packing paper and biodegradable packing peanuts for environmentally conscious customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US ═══ -->
+<section class="lc-sec lc-sec-dark" id="why">
+  <div class="lc-sec-in">
+    <p class="lc-label fu" style="color:#4fc3f7;">Why choose us</p>
+    <h2 class="lc-title lc-title-white fu fd1">Calgary's Most Trusted Packers</h2>
+    <p class="lc-sub lc-sub-white fu fd2">4 guarantees that set us apart from every other packing company in Calgary.</p>
+    <div class="lc-why-grid">
+      <div class="lc-why-card fu fd1">
+        <span class="lc-why-icon">⏰</span>
+        <h3>Perfect Timing</h3>
+        <p>We keep you informed every step of the way. Constant communication before and during your packing day so there are never any surprises.</p>
+      </div>
+      <div class="lc-why-card fu fd2">
+        <span class="lc-why-icon">💰</span>
+        <h3>No Hidden Costs</h3>
+        <p>The price we quote is the price you pay. Transparent, itemized pricing with no surprise charges on moving day — ever.</p>
+      </div>
+      <div class="lc-why-card fu fd3">
+        <span class="lc-why-icon">❤️</span>
+        <h3>Our Clients Love Us</h3>
+        <p>355K+ happy customers and a 4.9/5 Google rating. We've built our reputation on referrals and five-star reviews from real Calgarians.</p>
+      </div>
+      <div class="lc-why-card fu fd4">
+        <span class="lc-why-icon">✅</span>
+        <h3>Free of Error</h3>
+        <p>Trained, certified professionals who take every precaution. Our systematic packing process ensures nothing is missed, damaged, or mislabeled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="lc-sec lc-sec-light" id="reviews">
+  <div class="lc-sec-in">
+    <p class="lc-label fu lc-center" style="text-align:center;">Client reviews</p>
+    <h2 class="lc-title fu fd1 lc-center" style="text-align:center;">What Our Clients Say</h2>
+    <p class="lc-sub fu fd2" style="margin:0 auto 2.5rem; text-align:center;">Hundreds of five-star reviews from happy Calgary residents and businesses.</p>
+  </div>
+  <div class="lc-review-strip">
+    <div class="lc-review-track" id="reviewTrack">
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">A</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Amanda R.</div>
+            <div class="lc-review-tag">Full Packing Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"The packing team was incredibly efficient. They packed our entire 3-bedroom home in one day and everything arrived at the new place in perfect condition. Absolutely recommend!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">D</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">David M.</div>
+            <div class="lc-review-tag">Commercial Move Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Moved our entire office over a weekend. Zero damage, zero missing items. The packing was so organized that unpacking at the new office was a breeze. True professionals."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">S</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Sophie T.</div>
+            <div class="lc-review-tag">Delicate Items Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"I was so worried about my china collection and vintage artwork. They wrapped every piece individually and nothing was scratched or broken. Worth every dollar."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">J</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Jason K.</div>
+            <div class="lc-review-tag">Residential Move Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Used them for packing and moving. The communication throughout was excellent — I always knew what was happening. On time, on budget, and no surprises. Highly recommend!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">N</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Nadia P.</div>
+            <div class="lc-review-tag">Full Service Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"They packed, moved, and unpacked everything. I walked into my new home and it was already set up. The best money I ever spent on a move. Will use them again for sure."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">R</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Ryan B.</div>
+            <div class="lc-review-tag">Furniture Disassembly</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Had them disassemble and reassemble a large wardrobe and king bed. Everything was done perfectly and faster than I expected. Great attention to detail."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">L</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Laura H.</div>
+            <div class="lc-review-tag">Condo Move Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Moving out of a high-rise condo is stressful but these guys had it all figured out. Professional, efficient, and friendly. The packing was neat and organized."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">C</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Carlos F.</div>
+            <div class="lc-review-tag">Packing Only Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Booked packing only since I was doing the moving myself. They packed everything so well that loading the truck was quick and easy. Great service, fair price."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ADDITIONAL SERVICES ═══ -->
+<section class="lc-sec" id="more-services">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">We also offer</p>
+    <h2 class="lc-title fu fd1">Additional Moving Services</h2>
+    <p class="lc-sub fu fd2">Need more than just packing? We're Calgary's full-service moving company — handling every part of your move.</p>
+    <div class="lc-add-grid">
+      <div class="lc-add-card fu fd1">
+        <span class="lc-add-icon">🚚</span>
+        <h3>Residential Moving</h3>
+        <p>Local and long-distance moving for houses, condos, and apartments throughout Calgary and across Alberta. We treat your belongings like our own.</p>
+        <a href="#contact" class="lc-add-link">Learn more →</a>
+      </div>
+      <div class="lc-add-card fu fd2">
+        <span class="lc-add-icon">🏢</span>
+        <h3>Commercial Moving</h3>
+        <p>Efficient office and business relocations with minimal downtime. We plan around your schedule to keep your operations running smoothly.</p>
+        <a href="#contact" class="lc-add-link">Learn more →</a>
+      </div>
+      <div class="lc-add-card fu fd3">
+        <span class="lc-add-icon">🗄️</span>
+        <h3>Storage Services</h3>
+        <p>Secure, climate-controlled short and long-term storage solutions. Perfect for between-move gaps, downsizing, or seasonal storage needs.</p>
+        <a href="#contact" class="lc-add-link">Learn more →</a>
+      </div>
+      <div class="lc-add-card fu fd1">
+        <span class="lc-add-icon">🗑️</span>
+        <h3>Junk Removal</h3>
+        <p>Don't move what you don't need. We'll haul away unwanted furniture, appliances, and clutter — leaving your space clean and clear.</p>
+        <a href="#contact" class="lc-add-link">Learn more →</a>
+      </div>
+      <div class="lc-add-card fu fd2">
+        <span class="lc-add-icon">🖼️</span>
+        <h3>Specialty Moving</h3>
+        <p>Expert handling of high-value and delicate items — fine art, antiques, pianos, safes, and other specialty pieces requiring extra care.</p>
+        <a href="#contact" class="lc-add-link">Learn more →</a>
+      </div>
+      <div class="lc-add-card fu fd3">
+        <span class="lc-add-icon">🧹</span>
+        <h3>Post-Move Cleaning</h3>
+        <p>Leave your old space spotless and start fresh in your new one. We coordinate professional cleaning services as part of your move package.</p>
+        <a href="#contact" class="lc-add-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BADGES ═══ -->
+<div class="lc-trust-strip">
+  <div class="lc-trust-in">
+    <div class="lc-trust-badge"><span class="tb-icon">🏆</span> CAM Certified</div>
+    <div class="lc-trust-badge"><span class="tb-icon">✅</span> CFA Member</div>
+    <div class="lc-trust-badge"><span class="tb-icon">⭐</span> Yelp Top Rated</div>
+    <div class="lc-trust-badge"><span class="tb-icon">🤝</span> IFA Member</div>
+    <div class="lc-trust-badge"><span class="tb-icon">🛡️</span> Fully Insured</div>
+    <div class="lc-trust-badge"><span class="tb-icon">📋</span> Licensed & Bonded</div>
+    <div class="lc-trust-badge"><span class="tb-icon">🌟</span> Google Guaranteed</div>
+  </div>
+</div>
+
+<!-- ═══ FAQ ═══ -->
+<section class="lc-sec lc-sec-light" id="faq">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Got questions?</p>
+    <h2 class="lc-title fu fd1">Frequently Asked Questions</h2>
+    <p class="lc-sub fu fd2">Everything you need to know about our professional packing services in Calgary.</p>
+
+    <div class="lc-faq-tabs fu fd1">
+      <button class="lc-faq-tab active" onclick="switchTab('general', this)">General</button>
+      <button class="lc-faq-tab" onclick="switchTab('pricing', this)">Pricing</button>
+      <button class="lc-faq-tab" onclick="switchTab('services', this)">Services</button>
+    </div>
+
+    <div class="lc-faq-panel active" id="faq-general">
+      <div class="lc-faq-item">
+        <details>
+          <summary>What types of items do you pack?</summary>
+          <div class="lc-faq-body">We pack everything — kitchenware, electronics, clothing, furniture, artwork, fragile collectibles, gym equipment, mattresses, and more. Our team is trained to properly wrap and protect every item type, no matter how delicate or bulky.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Do you provide all the packing materials?</summary>
+          <div class="lc-faq-body">Yes! We bring all necessary packing materials including double-walled boxes (various sizes), bubble wrap, packing paper, shrink wrap, mattress covers, moving blankets, tape, and specialty boxes for TVs and mirrors. Everything is included in your package price.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>How long does professional packing take?</summary>
+          <div class="lc-faq-body">Most homes can be fully packed in one day. A 1–2 bedroom home typically takes 3–5 hours, while a 3–4 bedroom home may take 6–8 hours. We'll give you an accurate time estimate during your free consultation based on your specific inventory.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Can I book packing without moving?</summary>
+          <div class="lc-faq-body">Absolutely! Our packing service is available as a standalone booking. We can pack your home and leave everything ready for you to move yourself, or coordinate with another moving company. There's no requirement to use our moving service.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>What areas in Calgary do you service?</summary>
+          <div class="lc-faq-body">We service all neighbourhoods throughout Calgary and surrounding areas including Airdrie, Chestermere, Cochrane, and Okotoks. We also handle long-distance packing and moving across Alberta. Contact us to confirm service availability in your area.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Can I cancel or reschedule?</summary>
+          <div class="lc-faq-body">Yes, we understand plans change. We ask for at least 48 hours notice for cancellations or rescheduling to avoid fees. We'll always do our best to accommodate your new preferred date and time with as little disruption as possible.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="lc-faq-panel" id="faq-pricing">
+      <div class="lc-faq-item">
+        <details>
+          <summary>How much does professional packing cost in Calgary?</summary>
+          <div class="lc-faq-body">Packing costs depend on your home size, the number of items, and the services selected. We offer a free, no-obligation quote after your consultation. Our pricing is fully transparent — <strong>no hidden fees</strong>. What we quote is what you pay, period.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Are packing materials included in the price?</summary>
+          <div class="lc-faq-body">Yes. All packing materials — boxes, bubble wrap, tape, mattress covers, packing paper, and specialty boxes — are included in our full packing packages. There are no additional material charges added after the fact.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Do you offer discounts for larger homes?</summary>
+          <div class="lc-faq-body">Yes! We offer volume discounts for larger homes and competitive rates for combined packing + moving packages. Returning customers also receive loyalty pricing. Contact us to discuss the best deal for your specific situation.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>How do I get a free packing quote?</summary>
+          <div class="lc-faq-body">Fill out the quote form on this page or call us at <strong>587-962-1919</strong>. We'll review your needs and provide a detailed, no-obligation quote — completely free. We typically respond within the hour during business hours.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="lc-faq-panel" id="faq-services">
+      <div class="lc-faq-item">
+        <details>
+          <summary>Do you have experience packing fragile items?</summary>
+          <div class="lc-faq-body">Yes — it's one of our specialties. Our team is trained in professional wrapping techniques for glassware, china, artwork, electronics, and antiques. We use the correct materials for each item type and document fragile items for extra care during transport.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Can you do partial packing (only some rooms)?</summary>
+          <div class="lc-faq-body">Absolutely. Partial packing is very common — many clients pack their own items and have us handle just the kitchen, fragile items, or specific rooms. We'll work with exactly what you need and quote only for those areas.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>What should I do to prepare for packing day?</summary>
+          <div class="lc-faq-body">We recommend setting aside any personal documents, medications, or valuables you want to transport yourself. Clear pathways throughout the home and let us know about any access restrictions. Otherwise, leave the packing to us — we'll handle everything.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Do you disassemble furniture as part of packing?</summary>
+          <div class="lc-faq-body">Yes. Furniture disassembly and reassembly is available as part of our packing service or as a standalone add-on. We bring all necessary tools and bag all hardware separately so reassembly at your new home is fast and easy.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Can you pack specialty items like pianos or gym equipment?</summary>
+          <div class="lc-faq-body">Yes. We have experience with specialty items including pianos, pool tables, safes, large gym equipment, and mounted TVs. These require specific handling and materials — let us know during your consultation so we can plan and quote accordingly.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>What items can you NOT pack?</summary>
+          <div class="lc-faq-body">For safety reasons we cannot pack hazardous materials (paint, propane, chemicals, ammunition), perishable food, plants, or live animals. We recommend making separate arrangements for these before packing day. If you're unsure about a specific item, just ask.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="lc-sec lc-sec-blue lc-cta" id="contact">
+  <div class="lc-cta-in">
+    <h2 class="fu">Ready to get packed?</h2>
+    <p class="fu fd1">Call us today or fill out our quick quote form. We respond within the hour and can have a team at your door faster than you think.</p>
+    <div class="lc-cta-btns fu fd2">
+      <a href="tel:5879621919" class="lc-cta-white">📞 587-962-1919</a>
+      <a href="mailto:calgary@letsgetmoving.ca" class="lc-cta-ghost">✉️ calgary@letsgetmoving.ca</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="lc-footer">
+  <div class="lc-footer-in">
+    <div class="lc-footer-grid">
+      <div class="lc-footer-brand">
+        <a class="lc-logo" href="index.html">Lawn care</a>
+        <p>Calgary's most trusted packing &amp; moving professionals. Licensed, insured, and committed to making every move smooth, safe, and stress-free.</p>
+        <div class="lc-footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="Twitter">tw</a>
+          <a href="#" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div class="lc-fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#materials">Materials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lc-fc">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="lawn-care.html">Lawn Care</a></li>
+          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+          <li><a href="fence-building.html">Fence Building</a></li>
+        </ul>
+      </div>
+      <div class="lc-fc">
+        <h4>Contact Us</h4>
+        <div class="lc-fc-contact">
+          <div class="lc-ci"><span class="ci">📞</span><a href="tel:5879621919">587-962-1919</a></div>
+          <div class="lc-ci"><span class="ci">✉️</span><a href="mailto:calgary@letsgetmoving.ca">calgary@letsgetmoving.ca</a></div>
+          <div class="lc-ci"><span class="ci">📍</span><span>1212 34 Ave SE, Calgary, AB T2G 1V7</span></div>
+          <div class="lc-ci"><span class="ci">🕐</span>
+            <div>
+              <div>Mon–Fri: 6am – 9pm</div>
+              <div>Sat–Sun: 8am – 5pm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lc-footer-bot">
+      <p>© 2025 Let's Move Calgary. All rights reserved.</p>
+      <div class="lc-footer-bot-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Mobile nav ── */
+  const tog = document.getElementById('lcToggle');
+  const nav = document.getElementById('lcNavLinks');
+  if (tog) tog.addEventListener('click', () => nav.classList.toggle('open'));
+
+  /* ── Scroll animations ── */
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  /* ── Counter ── */
+  function animCount(el) {
+    const t = parseInt(el.dataset.target), dur = 2000, s = performance.now();
+    const tick = now => {
+      const p = Math.min((now - s) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      const v = Math.round(e * t);
+      el.textContent = t >= 100000 ? Math.round(v / 1000) + 'K+' : v + '+';
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const cio = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { animCount(e.target); cio.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(el => cio.observe(el));
+
+  /* ── FAQ tabs ── */
+  function switchTab(id, btn) {
+    document.querySelectorAll('.lc-faq-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.lc-faq-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('faq-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  /* ── Duplicate review track for infinite scroll ── */
+  const track = document.getElementById('reviewTrack');
+  if (track) {
+    const clone = track.innerHTML;
+    track.innerHTML = clone + clone;
+  }
+</script>
+</body>
+</html>
