@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Lawn Care Services in Calgary | Lawn care</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1c2b4a;
+      background: #f4f6fb;
+      line-height: 1.6;
+    }
+
+    /* ══════════════════════════════
+       NAV
+    ══════════════════════════════ */
+    .lc-header {
+      background: #0d1b35;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+    .lc-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 1rem;
+    }
+    .lc-logo {
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .lc-logo span { color: #4fc3f7; }
+    .lc-nav-links {
+      display: flex;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .lc-nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 0.55rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .lc-nav-links a:hover { color: #4fc3f7; }
+    .lc-nav-phone {
+      background: #1e88e5;
+      color: white;
+      padding: 0.55rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .lc-nav-phone:hover { background: #1565c0; transform: translateY(-1px); }
+    .lc-mob-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .lc-mob-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: transform 0.25s;
+    }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .lc-hero {
+      background:
+        linear-gradient(135deg, rgba(13,27,53,0.30) 0%, rgba(26,47,90,0.25) 55%, rgba(10,32,64,0.35) 100%),
+        url('summer-providers.webp') center/cover no-repeat;
+      min-height: 560px;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 4rem 1.5rem;
+    }
+    .lc-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(30,136,229,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .lc-hero-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .lc-hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px; padding: 0.35rem 0.9rem;
+      color: rgba(255,255,255,0.9); font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+    .lc-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 900; color: #fff;
+      line-height: 1.08; margin-bottom: 1.1rem;
+    }
+    .lc-hero h1 em { font-style: normal; color: #4fc3f7; }
+    .lc-hero-sub {
+      color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.75;
+      max-width: 500px; margin-bottom: 2rem;
+    }
+    .lc-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .lc-btn-hero {
+      background: #1e88e5; color: #fff;
+      padding: 0.85rem 1.9rem; border-radius: 9px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+    .lc-btn-hero:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30,136,229,0.4); }
+    .lc-btn-hero-outline {
+      background: transparent; color: #fff;
+      padding: 0.85rem 1.9rem; border-radius: 9px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.35);
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .lc-btn-hero-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+    .lc-hero-review {
+      background: rgba(13,27,53,0.55); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px; padding: 1rem 1.2rem;
+      max-width: 420px;
+    }
+    .lc-hero-review .stars { color: #fbbf24; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .lc-hero-review p { color: rgba(255,255,255,0.85); font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.5rem; font-style: italic; }
+    .lc-hero-review .reviewer { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 600; }
+
+    /* Right hero visual */
+    .lc-hero-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;
+    }
+    .lc-lawn-thumb {
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; position: relative;
+      transition: transform 0.3s;
+    }
+    .lc-lawn-thumb:hover { transform: scale(1.03); }
+    .lc-lawn-thumb:first-child { grid-column: span 2; aspect-ratio: 16/7; font-size: 4rem; }
+    .lc-lawn-thumb .lt-label {
+      position: absolute; bottom: 0.7rem; left: 0.7rem;
+      background: rgba(0,0,0,0.55); color: #fff;
+      font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem;
+      border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ══════════════════════════════
+       STATS BANNER
+    ══════════════════════════════ */
+    .lc-stats-bar {
+      background: #0d1b35; padding: 1.1rem 1.5rem;
+    }
+    .lc-stats-bar-in {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-around;
+      gap: 1.5rem; flex-wrap: wrap;
+    }
+    .lc-stat-item { display: flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,0.9); }
+    .lc-stat-item strong { font-size: 1.5rem; font-weight: 900; color: #4fc3f7; }
+    .lc-stat-item span { font-size: 0.88rem; color: rgba(255,255,255,0.72); max-width: 180px; line-height: 1.4; }
+
+    /* ══════════════════════════════
+       SECTION LAYOUT
+    ══════════════════════════════ */
+    .lc-sec { padding: 5rem 1.5rem; }
+    .lc-sec-in { max-width: 1200px; margin: 0 auto; }
+    .lc-sec-light { background: #f4f6fb; }
+    .lc-sec-dark { background: #0d1b35; }
+    .lc-sec-green { background: linear-gradient(135deg, #1e88e5, #1565c0); }
+    .lc-label { color: #1e88e5; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .lc-title { font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 800; color: #0d1b35; line-height: 1.15; margin-bottom: 0.8rem; }
+    .lc-title-white { color: #fff; }
+    .lc-sub { color: #64748b; font-size: 1.02rem; line-height: 1.75; max-width: 600px; margin-bottom: 3rem; }
+    .lc-sub-white { color: rgba(255,255,255,0.72); }
+    .lc-center { text-align: center; }
+    .lc-center .lc-sub { margin-left: auto; margin-right: auto; }
+
+    /* ══════════════════════════════
+       HOW IT WORKS
+    ══════════════════════════════ */
+    .lc-how-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    }
+    .lc-how-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 2rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .lc-how-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #4fc3f7, #1e88e5);
+    }
+    .lc-how-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.09); }
+    .lc-how-num {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: #e3f2fd; color: #1e88e5;
+      font-size: 1.1rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+    .lc-how-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .lc-how-card h3 { font-size: 1.05rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.4rem; }
+    .lc-how-card p { color: #64748b; font-size: 0.87rem; line-height: 1.7; margin-bottom: 1.1rem; }
+    .lc-how-card .hw-note { font-size: 0.8rem; color: #94a3b8; font-style: italic; }
+    .lc-how-step-btn {
+      display: inline-block; color: #1e88e5; font-size: 0.85rem; font-weight: 700;
+      text-decoration: none; margin-top: 0.5rem;
+    }
+    .lc-how-step-btn:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════
+       SERVICES GRID
+    ══════════════════════════════ */
+    .lc-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-svc-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .lc-svc-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); border-color: #90caf9; }
+    .lc-svc-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .lc-svc-card h3 { font-size: 1.1rem; font-weight: 700; color: #1b2432; margin-bottom: 0.5rem; }
+    .lc-svc-card p { color: #64748b; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+    .lc-svc-tag {
+      display: inline-block;
+      background: #e3f2fd; color: #1e88e5;
+      padding: 0.2rem 0.7rem; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+
+    /* ══════════════════════════════
+       PACKAGES
+    ══════════════════════════════ */
+    .lc-pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-pkg {
+      border: 2px solid #e8edf2; border-radius: 16px; padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .lc-pkg:hover { border-color: #1e88e5; transform: translateY(-5px); box-shadow: 0 14px 32px rgba(30,136,229,0.12); }
+    .lc-pkg.feat { background: linear-gradient(135deg, #0d1b35, #1a2f5a); border-color: #1e88e5; }
+    .lc-pkg h3 { font-size: 1.25rem; font-weight: 800; color: #0d1b35; margin-bottom: 0.3rem; }
+    .lc-pkg.feat h3 { color: #fff; }
+    .lc-pkg-tag {
+      display: inline-block;
+      background: #e3f2fd; color: #1e88e5;
+      padding: 0.18rem 0.7rem; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+    .lc-pkg.feat .lc-pkg-tag { background: rgba(30,136,229,0.3); color: #4fc3f7; }
+    .lc-pkg-list { list-style: none; padding: 0; margin: 0.8rem 0 1.5rem; display: grid; gap: 0.55rem; }
+    .lc-pkg-list li { padding-left: 1.4rem; position: relative; color: #607585; font-size: 0.88rem; line-height: 1.6; }
+    .lc-pkg.feat .lc-pkg-list li { color: rgba(255,255,255,0.75); }
+    .lc-pkg-list li::before { content: '✓'; position: absolute; left: 0; color: #1e88e5; font-weight: 700; }
+    .lc-pkg.feat .lc-pkg-list li::before { color: #4fc3f7; }
+    .lc-pkg-btn {
+      display: block; text-align: center;
+      padding: 0.85rem; border-radius: 8px;
+      font-weight: 700; text-decoration: none;
+      font-size: 0.92rem;
+      background: #e3f2fd; color: #1e88e5;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .lc-pkg-btn:hover { background: #bbdefb; transform: translateY(-1px); }
+    .lc-pkg.feat .lc-pkg-btn { background: #1e88e5; color: white; }
+    .lc-pkg.feat .lc-pkg-btn:hover { background: #42a5f5; }
+
+    /* ══════════════════════════════
+       WHY CHOOSE US
+    ══════════════════════════════ */
+    .lc-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-why-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 1.8rem;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .lc-why-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(0,0,0,0.08); border-color: #90caf9; }
+    .lc-why-icon { font-size: 2.2rem; margin-bottom: 0.9rem; display: block; }
+    .lc-why-card h3 { font-size: 1.08rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.45rem; }
+    .lc-why-card p { color: #64748b; font-size: 0.88rem; line-height: 1.7; }
+
+    /* ══════════════════════════════
+       PROCESS STEPS (dark bg)
+    ══════════════════════════════ */
+    .lc-proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-proc-item {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px; padding: 1.8rem;
+      transition: background 0.2s;
+    }
+    .lc-proc-item:hover { background: rgba(255,255,255,0.11); }
+    .lc-proc-step {
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem;
+    }
+    .lc-proc-n {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #1e88e5; color: white;
+      font-size: 0.9rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .lc-proc-icon { font-size: 1.4rem; }
+    .lc-proc-item h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem; }
+    .lc-proc-item p { color: rgba(255,255,255,0.67); font-size: 0.87rem; line-height: 1.7; }
+
+    /* ══════════════════════════════
+       FAQ
+    ══════════════════════════════ */
+    .lc-faq-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .lc-faq-tab {
+      padding: 0.55rem 1.2rem; border-radius: 50px;
+      background: #f1f5f9; color: #475569; font-size: 0.88rem; font-weight: 600;
+      border: none; cursor: pointer; font-family: inherit;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lc-faq-tab.active { background: #1e88e5; color: #fff; }
+    .lc-faq-panel { display: none; }
+    .lc-faq-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+    .lc-faq-item { border: 1.5px solid #e8edf2; border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .lc-faq-item:has(details[open]) { border-color: #1e88e5; }
+    .lc-faq-item details summary {
+      list-style: none; padding: 1.1rem 1.3rem;
+      cursor: pointer; font-weight: 700; font-size: 0.92rem; color: #1b2432;
+      display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;
+    }
+    .lc-faq-item details summary::-webkit-details-marker { display: none; }
+    .lc-faq-item details summary::after { content: '+'; font-size: 1.2rem; color: #1e88e5; min-width: 18px; text-align: center; }
+    .lc-faq-item details[open] summary::after { content: '−'; }
+    .lc-faq-item details[open] summary { color: #1e88e5; }
+    .lc-faq-body { padding: 0 1.3rem 1.1rem; color: #607585; font-size: 0.88rem; line-height: 1.75; }
+    .lc-faq-body strong { color: #1e88e5; }
+
+    /* ══════════════════════════════
+       TESTIMONIALS (scrolling strip)
+    ══════════════════════════════ */
+    .lc-review-strip { overflow: hidden; position: relative; }
+    .lc-review-track {
+      display: flex; gap: 1.2rem;
+      animation: scroll-reviews 40s linear infinite;
+      width: max-content;
+    }
+    .lc-review-track:hover { animation-play-state: paused; }
+    @keyframes scroll-reviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .lc-review-card {
+      background: #fff; border: 1px solid #e8edf2;
+      border-radius: 16px; padding: 1.5rem;
+      width: 300px; flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .lc-review-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem; }
+    .lc-review-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, #0d1b35, #1e88e5);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+    .lc-review-meta { flex: 1; min-width: 0; }
+    .lc-review-name { font-weight: 700; font-size: 0.9rem; color: #1b2432; }
+    .lc-review-tag { font-size: 0.72rem; color: #94a3b8; font-weight: 500; }
+    .lc-review-stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 0.6rem; }
+    .lc-review-text { color: #475569; font-size: 0.85rem; line-height: 1.7; }
+
+    /* ══════════════════════════════
+       CTA
+    ══════════════════════════════ */
+    .lc-cta { padding: 5rem 1.5rem; text-align: center; }
+    .lc-cta-in { max-width: 680px; margin: 0 auto; }
+    .lc-cta h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
+    .lc-cta p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.2rem; }
+    .lc-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .lc-cta-white { background: #fff; color: #1e88e5; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .lc-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .lc-cta-ghost { background: transparent; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; }
+    .lc-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .lc-footer { background: #0f1923; color: rgba(255,255,255,0.65); padding: 3.5rem 1.5rem 2rem; }
+    .lc-footer-in { max-width: 1200px; margin: 0 auto; }
+    .lc-footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .lc-footer-brand .lc-logo { display: inline-block; font-size: 1.3rem; margin-bottom: 0.9rem; }
+    .lc-footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .lc-footer-social { display: flex; gap: 0.6rem; }
+    .lc-footer-social a {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lc-footer-social a:hover { background: #1e88e5; color: white; }
+    .lc-fc h4 { color: #fff; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
+    .lc-fc ul { list-style: none; display: grid; gap: 0.5rem; }
+    .lc-fc ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
+    .lc-fc ul li a:hover { color: #4fc3f7; }
+    .lc-fc-contact { display: flex; flex-direction: column; gap: 0.7rem; }
+    .lc-ci { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.87rem; }
+    .lc-ci .ci { min-width: 18px; }
+    .lc-ci a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .lc-ci a:hover { color: #4fc3f7; }
+    .lc-footer-bot { padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .lc-footer-bot p { font-size: 0.82rem; }
+    .lc-footer-bot-links { display: flex; gap: 1.5rem; }
+    .lc-footer-bot-links a { color: rgba(255,255,255,0.42); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+    .lc-footer-bot-links a:hover { color: #4fc3f7; }
+
+    /* ══════════════════════════════
+       SCROLL ANIMATIONS
+    ══════════════════════════════ */
+    .fu { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fu.vis { opacity: 1; transform: translateY(0); }
+    .fd1 { transition-delay: 0.1s; } .fd2 { transition-delay: 0.2s; }
+    .fd3 { transition-delay: 0.3s; } .fd4 { transition-delay: 0.4s; }
+    .scale-in { opacity: 0; transform: scale(0.92); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .scale-in.vis { opacity: 1; transform: scale(1); }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 1024px) {
+      .lc-how-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-services-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-pkg-grid { grid-template-columns: 1fr 1fr; }
+      .lc-why-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-proc-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-hero-inner { grid-template-columns: 1fr; }
+      .lc-hero-visual { display: none; }
+      .lc-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .lc-nav-links { display: none; }
+      .lc-nav-phone { display: none; }
+      .lc-mob-toggle { display: flex; }
+      .lc-nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 68px; left: 0; right: 0;
+        background: #0d1b35; padding: 1rem 1.5rem 1.5rem;
+        z-index: 99; border-top: 1px solid rgba(255,255,255,0.07);
+      }
+      .lc-nav-links.open li { padding: 0.2rem 0; }
+      .lc-how-grid, .lc-services-grid, .lc-why-grid, .lc-proc-grid, .lc-pkg-grid { grid-template-columns: 1fr; }
+      .lc-faq-panel.active { grid-template-columns: 1fr; }
+      .lc-footer-grid { grid-template-columns: 1fr; }
+      .lc-footer-bot { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="lc-header">
+  <nav class="lc-nav">
+    <a class="lc-logo" href="index.html">Lawn care</a>
+    <ul class="lc-nav-links" id="lcNavLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lawn-care.html">Lawn Care</a></li>
+      <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+      <li><a href="fence-building.html">Fence Building</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How We Work</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="lc-nav-phone" href="tel:5879621919">📞 587-962-1919</a>
+    <button class="lc-mob-toggle" id="lcToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="lc-hero">
+  <div class="lc-hero-inner">
+    <div>
+      <div class="lc-hero-badge">🌿 Professional Lawn Care in Calgary</div>
+      <h1>Keep your lawn <em>green</em> &amp; beautiful</h1>
+      <p class="lc-hero-sub">Expert lawn mowing, edging, fertilizing, and seasonal maintenance for residential and commercial properties across Calgary.</p>
+      <div class="lc-hero-actions">
+        <a href="#contact" class="lc-btn-hero">Get a Free Quote</a>
+        <a href="tel:5879621919" class="lc-btn-hero-outline">📞 587-962-1919</a>
+      </div>
+      <div class="lc-hero-review">
+        <div class="stars">★★★★★</div>
+        <p>"Best lawn care service I've used in Calgary. Reliable, affordable, and the lawn has never looked better. Highly recommend!"</p>
+        <span class="reviewer">— Karen L., Lawn Care Client</span>
+      </div>
+    </div>
+    <div class="lc-hero-visual">
+      <div class="lc-lawn-thumb">🌿<span class="lt-label">Lawn Mowing</span></div>
+      <div class="lc-lawn-thumb">✂️<span class="lt-label">Edging</span></div>
+      <div class="lc-lawn-thumb">🌱<span class="lt-label">Fertilizing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS BANNER ═══ -->
+<div class="lc-stats-bar">
+  <div class="lc-stats-bar-in">
+    <div class="lc-stat-item">
+      <strong class="counter" data-target="355000">355K+</strong>
+      <span>happy customers across Calgary</span>
+    </div>
+    <div class="lc-stat-item">
+      <strong>15+</strong>
+      <span>years of professional lawn care experience</span>
+    </div>
+    <div class="lc-stat-item">
+      <strong>Weekly</strong>
+      <span>reliable scheduled service all season long</span>
+    </div>
+    <div class="lc-stat-item">
+      <strong>100%</strong>
+      <span>satisfaction guarantee on every visit</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="lc-sec" id="how">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Simple process</p>
+    <h2 class="lc-title fu fd1">How it works</h2>
+    <p class="lc-sub fu fd2">Getting a beautifully maintained lawn has never been easier. Here's our simple 4-step process.</p>
+    <div class="lc-how-grid">
+      <div class="lc-how-card fu fd1">
+        <div class="lc-how-icon">📞</div>
+        <div class="lc-how-num">1</div>
+        <h3>Contact us</h3>
+        <p>Call or fill out our online form. Tell us about your property size and the services you need — we'll get back to you quickly.</p>
+        <span class="hw-note">Same-day response</span>
+        <br><a href="#contact" class="lc-how-step-btn">Get in touch →</a>
+      </div>
+      <div class="lc-how-card fu fd2">
+        <div class="lc-how-icon">📐</div>
+        <div class="lc-how-num">2</div>
+        <h3>Free site assessment</h3>
+        <p>We visit your property to assess your lawn and provide a detailed, no-obligation quote with transparent pricing.</p>
+        <span class="hw-note">Free, no pressure</span>
+        <br><a href="#contact" class="lc-how-step-btn">Book assessment →</a>
+      </div>
+      <div class="lc-how-card fu fd3">
+        <div class="lc-how-icon">📋</div>
+        <div class="lc-how-num">3</div>
+        <h3>Choose your plan</h3>
+        <p>Pick a one-time service or a recurring maintenance plan. We'll set up a schedule that works best for you.</p>
+        <span class="hw-note">Flexible scheduling</span>
+        <br><a href="#packages" class="lc-how-step-btn">View packages →</a>
+      </div>
+      <div class="lc-how-card fu fd4">
+        <div class="lc-how-icon">🌿</div>
+        <div class="lc-how-num">4</div>
+        <h3>Sit back and enjoy</h3>
+        <p>Our professional crew arrives on time, completes the work to the highest standard, and leaves your property spotless.</p>
+        <span class="hw-note">Guaranteed satisfaction</span>
+        <br><a href="#contact" class="lc-how-step-btn">Get started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="lc-sec lc-sec-light" id="services">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">What we offer</p>
+    <h2 class="lc-title fu fd1">Our lawn care services</h2>
+    <p class="lc-sub fu fd2">From regular mowing to full seasonal maintenance — we cover everything your lawn needs to stay healthy and green all year.</p>
+    <div class="lc-services-grid">
+      <div class="lc-svc-card fu fd1">
+        <span class="lc-svc-icon">🌿</span>
+        <h3>Lawn Mowing &amp; Edging</h3>
+        <p>Regular, precise mowing and clean edging to keep your lawn looking neat and well-maintained. Available weekly or bi-weekly throughout the season.</p>
+        <span class="lc-svc-tag">Most Popular</span>
+      </div>
+      <div class="lc-svc-card fu fd2">
+        <span class="lc-svc-icon">🌱</span>
+        <h3>Fertilizing &amp; Weed Control</h3>
+        <p>Premium fertilizer treatments and targeted weed control to keep your grass lush, green, and free of invasive weeds all season long.</p>
+        <span class="lc-svc-tag">Seasonal</span>
+      </div>
+      <div class="lc-svc-card fu fd3">
+        <span class="lc-svc-icon">🍂</span>
+        <h3>Seasonal Cleanups</h3>
+        <p>Spring and fall cleanups including leaf removal, debris clearing, and garden bed preparation to keep your property looking its best year-round.</p>
+        <span class="lc-svc-tag">Spring &amp; Fall</span>
+      </div>
+      <div class="lc-svc-card fu fd1">
+        <span class="lc-svc-icon">💧</span>
+        <h3>Aeration &amp; Overseeding</h3>
+        <p>Core aeration and overseeding services to rejuvenate compacted lawns, improve drainage, and encourage thick, healthy grass growth.</p>
+        <span class="lc-svc-tag">Recommended</span>
+      </div>
+      <div class="lc-svc-card fu fd2">
+        <span class="lc-svc-icon">✂️</span>
+        <h3>Hedge &amp; Shrub Trimming</h3>
+        <p>Professional trimming and shaping of hedges, shrubs, and ornamental plants to enhance your property's curb appeal.</p>
+        <span class="lc-svc-tag">Add-On</span>
+      </div>
+      <div class="lc-svc-card fu fd3">
+        <span class="lc-svc-icon">🏡</span>
+        <h3>Property Maintenance</h3>
+        <p>Complete ongoing property maintenance packages combining all services into a convenient, worry-free plan for your home or business.</p>
+        <span class="lc-svc-tag">Full Service</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PACKAGES ═══ -->
+<section class="lc-sec" id="packages">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Pricing plans</p>
+    <h2 class="lc-title fu fd1">Choose your lawn care package</h2>
+    <p class="lc-sub fu fd2">Transparent, affordable packages with no hidden fees. Pick the plan that fits your lawn and your budget.</p>
+    <div class="lc-pkg-grid">
+      <div class="lc-pkg fu fd1">
+        <h3>🌿 Basic</h3>
+        <span class="lc-pkg-tag">Essential</span>
+        <ul class="lc-pkg-list">
+          <li>Bi-weekly lawn mowing</li>
+          <li>Lawn edging along borders</li>
+          <li>Clipping cleanup</li>
+          <li>Free site assessment</li>
+          <li>On-time service guarantee</li>
+        </ul>
+        <a href="#contact" class="lc-pkg-btn">Get This Package</a>
+      </div>
+      <div class="lc-pkg feat fu fd2">
+        <h3>🌱 Standard</h3>
+        <span class="lc-pkg-tag">Most Popular</span>
+        <ul class="lc-pkg-list">
+          <li>Weekly lawn mowing</li>
+          <li>Precision edging &amp; trimming</li>
+          <li>Seasonal fertilizer treatment</li>
+          <li>Weed control included</li>
+          <li>Debris &amp; leaf cleanup</li>
+          <li>Priority scheduling</li>
+        </ul>
+        <a href="#contact" class="lc-pkg-btn">Get This Package</a>
+      </div>
+      <div class="lc-pkg fu fd3">
+        <h3>🏡 Premium</h3>
+        <span class="lc-pkg-tag">Full Service</span>
+        <ul class="lc-pkg-list">
+          <li>Everything in Standard</li>
+          <li>Aeration &amp; overseeding</li>
+          <li>Spring &amp; fall cleanup</li>
+          <li>Hedge &amp; shrub trimming</li>
+          <li>Soil health analysis</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a href="#contact" class="lc-pkg-btn">Get This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US ═══ -->
+<section class="lc-sec lc-sec-light" id="why">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Why choose us</p>
+    <h2 class="lc-title fu fd1">Calgary's trusted lawn care experts</h2>
+    <p class="lc-sub fu fd2">Over 15 years serving Calgary homeowners with professional, reliable, and affordable lawn care.</p>
+    <div class="lc-why-grid">
+      <div class="lc-why-card fu fd1">
+        <span class="lc-why-icon">👷</span>
+        <h3>Trained professionals</h3>
+        <p>Every member of our lawn care team is trained, vetted, and equipped with commercial-grade tools. No untrained contractors — just skilled professionals who take pride in their work.</p>
+      </div>
+      <div class="lc-why-card fu fd2">
+        <span class="lc-why-icon">💰</span>
+        <h3>Transparent pricing</h3>
+        <p>No hidden fees, no surprise charges. What we quote is what you pay. Our free site assessment gives you a clear, honest price before any work begins.</p>
+      </div>
+      <div class="lc-why-card fu fd3">
+        <span class="lc-why-icon">⏰</span>
+        <h3>Always on time</h3>
+        <p>We show up when we say we will. Our scheduling system sends reminders before each visit and we never cancel without notice.</p>
+      </div>
+      <div class="lc-why-card fu fd1">
+        <span class="lc-why-icon">🌿</span>
+        <h3>Quality equipment</h3>
+        <p>We use commercial-grade mowers, trimmers, and tools maintained to the highest standards. The right equipment makes a visible difference in your lawn's appearance.</p>
+      </div>
+      <div class="lc-why-card fu fd2">
+        <span class="lc-why-icon">✅</span>
+        <h3>Licensed &amp; insured</h3>
+        <p>We are fully licensed and insured for all lawn care services. You can have complete peace of mind knowing your property is in safe hands.</p>
+      </div>
+      <div class="lc-why-card fu fd3">
+        <span class="lc-why-icon">🏆</span>
+        <h3>Satisfaction guaranteed</h3>
+        <p>If you're not happy with our work, we'll come back and make it right — no questions asked. Your satisfaction is our number one priority.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUR PROCESS ═══ -->
+<section class="lc-sec lc-sec-dark" id="process">
+  <div class="lc-sec-in">
+    <p class="lc-label fu" style="color:#4fc3f7;">Our approach</p>
+    <h2 class="lc-title lc-title-white fu fd1">How we care for your lawn</h2>
+    <p class="lc-sub lc-sub-white fu fd2">A thorough, consistent process that keeps your lawn healthy and beautiful all season long.</p>
+    <div class="lc-proc-grid">
+      <div class="lc-proc-item fu fd1">
+        <div class="lc-proc-step">
+          <div class="lc-proc-n">1</div>
+          <span class="lc-proc-icon">🔍</span>
+        </div>
+        <h3>Lawn assessment</h3>
+        <p>We inspect your lawn's condition, soil health, grass type, and identify any problem areas such as bare patches, weeds, or pest damage before each service.</p>
+      </div>
+      <div class="lc-proc-item fu fd2">
+        <div class="lc-proc-step">
+          <div class="lc-proc-n">2</div>
+          <span class="lc-proc-icon">🌿</span>
+        </div>
+        <h3>Precision mowing</h3>
+        <p>We mow at the correct height for your grass type, never removing more than one-third of the blade length to promote strong root growth and resist drought.</p>
+      </div>
+      <div class="lc-proc-item fu fd3">
+        <div class="lc-proc-step">
+          <div class="lc-proc-n">3</div>
+          <span class="lc-proc-icon">✂️</span>
+        </div>
+        <h3>Edging &amp; trimming</h3>
+        <p>Clean, precise edging along driveways, walkways, and garden beds gives your lawn a sharp, professional finish that makes the whole property look well-kept.</p>
+      </div>
+      <div class="lc-proc-item fu fd1">
+        <div class="lc-proc-step">
+          <div class="lc-proc-n">4</div>
+          <span class="lc-proc-icon">🌱</span>
+        </div>
+        <h3>Fertilizer application</h3>
+        <p>Seasonal fertilizer treatments are applied at the right time and in the right amounts to promote healthy growth and a deep, rich green colour.</p>
+      </div>
+      <div class="lc-proc-item fu fd2">
+        <div class="lc-proc-step">
+          <div class="lc-proc-n">5</div>
+          <span class="lc-proc-icon">🧹</span>
+        </div>
+        <h3>Cleanup &amp; blowout</h3>
+        <p>After every visit, we blow clippings off hard surfaces and clean up all debris so your property looks immaculate when we leave.</p>
+      </div>
+      <div class="lc-proc-item fu fd3">
+        <div class="lc-proc-step">
+          <div class="lc-proc-n">6</div>
+          <span class="lc-proc-icon">📸</span>
+        </div>
+        <h3>Quality check</h3>
+        <p>Before we leave, we do a final walk-around to ensure every area has been properly serviced. We don't close the job until we're satisfied with the result.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="lc-sec lc-sec-light" id="reviews">
+  <div class="lc-sec-in">
+    <p class="lc-label fu lc-center" style="text-align:center;">Client reviews</p>
+    <h2 class="lc-title fu fd1 lc-center" style="text-align:center;">What our clients say</h2>
+    <p class="lc-sub fu fd2" style="margin:0 auto 2.5rem; text-align:center;">Hundreds of five-star reviews from happy Calgary homeowners. Here's what they say about our lawn care service.</p>
+  </div>
+  <div class="lc-review-strip">
+    <div class="lc-review-track" id="reviewTrack">
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">K</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Karen L.</div>
+            <div class="lc-review-tag">Lawn Care Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Best lawn care service I've ever had. The crew is always on time, thorough, and my lawn has never looked better. Highly recommend to anyone in Calgary!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">M</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Mark D.</div>
+            <div class="lc-review-tag">Lawn Care Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"I've tried several lawn care companies and these guys are by far the best. Professional, affordable, and they genuinely care about the results."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">S</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Sarah M.</div>
+            <div class="lc-review-tag">Seasonal Cleanup Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Had them for a spring cleanup and was blown away by how thorough they were. Every leaf, every branch — the yard was spotless. Booking again this fall for sure."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">J</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">James T.</div>
+            <div class="lc-review-tag">Weekly Mowing Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Weekly mowing service has been absolutely perfect. They show up every time without me having to worry about it. Neighbour keeps asking who does my lawn!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">P</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Priya K.</div>
+            <div class="lc-review-tag">Fertilizing Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"After the fertilizer treatment my lawn went from patchy and yellow to thick and green in just a few weeks. Amazing difference. Very pleased with the results."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">R</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Robert A.</div>
+            <div class="lc-review-tag">Premium Plan Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"The premium package is worth every penny. The whole yard is handled — mowing, edging, fertilizing, cleanup. I don't have to think about the lawn anymore."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">L</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Linda W.</div>
+            <div class="lc-review-tag">Aeration Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Had aeration and overseeding done on my compacted lawn. Three weeks later the new grass is coming in beautifully. Great service and very knowledgeable team."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top">
+          <div class="lc-review-avatar">C</div>
+          <div class="lc-review-meta">
+            <div class="lc-review-name">Chris N.</div>
+            <div class="lc-review-tag">Lawn Care Client</div>
+          </div>
+        </div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Honest pricing, reliable scheduling, and a crew that actually knows what they're doing. Zero complaints. Will be using their services again next season."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="lc-sec" id="faq">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Got questions?</p>
+    <h2 class="lc-title fu fd1">Frequently asked questions</h2>
+    <p class="lc-sub fu fd2">Everything you need to know about our lawn care services in Calgary — from scheduling to pricing.</p>
+
+    <div class="lc-faq-tabs fu fd1">
+      <button class="lc-faq-tab active" onclick="switchTab('general', this)">General</button>
+      <button class="lc-faq-tab" onclick="switchTab('pricing', this)">Pricing</button>
+      <button class="lc-faq-tab" onclick="switchTab('services', this)">Services</button>
+    </div>
+
+    <div class="lc-faq-panel active" id="faq-general">
+      <div class="lc-faq-item">
+        <details>
+          <summary>How often should I have my lawn mowed?</summary>
+          <div class="lc-faq-body">During the growing season (typically May through September in Calgary), we recommend weekly or bi-weekly mowing depending on your grass type and growth rate. We'll assess your lawn and suggest the best frequency during your free site visit.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>What areas in Calgary do you service?</summary>
+          <div class="lc-faq-body">We service all residential and commercial properties throughout Calgary and surrounding areas including Airdrie, Chestermere, and Cochrane. Contact us to confirm availability in your specific neighbourhood.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Do I need to be home when you visit?</summary>
+          <div class="lc-faq-body">No, you don't need to be home. As long as we have access to your lawn, our crew will complete the service and notify you when it's done. We'll discuss access requirements during your initial assessment.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>What happens if it rains on my scheduled service day?</summary>
+          <div class="lc-faq-body">We monitor the weather closely and reschedule services when conditions are unsuitable for lawn care. We'll contact you in advance to arrange an alternative time that works for you. Wet lawns can be damaged by mowing, so we never cut in poor conditions.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Are your lawn care services eco-friendly?</summary>
+          <div class="lc-faq-body">Yes. We use environmentally responsible fertilizers and weed control products that are safe for children, pets, and local wildlife. Our team is trained in responsible application practices to protect Calgary's natural environment.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Can I cancel or change my service plan?</summary>
+          <div class="lc-faq-body">Absolutely. You can adjust or cancel your service plan at any time with reasonable notice. We believe in flexible, customer-first arrangements — no lock-in contracts or cancellation penalties.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="lc-faq-panel" id="faq-pricing">
+      <div class="lc-faq-item">
+        <details>
+          <summary>How much does lawn mowing cost in Calgary?</summary>
+          <div class="lc-faq-body">Lawn mowing prices vary based on your property size, terrain complexity, and the frequency of service. We provide a free, no-obligation quote after assessing your lawn. Our pricing is transparent with <strong>no hidden fees</strong> — what we quote is what you pay.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>What is included in the quoted price?</summary>
+          <div class="lc-faq-body">Your quote includes all labour, equipment, and time for the services selected. Fertilizer and weed control products are included in seasonal treatment plans. There are no additional charges for standard travel within our service area.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Do you offer discounts for regular customers?</summary>
+          <div class="lc-faq-body">Yes! Customers on recurring weekly or bi-weekly service plans receive better rates than one-time visits. We also offer loyalty discounts for customers who book multiple services (e.g., mowing + fertilizing + cleanup) in a single package.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>How do I get a free quote?</summary>
+          <div class="lc-faq-body">Simply call us at 587-962-1919 or fill out the contact form on this page. We'll arrange a free site assessment where one of our lawn specialists will visit your property and provide a detailed, no-obligation quote — completely free.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="lc-faq-panel" id="faq-services">
+      <div class="lc-faq-item">
+        <details>
+          <summary>What lawn care services do you offer?</summary>
+          <div class="lc-faq-body">We offer a full range of lawn care services including: lawn mowing and edging, fertilizing and weed control, spring and fall cleanups, core aeration and overseeding, hedge and shrub trimming, and full-season property maintenance packages.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>What is core aeration and do I need it?</summary>
+          <div class="lc-faq-body">Core aeration involves removing small plugs of soil to reduce compaction and allow water, air, and nutrients to penetrate the root zone. If your lawn is heavily trafficked, has thatch buildup, or drains poorly, aeration (ideally combined with overseeding) can dramatically improve grass health.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>When is the best time to fertilize a lawn in Calgary?</summary>
+          <div class="lc-faq-body">The best times to fertilize in Calgary are <strong>early spring</strong> (after the last frost), <strong>mid-summer</strong>, and <strong>late fall</strong> before the ground freezes. Our seasonal treatment plans are timed to align with these optimal windows for the best results.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Do you do commercial lawn care as well?</summary>
+          <div class="lc-faq-body">Yes! We service both residential and commercial properties in Calgary. Whether it's a single-family home, strata complex, office park, or retail property, we can design a lawn maintenance program to fit your needs and budget. Contact us for a commercial quote.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>Can you repair a damaged or patchy lawn?</summary>
+          <div class="lc-faq-body">Absolutely. Lawn repair services include overseeding bare patches, soil amendment, and targeted weed or pest treatment to address the root cause of damage. We'll assess the issue during your free site visit and recommend the most effective solution.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details>
+          <summary>How long does a typical lawn visit take?</summary>
+          <div class="lc-faq-body">Service duration depends on your property size and the services being performed. A standard mow, edge, and blow for an average residential lawn typically takes 30–60 minutes. Full cleanup or treatment visits may take longer. We'll give you an accurate estimate upfront.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="lc-sec lc-sec-green lc-cta" id="contact">
+  <div class="lc-cta-in">
+    <h2 class="fu">Ready for a greener lawn?</h2>
+    <p class="fu fd1">Get your free, no-obligation lawn care quote today. Our team is standing by to help you get the lawn you've always wanted.</p>
+    <div class="lc-cta-btns fu fd2">
+      <a href="tel:5879621919" class="lc-cta-white">📞 587-962-1919</a>
+      <a href="mailto:calgary@letsgetmoving.ca" class="lc-cta-ghost">✉️ Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="lc-footer">
+  <div class="lc-footer-in">
+    <div class="lc-footer-grid">
+      <div class="lc-footer-brand">
+        <a class="lc-logo" href="index.html">Lawn care</a>
+        <p>Calgary's trusted lawn care professionals. Licensed, insured, and committed to keeping your property looking its best every season.</p>
+        <div class="lc-footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="Twitter">tw</a>
+          <a href="#" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div class="lc-fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lc-fc">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="lawn-care.html">Lawn Care</a></li>
+          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+          <li><a href="fence-building.html">Fence Building</a></li>
+        </ul>
+      </div>
+      <div class="lc-fc">
+        <h4>Contact Us</h4>
+        <div class="lc-fc-contact">
+          <div class="lc-ci"><span class="ci">📞</span><a href="tel:5879621919">587-962-1919</a></div>
+          <div class="lc-ci"><span class="ci">✉️</span><a href="mailto:calgary@letsgetmoving.ca">calgary@letsgetmoving.ca</a></div>
+          <div class="lc-ci"><span class="ci">📍</span><span>1212 34 Ave SE, Calgary, AB T2G 1V7</span></div>
+          <div class="lc-ci"><span class="ci">🕐</span>
+            <div>
+              <div>Mon–Fri: 6am – 9pm</div>
+              <div>Sat–Sun: 8am – 5pm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lc-footer-bot">
+      <p>© 2025 Let's Move Calgary. All rights reserved.</p>
+      <div class="lc-footer-bot-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Mobile nav ── */
+  const tog = document.getElementById('lcToggle');
+  const nav = document.getElementById('lcNavLinks');
+  if (tog) tog.addEventListener('click', () => nav.classList.toggle('open'));
+
+  /* ── Scroll animations ── */
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu, .scale-in').forEach(el => io.observe(el));
+
+  /* ── Counter ── */
+  function animCount(el) {
+    const t = parseInt(el.dataset.target), dur = 2000, s = performance.now();
+    const tick = now => {
+      const p = Math.min((now - s) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      const v = Math.round(e * t);
+      el.textContent = t >= 100000 ? Math.round(v / 1000) + 'K+' : v + '+';
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const cio = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { animCount(e.target); cio.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(el => cio.observe(el));
+
+  /* ── FAQ tabs ── */
+  function switchTab(id, btn) {
+    document.querySelectorAll('.lc-faq-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.lc-faq-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('faq-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  /* ── Duplicate review track for infinite scroll ── */
+  const track = document.getElementById('reviewTrack');
+  if (track) {
+    const clone = track.innerHTML;
+    track.innerHTML = clone + clone;
+  }
+</script>
+</body>
+</html>

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" role="img" aria-labelledby="packingIconTitle">
-  <title id="packingIconTitle">Packing and moving icon</title>
-  <rect width="140" height="140" rx="28" fill="#f5f7ed"/>
-  <path d="M30 68h80v44a12 12 0 0 1-12 12H42a12 12 0 0 1-12-12V68Z" fill="#c8dcad"/>
-  <path d="M30 68l20-24h40l20 24" fill="#96c285"/>
-  <path d="M50 40v16" stroke="#4e7f4c" stroke-width="8" stroke-linecap="round"/>
-  <path d="M90 40v16" stroke="#4e7f4c" stroke-width="8" stroke-linecap="round"/>
-  <path d="M47 88h46" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
-</svg>
