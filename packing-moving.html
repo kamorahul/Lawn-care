@@ -374,17 +374,67 @@
     .lc-trust-badge .tb-icon { font-size: 1.5rem; }
 
     /* ══════════════════════════════
-       CTA
+       CONTACT SECTION
     ══════════════════════════════ */
-    .lc-cta { padding: 5rem 1.5rem; text-align: center; }
-    .lc-cta-in { max-width: 680px; margin: 0 auto; }
-    .lc-cta h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
-    .lc-cta p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.2rem; }
-    .lc-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .lc-cta-white { background: #fff; color: #1e88e5; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
-    .lc-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-    .lc-cta-ghost { background: transparent; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; }
-    .lc-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+    .lc-contact-sec { background: #f4f6fb; padding: 5rem 1.5rem; }
+    .lc-contact-header { text-align: center; margin-bottom: 3rem; }
+    .lc-contact-header .lc-title {
+      background: linear-gradient(90deg, #1565c0, #1e88e5, #4fc3f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+    .lc-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .lc-contact-card {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 2rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .lc-contact-card:hover { transform: translateY(-4px); }
+    .lc-contact-card.featured {
+      border: 1px solid #1e88e5;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08), 5px 5px 0 0 #1e88e5;
+    }
+    .lc-contact-card.featured:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12), 5px 5px 0 0 #1e88e5;
+    }
+    .lc-contact-icon-wrap {
+      width: 64px; height: 64px; flex-shrink: 0;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.9rem;
+    }
+    .lc-contact-card.featured .lc-contact-icon-wrap {
+      background: linear-gradient(135deg, #1e88e5, #1565c0);
+    }
+    .lc-contact-info h4 {
+      color: #1e88e5;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .lc-contact-info div { color: #607585; font-size: 0.88rem; line-height: 1.65; }
+    .lc-contact-info a {
+      color: #0d1b35;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+    .lc-contact-info a:hover { color: #1e88e5; }
 
     /* ══════════════════════════════
        FOOTER
@@ -450,7 +500,7 @@
         z-index: 99; border-top: 1px solid rgba(255,255,255,0.07);
       }
       .lc-nav-links.open li { padding: 0.2rem 0; }
-      .lc-core-grid, .lc-how-grid, .lc-why-grid, .lc-add-grid { grid-template-columns: 1fr; }
+      .lc-core-grid, .lc-how-grid, .lc-why-grid, .lc-add-grid, .lc-contact-grid { grid-template-columns: 1fr; }
       .lc-mat-grid { grid-template-columns: repeat(2, 1fr); }
       .lc-faq-panel.active { grid-template-columns: 1fr; }
       .lc-footer-grid { grid-template-columns: 1fr; }
@@ -1008,14 +1058,38 @@
   </div>
 </section>
 
-<!-- ═══ CTA ═══ -->
-<section class="lc-sec lc-sec-blue lc-cta" id="contact">
-  <div class="lc-cta-in">
-    <h2 class="fu">Ready to get packed?</h2>
-    <p class="fu fd1">Call us today or fill out our quick quote form. We respond within the hour and can have a team at your door faster than you think.</p>
-    <div class="lc-cta-btns fu fd2">
-      <a href="tel:5879621919" class="lc-cta-white">📞 587-962-1919</a>
-      <a href="mailto:calgary@letsgetmoving.ca" class="lc-cta-ghost">✉️ calgary@letsgetmoving.ca</a>
+<!-- ═══ CONTACT ═══ -->
+<section class="lc-contact-sec" id="contact">
+  <div class="lc-contact-header">
+    <p class="lc-label fu">Get In Touch</p>
+    <h2 class="lc-title fu fd1">Our Contacts</h2>
+  </div>
+  <div class="lc-contact-grid">
+    <div class="lc-contact-card fu fd1">
+      <div class="lc-contact-icon-wrap">🕐</div>
+      <div class="lc-contact-info">
+        <h4>Sales Office</h4>
+        <div>Monday – Friday: 6am – 9pm</div>
+        <div>Saturday – Sunday: 8am – 5pm</div>
+      </div>
+    </div>
+    <div class="lc-contact-card featured fu fd2">
+      <div class="lc-contact-icon-wrap">🎧</div>
+      <div class="lc-contact-info">
+        <h4>Customer Support</h4>
+        <div>5 Days a week from 9am – 5pm</div>
+        <div style="margin-top:0.5rem;">
+          <a href="mailto:calgary@letsgetmoving.ca">calgary@letsgetmoving.ca</a>
+        </div>
+      </div>
+    </div>
+    <div class="lc-contact-card fu fd3">
+      <div class="lc-contact-icon-wrap">📞</div>
+      <div class="lc-contact-info">
+        <h4>Call For Booking</h4>
+        <div><a href="tel:5879621919">587-962-1919</a></div>
+        <div style="margin-top:0.4rem; font-size:0.82rem;">Free estimate available</div>
+      </div>
     </div>
   </div>
 </section>
