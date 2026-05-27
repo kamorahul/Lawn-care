@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wooden Fence Installation in Calgary | Lawn care</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1c2b4a;
+      background: #f4f6fb;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    .lc-header { background: #0d1b35; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.35); }
+    .lc-nav { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1rem; }
+    .lc-logo { color: #fff; font-size: 1.35rem; font-weight: 800; text-decoration: none; }
+    .lc-logo span { color: #4fc3f7; }
+    .lc-nav-links { display: flex; gap: 0; list-style: none; margin: 0; padding: 0; }
+    .lc-nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.55rem 1rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .lc-nav-links a:hover, .lc-nav-links a.active { color: #4fc3f7; }
+    .lc-nav-phone { background: #1e88e5; color: white; padding: 0.55rem 1.2rem; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; white-space: nowrap; transition: background 0.2s, transform 0.2s; }
+    .lc-nav-phone:hover { background: #1565c0; transform: translateY(-1px); }
+    .lc-mob-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .lc-mob-toggle span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: transform 0.25s; }
+
+    /* DROPDOWN */
+    .lc-nav-links .dropdown { position: relative; }
+    .lc-nav-links .dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+    .lc-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #0d1b35; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; min-width: 180px; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.3); padding: 0.4rem 0; }
+    .lc-dropdown-menu a { display: block; padding: 0.55rem 1.2rem; color: rgba(255,255,255,0.8); font-size: 0.88rem; white-space: nowrap; }
+    .lc-dropdown-menu a:hover { color: #4fc3f7; background: rgba(255,255,255,0.05); }
+    .dropdown:hover .lc-dropdown-menu { display: block; }
+
+    /* HERO */
+    .lc-hero {
+      background: linear-gradient(135deg, rgba(13,27,53,0.45) 0%, rgba(26,47,90,0.35) 55%, rgba(10,32,64,0.50) 100%), url('fence-building.png') center/cover no-repeat;
+      min-height: 560px; display: flex; align-items: center; position: relative; overflow: hidden; padding: 4rem 1.5rem;
+    }
+    .lc-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(30,136,229,0.12) 0%, transparent 60%); pointer-events: none; }
+    .lc-hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; position: relative; z-index: 1; }
+    .lc-hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 0.35rem 0.9rem; color: rgba(255,255,255,0.9); font-size: 0.8rem; font-weight: 600; margin-bottom: 1.1rem; }
+    .lc-hero h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 1.1rem; }
+    .lc-hero h1 em { font-style: normal; color: #4fc3f7; }
+    .lc-hero-sub { color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.75; max-width: 500px; margin-bottom: 2rem; }
+    .lc-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .lc-btn-hero { background: #1e88e5; color: #fff; padding: 0.85rem 1.9rem; border-radius: 9px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; display: inline-block; }
+    .lc-btn-hero:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30,136,229,0.4); }
+    .lc-btn-hero-outline { background: transparent; color: #fff; padding: 0.85rem 1.9rem; border-radius: 9px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.35); transition: border-color 0.2s, background 0.2s; display: inline-block; }
+    .lc-btn-hero-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+    .lc-hero-review { background: rgba(13,27,53,0.55); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1rem 1.2rem; max-width: 420px; }
+    .lc-hero-review .stars { color: #fbbf24; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .lc-hero-review p { color: rgba(255,255,255,0.85); font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.5rem; font-style: italic; }
+    .lc-hero-review .reviewer { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 600; }
+    .lc-hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .lc-thumb { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; position: relative; transition: transform 0.3s; }
+    .lc-thumb:hover { transform: scale(1.03); }
+    .lc-thumb:first-child { grid-column: span 2; aspect-ratio: 16/7; font-size: 4rem; }
+    .lc-thumb .lt-label { position: absolute; bottom: 0.7rem; left: 0.7rem; background: rgba(0,0,0,0.55); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* STATS */
+    .lc-stats-bar { background: #0d1b35; padding: 1.1rem 1.5rem; }
+    .lc-stats-bar-in { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-around; gap: 1.5rem; flex-wrap: wrap; }
+    .lc-stat-item { display: flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,0.9); }
+    .lc-stat-item strong { font-size: 1.5rem; font-weight: 900; color: #4fc3f7; }
+    .lc-stat-item span { font-size: 0.88rem; color: rgba(255,255,255,0.72); max-width: 180px; line-height: 1.4; }
+
+    /* SECTIONS */
+    .lc-sec { padding: 5rem 1.5rem; }
+    .lc-sec-in { max-width: 1200px; margin: 0 auto; }
+    .lc-sec-light { background: #f4f6fb; }
+    .lc-sec-dark { background: #0d1b35; }
+    .lc-sec-blue { background: linear-gradient(135deg, #1e88e5, #1565c0); }
+    .lc-label { color: #1e88e5; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .lc-title { font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 800; color: #0d1b35; line-height: 1.15; margin-bottom: 0.8rem; }
+    .lc-title-white { color: #fff; }
+    .lc-sub { color: #64748b; font-size: 1.02rem; line-height: 1.75; max-width: 600px; margin-bottom: 3rem; }
+    .lc-sub-white { color: rgba(255,255,255,0.72); }
+    .lc-center { text-align: center; }
+    .lc-center .lc-sub { margin-left: auto; margin-right: auto; }
+
+    /* HOW IT WORKS */
+    .lc-how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .lc-how-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 2rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+    .lc-how-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #4fc3f7, #1e88e5); }
+    .lc-how-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.09); }
+    .lc-how-num { width: 42px; height: 42px; border-radius: 50%; background: #e3f2fd; color: #1e88e5; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
+    .lc-how-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .lc-how-card h3 { font-size: 1.05rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.4rem; }
+    .lc-how-card p { color: #64748b; font-size: 0.87rem; line-height: 1.7; margin-bottom: 1.1rem; }
+    .lc-how-step-btn { display: inline-block; color: #1e88e5; font-size: 0.85rem; font-weight: 700; text-decoration: none; margin-top: 0.5rem; }
+    .lc-how-step-btn:hover { text-decoration: underline; }
+
+    /* SERVICES GRID */
+    .lc-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-svc-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+    .lc-svc-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); border-color: #90caf9; }
+    .lc-svc-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .lc-svc-card h3 { font-size: 1.1rem; font-weight: 700; color: #1b2432; margin-bottom: 0.5rem; }
+    .lc-svc-card p { color: #64748b; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+    .lc-svc-tag { display: inline-block; background: #e3f2fd; color: #1e88e5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* WHY CHOOSE US */
+    .lc-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-why-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 1.8rem; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+    .lc-why-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(0,0,0,0.08); border-color: #90caf9; }
+    .lc-why-icon { font-size: 2.2rem; margin-bottom: 0.9rem; display: block; }
+    .lc-why-card h3 { font-size: 1.08rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.45rem; }
+    .lc-why-card p { color: #64748b; font-size: 0.88rem; line-height: 1.7; }
+
+    /* PROCESS */
+    .lc-proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-proc-item { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.8rem; transition: background 0.2s; }
+    .lc-proc-item:hover { background: rgba(255,255,255,0.11); }
+    .lc-proc-step { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+    .lc-proc-n { width: 36px; height: 36px; border-radius: 50%; background: #1e88e5; color: white; font-size: 0.9rem; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .lc-proc-icon { font-size: 1.4rem; }
+    .lc-proc-item h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem; }
+    .lc-proc-item p { color: rgba(255,255,255,0.67); font-size: 0.87rem; line-height: 1.7; }
+
+    /* FAQ */
+    .lc-faq-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .lc-faq-tab { padding: 0.55rem 1.2rem; border-radius: 50px; background: #f1f5f9; color: #475569; font-size: 0.88rem; font-weight: 600; border: none; cursor: pointer; font-family: inherit; transition: background 0.2s, color 0.2s; }
+    .lc-faq-tab.active { background: #1e88e5; color: #fff; }
+    .lc-faq-panel { display: none; }
+    .lc-faq-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+    .lc-faq-item { border: 1.5px solid #e8edf2; border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .lc-faq-item:has(details[open]) { border-color: #1e88e5; }
+    .lc-faq-item details summary { list-style: none; padding: 1.1rem 1.3rem; cursor: pointer; font-weight: 700; font-size: 0.92rem; color: #1b2432; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+    .lc-faq-item details summary::-webkit-details-marker { display: none; }
+    .lc-faq-item details summary::after { content: '+'; font-size: 1.2rem; color: #1e88e5; min-width: 18px; text-align: center; }
+    .lc-faq-item details[open] summary::after { content: '−'; }
+    .lc-faq-item details[open] summary { color: #1e88e5; }
+    .lc-faq-body { padding: 0 1.3rem 1.1rem; color: #607585; font-size: 0.88rem; line-height: 1.75; }
+    .lc-faq-body strong { color: #1e88e5; }
+
+    /* TESTIMONIALS */
+    .lc-review-strip { overflow: hidden; position: relative; }
+    .lc-review-track { display: flex; gap: 1.2rem; animation: scroll-reviews 40s linear infinite; width: max-content; }
+    .lc-review-track:hover { animation-play-state: paused; }
+    @keyframes scroll-reviews { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .lc-review-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 1.5rem; width: 300px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .lc-review-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem; }
+    .lc-review-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #0d1b35, #1e88e5); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+    .lc-review-meta { flex: 1; min-width: 0; }
+    .lc-review-name { font-weight: 700; font-size: 0.9rem; color: #1b2432; }
+    .lc-review-tag { font-size: 0.72rem; color: #94a3b8; font-weight: 500; }
+    .lc-review-stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 0.6rem; }
+    .lc-review-text { color: #475569; font-size: 0.85rem; line-height: 1.7; }
+
+    /* CTA */
+    .lc-cta { padding: 5rem 1.5rem; text-align: center; }
+    .lc-cta-in { max-width: 680px; margin: 0 auto; }
+    .lc-cta h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
+    .lc-cta p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.2rem; }
+    .lc-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .lc-cta-white { background: #fff; color: #1e88e5; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .lc-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .lc-cta-ghost { background: transparent; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; }
+    .lc-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* FOOTER */
+    .lc-footer { background: #0f1923; color: rgba(255,255,255,0.65); padding: 3.5rem 1.5rem 2rem; }
+    .lc-footer-in { max-width: 1200px; margin: 0 auto; }
+    .lc-footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .lc-footer-brand .lc-logo { display: inline-block; font-size: 1.3rem; margin-bottom: 0.9rem; }
+    .lc-footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .lc-footer-social { display: flex; gap: 0.6rem; }
+    .lc-footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: background 0.2s, color 0.2s; }
+    .lc-footer-social a:hover { background: #1e88e5; color: white; }
+    .lc-fc h4 { color: #fff; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
+    .lc-fc ul { list-style: none; display: grid; gap: 0.5rem; }
+    .lc-fc ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
+    .lc-fc ul li a:hover { color: #4fc3f7; }
+    .lc-fc-contact { display: flex; flex-direction: column; gap: 0.7rem; }
+    .lc-ci { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.87rem; }
+    .lc-ci .ci { min-width: 18px; }
+    .lc-ci a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .lc-ci a:hover { color: #4fc3f7; }
+    .lc-footer-bot { padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .lc-footer-bot p { font-size: 0.82rem; }
+    .lc-footer-bot-links { display: flex; gap: 1.5rem; }
+    .lc-footer-bot-links a { color: rgba(255,255,255,0.42); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+    .lc-footer-bot-links a:hover { color: #4fc3f7; }
+
+    /* ANIMATIONS */
+    .fu { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fu.vis { opacity: 1; transform: translateY(0); }
+    .fd1 { transition-delay: 0.1s; } .fd2 { transition-delay: 0.2s; }
+    .fd3 { transition-delay: 0.3s; } .fd4 { transition-delay: 0.4s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .lc-how-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-services-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-why-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-proc-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-hero-inner { grid-template-columns: 1fr; }
+      .lc-hero-visual { display: none; }
+      .lc-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .lc-nav-links { display: none; }
+      .lc-nav-phone { display: none; }
+      .lc-mob-toggle { display: flex; }
+      .lc-nav-links.open { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #0d1b35; padding: 1rem 1.5rem 1.5rem; z-index: 99; border-top: 1px solid rgba(255,255,255,0.07); }
+      .lc-nav-links.open li { padding: 0.2rem 0; }
+      .lc-how-grid, .lc-services-grid, .lc-why-grid, .lc-proc-grid { grid-template-columns: 1fr; }
+      .lc-faq-panel.active { grid-template-columns: 1fr; }
+      .lc-footer-grid { grid-template-columns: 1fr; }
+      .lc-footer-bot { flex-direction: column; text-align: center; }
+      .lc-dropdown-menu { position: static; box-shadow: none; border: none; padding-left: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="lc-header">
+  <nav class="lc-nav">
+    <a class="lc-logo" href="index.html">Lawn care</a>
+    <ul class="lc-nav-links" id="lcNavLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lawn-care.html">Lawn Care</a></li>
+      <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+      <li class="dropdown">
+        <a href="fence-building.html" class="active">Fence Building</a>
+        <ul class="lc-dropdown-menu">
+          <li><a href="fence-building.html">Fence Building</a></li>
+          <li><a href="wooden-fence.html">Wooden Fence</a></li>
+        </ul>
+      </li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="lc-nav-phone" href="tel:18257366306">📞 +1(825)736-6306</a>
+    <button class="lc-mob-toggle" id="lcToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="lc-hero">
+  <div class="lc-hero-inner">
+    <div>
+      <div class="lc-hero-badge">🪵 Professional Wooden Fence in Calgary</div>
+      <h1>Custom <span style="white-space:nowrap">Residential &amp; Commercial</span><br><em>Wooden Fence</em> Installation</h1>
+      <p class="lc-hero-sub">Durable, beautifully crafted wooden fences for homes and businesses across Calgary. Built with premium pressure-treated lumber to withstand Calgary's climate.</p>
+      <div class="lc-hero-actions">
+        <a href="#contact" class="lc-btn-hero">Get a Free Quote</a>
+        <a href="tel:18257366306" class="lc-btn-hero-outline">📞 +1(825)736-6306</a>
+      </div>
+      <div class="lc-hero-review">
+        <div class="stars">★★★★★</div>
+        <p>"The wooden fence they built is absolutely stunning. Perfect craftsmanship, completed on time, and the backyard now feels completely private!"</p>
+        <span class="reviewer">— James T., Wooden Fence Client</span>
+      </div>
+    </div>
+    <div class="lc-hero-visual">
+      <div class="lc-thumb">🪵<span class="lt-label">Privacy Fence</span></div>
+      <div class="lc-thumb">🌲<span class="lt-label">Cedar Fence</span></div>
+      <div class="lc-thumb">🏡<span class="lt-label">Picket Fence</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="lc-stats-bar">
+  <div class="lc-stats-bar-in">
+    <div class="lc-stat-item"><strong>3,000+</strong><span>wooden fences installed in Calgary</span></div>
+    <div class="lc-stat-item"><strong>15+</strong><span>years of wooden fence experience</span></div>
+    <div class="lc-stat-item"><strong>1–2</strong><span>day installation for most projects</span></div>
+    <div class="lc-stat-item"><strong>100%</strong><span>satisfaction guarantee on every build</span></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="lc-sec" id="how">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Simple process</p>
+    <h2 class="lc-title fu fd1">How it works</h2>
+    <p class="lc-sub fu fd2">From your first call to your finished wooden fence — our 4-step process makes it simple and stress-free.</p>
+    <div class="lc-how-grid">
+      <div class="lc-how-card fu fd1">
+        <div class="lc-how-icon">📞</div>
+        <div class="lc-how-num">1</div>
+        <h3>Contact us</h3>
+        <p>Call or fill out our online form. Tell us about your property and your wooden fence requirements — we'll respond quickly.</p>
+        <br><a href="#contact" class="lc-how-step-btn">Get in touch →</a>
+      </div>
+      <div class="lc-how-card fu fd2">
+        <div class="lc-how-icon">📐</div>
+        <div class="lc-how-num">2</div>
+        <h3>Free site assessment</h3>
+        <p>We visit your property to measure, assess terrain, and discuss wood type and style options. You'll get a free, no-obligation quote.</p>
+        <br><a href="#contact" class="lc-how-step-btn">Book assessment →</a>
+      </div>
+      <div class="lc-how-card fu fd3">
+        <div class="lc-how-icon">🪵</div>
+        <div class="lc-how-num">3</div>
+        <h3>Choose your style</h3>
+        <p>Select your wood type, height, and style — privacy, picket, or semi-privacy. We'll help you find the perfect wooden fence design.</p>
+        <br><a href="#services" class="lc-how-step-btn">View styles →</a>
+      </div>
+      <div class="lc-how-card fu fd4">
+        <div class="lc-how-icon">🔨</div>
+        <div class="lc-how-num">4</div>
+        <h3>Professional installation</h3>
+        <p>Our expert crew installs your wooden fence with precision, cleans up the site, and ensures every post and board is built to last.</p>
+        <br><a href="#contact" class="lc-how-step-btn">Get started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="lc-sec lc-sec-light" id="services">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">What we offer</p>
+    <h2 class="lc-title fu fd1">Our wooden fence services</h2>
+    <p class="lc-sub fu fd2">From classic privacy fences to decorative picket styles — we build wooden fences that suit your property, budget, and taste.</p>
+    <div class="lc-services-grid">
+      <div class="lc-svc-card fu fd1">
+        <span class="lc-svc-icon">🪵</span>
+        <h3>Wood Privacy Fence</h3>
+        <p>Our most popular style — tall, solid wood panels that provide full privacy for your backyard. Built with premium pressure-treated lumber for durability.</p>
+        <span class="lc-svc-tag">Most Popular</span>
+      </div>
+      <div class="lc-svc-card fu fd2">
+        <span class="lc-svc-icon">🌲</span>
+        <h3>Cedar Fence</h3>
+        <p>Naturally rot-resistant and beautiful, cedar fences offer excellent longevity and a rich, warm appearance that enhances any property's curb appeal.</p>
+        <span class="lc-svc-tag">Premium Wood</span>
+      </div>
+      <div class="lc-svc-card fu fd3">
+        <span class="lc-svc-icon">🏡</span>
+        <h3>Picket Fence</h3>
+        <p>Classic and charming, wooden picket fences add a traditional look to your front yard while defining your property boundary with style.</p>
+        <span class="lc-svc-tag">Decorative</span>
+      </div>
+      <div class="lc-svc-card fu fd1">
+        <span class="lc-svc-icon">🚪</span>
+        <h3>Wooden Gate Installation</h3>
+        <p>Custom wooden gates designed to match your fence. Walk-through or drive-through options with heavy-duty hardware for smooth, lasting operation.</p>
+        <span class="lc-svc-tag">Add-On</span>
+      </div>
+      <div class="lc-svc-card fu fd2">
+        <span class="lc-svc-icon">🔧</span>
+        <h3>Wood Fence Repair</h3>
+        <p>Damaged boards, leaning posts, or rot? We repair and replace wooden fence sections quickly, restoring your fence to its original strength and look.</p>
+        <span class="lc-svc-tag">Repair</span>
+      </div>
+      <div class="lc-svc-card fu fd3">
+        <span class="lc-svc-icon">🎨</span>
+        <h3>Staining &amp; Sealing</h3>
+        <p>Protect and beautify your wooden fence with professional staining and sealing services. Extends the life of your fence and enhances its natural appearance.</p>
+        <span class="lc-svc-tag">Protection</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="lc-sec lc-sec-light" id="why">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Why choose us</p>
+    <h2 class="lc-title fu fd1">Calgary's trusted wooden fence builders</h2>
+    <p class="lc-sub fu fd2">Over 15 years of wooden fence installation experience serving Calgary homeowners with quality craftsmanship and honest pricing.</p>
+    <div class="lc-why-grid">
+      <div class="lc-why-card fu fd1">
+        <span class="lc-why-icon">👷</span>
+        <h3>Experienced craftsmen</h3>
+        <p>Our team are skilled wooden fence craftsmen — not subcontractors. We take pride in every board and post we install and stand behind our workmanship.</p>
+      </div>
+      <div class="lc-why-card fu fd2">
+        <span class="lc-why-icon">💰</span>
+        <h3>Transparent pricing</h3>
+        <p>No hidden fees, no surprises. You receive a clear, itemized quote before any work begins. What we quote is exactly what you pay.</p>
+      </div>
+      <div class="lc-why-card fu fd3">
+        <span class="lc-why-icon">⏰</span>
+        <h3>On-time completion</h3>
+        <p>We respect your schedule. Most residential wooden fence projects are completed within 1–2 days as quoted, with no delays or excuses.</p>
+      </div>
+      <div class="lc-why-card fu fd1">
+        <span class="lc-why-icon">🪵</span>
+        <h3>Premium lumber</h3>
+        <p>We use only quality, weather-resistant pressure-treated lumber and cedar suited to Calgary's climate — strong, durable, and beautiful.</p>
+      </div>
+      <div class="lc-why-card fu fd2">
+        <span class="lc-why-icon">✅</span>
+        <h3>Licensed &amp; insured</h3>
+        <p>We are fully licensed and insured for all wooden fence installation work. Complete peace of mind for every project on your property.</p>
+      </div>
+      <div class="lc-why-card fu fd3">
+        <span class="lc-why-icon">🏆</span>
+        <h3>Satisfaction guaranteed</h3>
+        <p>If you're not completely satisfied with our work, we'll make it right — no questions asked. Your happiness is our top priority.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS -->
+<section class="lc-sec lc-sec-dark" id="process">
+  <div class="lc-sec-in">
+    <p class="lc-label fu" style="color:#4fc3f7;">Our approach</p>
+    <h2 class="lc-title lc-title-white fu fd1">How we build your wooden fence</h2>
+    <p class="lc-sub lc-sub-white fu fd2">A proven installation process ensuring your wooden fence is strong, level, and built to last for decades.</p>
+    <div class="lc-proc-grid">
+      <div class="lc-proc-item fu fd1">
+        <div class="lc-proc-step"><div class="lc-proc-n">1</div><span class="lc-proc-icon">📐</span></div>
+        <h3>Site survey &amp; layout</h3>
+        <p>We measure your property line, mark post locations, and check for underground utilities before any digging begins — ensuring accuracy and safety.</p>
+      </div>
+      <div class="lc-proc-item fu fd2">
+        <div class="lc-proc-step"><div class="lc-proc-n">2</div><span class="lc-proc-icon">⛏️</span></div>
+        <h3>Post hole digging</h3>
+        <p>Post holes are dug below Calgary's frost line to ensure your wooden fence won't shift or heave through seasonal freeze-thaw cycles.</p>
+      </div>
+      <div class="lc-proc-item fu fd3">
+        <div class="lc-proc-step"><div class="lc-proc-n">3</div><span class="lc-proc-icon">🏗️</span></div>
+        <h3>Post setting in concrete</h3>
+        <p>Each post is set plumb and level in concrete. We allow full curing time before attaching rails and boards for a rock-solid foundation.</p>
+      </div>
+      <div class="lc-proc-item fu fd1">
+        <div class="lc-proc-step"><div class="lc-proc-n">4</div><span class="lc-proc-icon">🪵</span></div>
+        <h3>Rail &amp; board installation</h3>
+        <p>Rails are attached and boards are fixed with precision — checked for level and alignment throughout for maximum strength and visual appeal.</p>
+      </div>
+      <div class="lc-proc-item fu fd2">
+        <div class="lc-proc-step"><div class="lc-proc-n">5</div><span class="lc-proc-icon">🚪</span></div>
+        <h3>Gate hanging &amp; hardware</h3>
+        <p>Wooden gates are hung with heavy-duty hinges and latches. We test all gate operation to ensure smooth, reliable use before we leave.</p>
+      </div>
+      <div class="lc-proc-item fu fd3">
+        <div class="lc-proc-step"><div class="lc-proc-n">6</div><span class="lc-proc-icon">🧹</span></div>
+        <h3>Site cleanup &amp; inspection</h3>
+        <p>We remove all waste materials and debris. A final walk-around inspection ensures every section meets our quality standards before sign-off.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="lc-sec lc-sec-light" id="reviews">
+  <div class="lc-sec-in">
+    <p class="lc-label fu lc-center" style="text-align:center;">Client reviews</p>
+    <h2 class="lc-title fu fd1 lc-center" style="text-align:center;">What our clients say</h2>
+    <p class="lc-sub fu fd2" style="margin:0 auto 2.5rem; text-align:center;">Hundreds of happy homeowners across Calgary trust us to build their wooden fences.</p>
+  </div>
+  <div class="lc-review-strip">
+    <div class="lc-review-track" id="reviewTrack">
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">J</div><div class="lc-review-meta"><div class="lc-review-name">James T.</div><div class="lc-review-tag">Wood Privacy Fence</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Beautiful 6-foot wood privacy fence around our backyard. Done professionally, on time, and the cleanup was spotless. Couldn't be happier!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">S</div><div class="lc-review-meta"><div class="lc-review-name">Sarah M.</div><div class="lc-review-tag">Cedar Fence Client</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Went with cedar and it looks absolutely stunning. The crew finished in one day and the quality is outstanding. Neighbours keep asking who did it!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">R</div><div class="lc-review-meta"><div class="lc-review-name">Robert K.</div><div class="lc-review-tag">Picket Fence Client</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"The picket fence they installed is exactly what I envisioned. Perfect craftsmanship, honest pricing, and the team was a pleasure to work with."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">L</div><div class="lc-review-meta"><div class="lc-review-name">Linda W.</div><div class="lc-review-tag">Wood Fence Repair</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Storm damaged several fence boards. They came out the next day, replaced everything perfectly, and you can't even tell where the repairs were made!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">P</div><div class="lc-review-meta"><div class="lc-review-name">Paul B.</div><div class="lc-review-tag">Privacy Fence Client</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Very impressed with the quality of the posts and boards. The fence is perfectly level, looks great, and the wooden gate swings perfectly every time."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="lc-sec" id="faq">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Got questions?</p>
+    <h2 class="lc-title fu fd1">Frequently asked questions</h2>
+    <p class="lc-sub fu fd2">Everything you need to know about our wooden fence installation services in Calgary.</p>
+    <div class="lc-faq-tabs fu fd1">
+      <button class="lc-faq-tab active" onclick="switchTab('general', this)">General</button>
+      <button class="lc-faq-tab" onclick="switchTab('materials', this)">Materials</button>
+    </div>
+    <div class="lc-faq-panel active" id="faq-general">
+      <div class="lc-faq-item">
+        <details><summary>How long does wooden fence installation take?</summary>
+          <div class="lc-faq-body">Most standard residential wooden fence installations are completed in 1–2 days. We'll give you a clear timeline during your free site assessment.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>What areas in Calgary do you service?</summary>
+          <div class="lc-faq-body">We service all residential and commercial properties throughout Calgary and surrounding areas including Airdrie, Chestermere, and Cochrane.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>Do I need a permit for a wooden fence in Calgary?</summary>
+          <div class="lc-faq-body">In most cases, fences under 1.85 metres (6 feet) do not require a permit in Calgary. We can advise on permit requirements during your assessment.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>Are you licensed and insured?</summary>
+          <div class="lc-faq-body">Yes, we are fully licensed and insured for all wooden fence installation services in Calgary. Your property and our team are fully protected throughout the project.</div>
+        </details>
+      </div>
+    </div>
+    <div class="lc-faq-panel" id="faq-materials">
+      <div class="lc-faq-item">
+        <details><summary>What types of wood do you use?</summary>
+          <div class="lc-faq-body">We use premium <strong>pressure-treated pine</strong> and <strong>cedar</strong>. Both are suited to Calgary's climate — pressure-treated for maximum durability and cedar for natural rot resistance and beauty.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>How long will a wooden fence last?</summary>
+          <div class="lc-faq-body">A properly installed pressure-treated wood fence typically lasts 15–20 years. Cedar can last even longer with occasional staining or sealing. We'll advise on the best maintenance plan for your fence.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>Does a wooden fence need maintenance?</summary>
+          <div class="lc-faq-body">Wooden fences benefit from occasional staining or sealing every 2–3 years to maintain their appearance and extend their lifespan. We also offer staining and sealing services.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>How do I get a free quote?</summary>
+          <div class="lc-faq-body">Simply call us at +1(825)736-6306 or fill out the contact form below. One of our fence specialists will visit your property and provide a detailed, no-obligation quote free of charge.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="lc-sec lc-sec-blue lc-cta" id="contact">
+  <div class="lc-cta-in">
+    <h2 class="fu">Ready to build your wooden fence?</h2>
+    <p class="fu fd1">Get your free, no-obligation wooden fence quote today. Our team is ready to help you design and install the perfect fence for your property.</p>
+    <div class="lc-cta-btns fu fd2">
+      <a href="tel:18257366306" class="lc-cta-white">📞 +1(825)736-6306</a>
+      <a href="mailto:calgary@letsgetmoving.ca" class="lc-cta-ghost">✉️ Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="lc-footer">
+  <div class="lc-footer-in">
+    <div class="lc-footer-grid">
+      <div class="lc-footer-brand">
+        <a class="lc-logo" href="index.html">Lawn care</a>
+        <p>Calgary's trusted wooden fence installation professionals. Licensed, insured, and committed to delivering durable, beautiful fences for every property.</p>
+        <div class="lc-footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="Twitter">tw</a>
+          <a href="#" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div class="lc-fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lc-fc">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="lawn-care.html">Lawn Care</a></li>
+          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+          <li><a href="fence-building.html">Fence Building</a></li>
+          <li><a href="wooden-fence.html">Wooden Fence</a></li>
+        </ul>
+      </div>
+      <div class="lc-fc">
+        <h4>Contact Us</h4>
+        <div class="lc-fc-contact">
+          <div class="lc-ci"><span class="ci">📞</span><a href="tel:18257366306">+1(825)736-6306</a></div>
+          <div class="lc-ci"><span class="ci">✉️</span><a href="mailto:calgary@letsgetmoving.ca">calgary@letsgetmoving.ca</a></div>
+          <div class="lc-ci"><span class="ci">📍</span><span>95 TARARIDGE CRT NE CALGARY AB T3J 2R1</span></div>
+          <div class="lc-ci"><span class="ci">🕐</span><div><div>Mon–Fri: 6am – 9pm</div><div>Sat–Sun: 8am – 5pm</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="lc-footer-bot">
+      <p>© 2025 Let's Move Calgary. All rights reserved.</p>
+      <div class="lc-footer-bot-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const tog = document.getElementById('lcToggle');
+  const nav = document.getElementById('lcNavLinks');
+  if (tog) tog.addEventListener('click', () => nav.classList.toggle('open'));
+
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  function switchTab(id, btn) {
+    document.querySelectorAll('.lc-faq-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.lc-faq-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('faq-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  const track = document.getElementById('reviewTrack');
+  if (track) { const clone = track.innerHTML; track.innerHTML = clone + clone; }
+</script>
+
+<script src="//code.tidio.co/pbj18ed9woaajv4pjnjnasotkuph0y5t.js" async></script>
+</body>
+</html>

@@ -69,6 +69,12 @@
       transition: background 0.2s, transform 0.2s;
     }
     .lc-nav-phone:hover { background: #1565c0; transform: translateY(-1px); }
+    .lc-nav-links .dropdown { position: relative; }
+    .lc-nav-links .dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+    .lc-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #0d1b35; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; min-width: 180px; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.3); padding: 0.4rem 0; list-style: none; }
+    .lc-dropdown-menu a { display: block; padding: 0.55rem 1.2rem; color: rgba(255,255,255,0.8); font-size: 0.88rem; white-space: nowrap; text-decoration: none; }
+    .lc-dropdown-menu a:hover { color: #4fc3f7; background: rgba(255,255,255,0.05); }
+    .dropdown:hover .lc-dropdown-menu { display: block; }
     .lc-mob-toggle {
       display: none;
       flex-direction: column;
@@ -493,7 +499,13 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="lawn-care.html">Lawn Care</a></li>
       <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
-      <li><a href="fence-building.html" class="active">Fence Building</a></li>
+      <li class="dropdown">
+        <a href="fence-building.html" class="active">Fence Building</a>
+        <ul class="lc-dropdown-menu">
+          <li><a href="fence-building.html">Fence Building</a></li>
+          <li><a href="wooden-fence.html">Wooden Fence</a></li>
+        </ul>
+      </li>
       <li><a href="#services">Services</a></li>
       <li><a href="#how">How We Work</a></li>
       <li><a href="#faq">FAQ</a></li>
