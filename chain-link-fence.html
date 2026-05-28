@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chain Link Fence Installation in Calgary | Lawn care</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1c2b4a;
+      background: #f4f6fb;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    .mv-header { background: #0d1b35; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.35); }
+    .mv-nav { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1rem; }
+    .mv-logo { color: #fff; font-size: 1.35rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; letter-spacing: -0.01em; }
+    .mv-logo-icon { font-size: 1.4rem; color: #4ade80; flex-shrink: 0; filter: drop-shadow(0 0 5px rgba(74,222,128,0.7)); line-height: 1; }
+    .mv-logo span { color: #4fc3f7; }
+    .mv-nav-links { display: flex; gap: 0; list-style: none; margin: 0; padding: 0; }
+    .mv-nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.55rem 1rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .mv-nav-links a:hover { color: #4fc3f7; }
+    .mv-nav-phone { background: #1e88e5; color: white; padding: 0.55rem 1.2rem; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; white-space: nowrap; transition: background 0.2s, transform 0.2s; }
+    .mv-nav-phone:hover { background: #1565c0; transform: translateY(-1px); }
+    .mv-mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .mv-mobile-toggle span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: transform 0.25s; }
+    .mv-nav-links .dropdown { position: relative; }
+    .mv-nav-links .dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
+    .mv-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #0d1b35; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; min-width: 180px; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.3); padding: 0.4rem 0; list-style: none; }
+    .mv-dropdown-menu a { display: block; padding: 0.55rem 1.2rem; color: rgba(255,255,255,0.8); font-size: 0.88rem; white-space: nowrap; text-decoration: none; }
+    .mv-dropdown-menu a:hover { color: #4fc3f7; background: rgba(255,255,255,0.05); }
+    .dropdown:hover .mv-dropdown-menu { display: block; }
+    .mv-dropdown-menu .subdropdown { position: relative; }
+    .mv-dropdown-menu .subdropdown > a::after { content: ' ›'; font-size: 0.85rem; }
+    .mv-subdropdown-menu { display: none; position: absolute; top: 0; left: 100%; background: #0d1b35; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; min-width: 160px; z-index: 201; box-shadow: 0 8px 24px rgba(0,0,0,0.3); padding: 0.4rem 0; list-style: none; }
+    .mv-dropdown-menu .subdropdown:hover .mv-subdropdown-menu { display: block; }
+
+    /* HERO */
+    .lc-hero {
+      background: linear-gradient(135deg, rgba(13,27,53,0.55) 0%, rgba(26,47,90,0.45) 55%, rgba(10,32,64,0.60) 100%), url('chain-link-fence.png') center/cover no-repeat;
+      min-height: 560px; display: flex; align-items: center; position: relative; overflow: hidden; padding: 4rem 1.5rem;
+    }
+    .lc-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(30,136,229,0.12) 0%, transparent 60%); pointer-events: none; }
+    .lc-hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; position: relative; z-index: 1; }
+    .lc-hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 0.35rem 0.9rem; color: rgba(255,255,255,0.9); font-size: 0.8rem; font-weight: 600; margin-bottom: 1.1rem; }
+    .lc-hero h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 1.1rem; }
+    .lc-hero h1 em { font-style: normal; color: #4fc3f7; }
+    .lc-hero-sub { color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.75; max-width: 500px; margin-bottom: 2rem; }
+    .lc-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .lc-btn-hero { background: #1e88e5; color: #fff; padding: 0.85rem 1.9rem; border-radius: 9px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; display: inline-block; }
+    .lc-btn-hero:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(30,136,229,0.4); }
+    .lc-btn-hero-outline { background: transparent; color: #fff; padding: 0.85rem 1.9rem; border-radius: 9px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.35); transition: border-color 0.2s, background 0.2s; display: inline-block; }
+    .lc-btn-hero-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+    .lc-hero-review { background: rgba(13,27,53,0.55); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1rem 1.2rem; max-width: 420px; }
+    .lc-hero-review .stars { color: #fbbf24; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .lc-hero-review p { color: rgba(255,255,255,0.85); font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.5rem; font-style: italic; }
+    .lc-hero-review .reviewer { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 600; }
+    .lc-hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .lc-thumb { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; position: relative; transition: transform 0.3s; }
+    .lc-thumb:hover { transform: scale(1.03); }
+    .lc-thumb:first-child { grid-column: span 2; aspect-ratio: 16/7; font-size: 4rem; }
+    .lc-thumb .lt-label { position: absolute; bottom: 0.7rem; left: 0.7rem; background: rgba(0,0,0,0.55); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* STATS */
+    .lc-stats-bar { background: #0d1b35; padding: 1.1rem 1.5rem; }
+    .lc-stats-bar-in { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-around; gap: 1.5rem; flex-wrap: wrap; }
+    .lc-stat-item { display: flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,0.9); }
+    .lc-stat-item strong { font-size: 1.5rem; font-weight: 900; color: #4fc3f7; }
+    .lc-stat-item span { font-size: 0.88rem; color: rgba(255,255,255,0.72); max-width: 180px; line-height: 1.4; }
+
+    /* SECTIONS */
+    .lc-sec { padding: 5rem 1.5rem; }
+    .lc-sec-in { max-width: 1200px; margin: 0 auto; }
+    .lc-sec-light { background: #f4f6fb; }
+    .lc-sec-dark { background: #0d1b35; }
+    .lc-sec-blue { background: linear-gradient(135deg, #1e88e5, #1565c0); }
+    .lc-label { color: #1e88e5; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .lc-title { font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 800; color: #0d1b35; line-height: 1.15; margin-bottom: 0.8rem; }
+    .lc-title-white { color: #fff; }
+    .lc-sub { color: #64748b; font-size: 1.02rem; line-height: 1.75; max-width: 600px; margin-bottom: 3rem; }
+    .lc-sub-white { color: rgba(255,255,255,0.72); }
+    .lc-center { text-align: center; }
+    .lc-center .lc-sub { margin-left: auto; margin-right: auto; }
+
+    /* HOW IT WORKS */
+    .lc-how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .lc-how-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 2rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+    .lc-how-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #4fc3f7, #1e88e5); }
+    .lc-how-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.09); }
+    .lc-how-num { width: 42px; height: 42px; border-radius: 50%; background: #e3f2fd; color: #1e88e5; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
+    .lc-how-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .lc-how-card h3 { font-size: 1.05rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.4rem; }
+    .lc-how-card p { color: #64748b; font-size: 0.87rem; line-height: 1.7; margin-bottom: 1.1rem; }
+    .lc-how-step-btn { display: inline-block; color: #1e88e5; font-size: 0.85rem; font-weight: 700; text-decoration: none; margin-top: 0.5rem; }
+    .lc-how-step-btn:hover { text-decoration: underline; }
+
+    /* SERVICES GRID */
+    .lc-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-svc-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+    .lc-svc-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); border-color: #90caf9; }
+    .lc-svc-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .lc-svc-card h3 { font-size: 1.1rem; font-weight: 700; color: #1b2432; margin-bottom: 0.5rem; }
+    .lc-svc-card p { color: #64748b; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+    .lc-svc-tag { display: inline-block; background: #e3f2fd; color: #1e88e5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* WHY CHOOSE US */
+    .lc-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-why-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 1.8rem; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+    .lc-why-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(0,0,0,0.08); border-color: #90caf9; }
+    .lc-why-icon { font-size: 2.2rem; margin-bottom: 0.9rem; display: block; }
+    .lc-why-card h3 { font-size: 1.08rem; font-weight: 700; color: #0d1b35; margin-bottom: 0.45rem; }
+    .lc-why-card p { color: #64748b; font-size: 0.88rem; line-height: 1.7; }
+
+    /* PROCESS */
+    .lc-proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .lc-proc-item { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.8rem; transition: background 0.2s; }
+    .lc-proc-item:hover { background: rgba(255,255,255,0.11); }
+    .lc-proc-step { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+    .lc-proc-n { width: 36px; height: 36px; border-radius: 50%; background: #1e88e5; color: white; font-size: 0.9rem; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .lc-proc-icon { font-size: 1.4rem; }
+    .lc-proc-item h3 { font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem; }
+    .lc-proc-item p { color: rgba(255,255,255,0.67); font-size: 0.87rem; line-height: 1.7; }
+
+    /* FAQ */
+    .lc-faq-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .lc-faq-tab { padding: 0.55rem 1.2rem; border-radius: 50px; background: #f1f5f9; color: #475569; font-size: 0.88rem; font-weight: 600; border: none; cursor: pointer; font-family: inherit; transition: background 0.2s, color 0.2s; }
+    .lc-faq-tab.active { background: #1e88e5; color: #fff; }
+    .lc-faq-panel { display: none; }
+    .lc-faq-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+    .lc-faq-item { border: 1.5px solid #e8edf2; border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .lc-faq-item:has(details[open]) { border-color: #1e88e5; }
+    .lc-faq-item details summary { list-style: none; padding: 1.1rem 1.3rem; cursor: pointer; font-weight: 700; font-size: 0.92rem; color: #1b2432; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+    .lc-faq-item details summary::-webkit-details-marker { display: none; }
+    .lc-faq-item details summary::after { content: '+'; font-size: 1.2rem; color: #1e88e5; min-width: 18px; text-align: center; }
+    .lc-faq-item details[open] summary::after { content: '−'; }
+    .lc-faq-item details[open] summary { color: #1e88e5; }
+    .lc-faq-body { padding: 0 1.3rem 1.1rem; color: #607585; font-size: 0.88rem; line-height: 1.75; }
+    .lc-faq-body strong { color: #1e88e5; }
+
+    /* TESTIMONIALS */
+    .lc-review-strip { overflow: hidden; position: relative; }
+    .lc-review-track { display: flex; gap: 1.2rem; animation: scroll-reviews 40s linear infinite; width: max-content; }
+    .lc-review-track:hover { animation-play-state: paused; }
+    @keyframes scroll-reviews { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .lc-review-card { background: #fff; border: 1px solid #e8edf2; border-radius: 16px; padding: 1.5rem; width: 300px; flex-shrink: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .lc-review-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem; }
+    .lc-review-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #0d1b35, #1e88e5); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+    .lc-review-meta { flex: 1; min-width: 0; }
+    .lc-review-name { font-weight: 700; font-size: 0.9rem; color: #1b2432; }
+    .lc-review-tag { font-size: 0.72rem; color: #94a3b8; font-weight: 500; }
+    .lc-review-stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 0.6rem; }
+    .lc-review-text { color: #475569; font-size: 0.85rem; line-height: 1.7; }
+
+    /* CTA */
+    .lc-cta { padding: 5rem 1.5rem; text-align: center; }
+    .lc-cta-in { max-width: 680px; margin: 0 auto; }
+    .lc-cta h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 1rem; line-height: 1.15; }
+    .lc-cta p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.2rem; }
+    .lc-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .lc-cta-white { background: #fff; color: #1e88e5; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .lc-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .lc-cta-ghost { background: transparent; color: #fff; padding: 0.9rem 2.2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; }
+    .lc-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ── FOOTER ── */
+    .mv-footer { background: #060f1e; color: rgba(255,255,255,0.65); padding: 3rem 1.5rem 2rem; }
+    .mv-footer-in { max-width: 1200px; margin: 0 auto; }
+    .mv-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mv-footer-brand .mv-logo { display: inline-flex; margin-bottom: 0.9rem; }
+    .mv-footer-brand p { font-size: 0.88rem; line-height: 1.7; margin: 0 0 1.1rem; }
+    .mv-social { display: flex; gap: 0.65rem; }
+    .mv-social a { width: 35px; height: 35px; border-radius: 7px; background: #1e88e5; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: background 0.2s, color 0.2s; }
+    .mv-social a:hover { background: #1565c0; color: white; }
+    .mv-fc h4 { color: #fff; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1.1rem; }
+    .mv-fc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+    .mv-fc ul li a { color: rgba(255,255,255,0.58); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
+    .mv-fc ul li a:hover { color: #4fc3f7; }
+    .mv-ci { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; font-size: 0.87rem; align-items: flex-start; }
+    .mv-ci .ci { min-width: 16px; }
+    .mv-ci a { color: rgba(255,255,255,0.58); text-decoration: none; transition: color 0.2s; }
+    .mv-ci a:hover { color: #4fc3f7; }
+    .mv-footer-bot { padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .mv-footer-bot p { margin: 0; font-size: 0.83rem; }
+    .mv-footer-bot-links { display: flex; gap: 1.5rem; }
+    .mv-footer-bot-links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    .mv-footer-bot-links a:hover { color: #4fc3f7; }
+
+    /* ANIMATIONS */
+    .fu { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fu.vis { opacity: 1; transform: translateY(0); }
+    .fd1 { transition-delay: 0.1s; } .fd2 { transition-delay: 0.2s; }
+    .fd3 { transition-delay: 0.3s; } .fd4 { transition-delay: 0.4s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .lc-how-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-services-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-why-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-proc-grid { grid-template-columns: repeat(2, 1fr); }
+      .lc-hero-inner { grid-template-columns: 1fr; }
+      .lc-hero-visual { display: none; }
+      .mv-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .mv-nav-links { display: none; }
+      .mv-mobile-toggle { display: flex; }
+      .mv-nav-links.open { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #0d1b35; padding: 1rem 1.5rem 1.5rem; z-index: 99; border-top: 1px solid rgba(255,255,255,0.07); }
+      .mv-nav-links.open li { padding: 0.2rem 0; }
+      .lc-how-grid, .lc-services-grid, .lc-why-grid, .lc-proc-grid { grid-template-columns: 1fr; }
+      .lc-faq-panel.active { grid-template-columns: 1fr; }
+      .mv-footer-grid { grid-template-columns: 1fr; }
+      .mv-footer-bot { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="mv-header">
+  <nav class="mv-nav">
+    <a class="mv-logo" href="index.html"><span class="mv-logo-icon"><i class="fa-solid fa-leaf"></i></span>Lawn<span>care</span></a>
+    <ul class="mv-nav-links" id="mvNavLinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="index.html#services">Services</a>
+        <ul class="mv-dropdown-menu">
+          <li><a href="lawn-care.html">Lawn Care</a></li>
+          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+          <li class="subdropdown">
+            <a href="fence-building.html">Fence Building</a>
+            <ul class="mv-subdropdown-menu">
+              <li><a href="wooden-fence.html">Wooden Fence</a></li>
+              <li><a href="chain-link-fence.html">Chain Link Fence</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="index.html#how-it-works">How We Work</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a class="mv-nav-phone" href="tel:18257366306"><span style="color:#ffffff;margin-right:5px;font-size:1rem;">☎</span>+1(825)736-6306</a>
+    <button class="mv-mobile-toggle" id="mvToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="lc-hero">
+  <div class="lc-hero-inner">
+    <div>
+      <div class="lc-hero-badge">🔗 Professional Chain Link Fence in Calgary</div>
+      <h1>Affordable <span style="white-space:nowrap">Residential &amp; Commercial</span><br><em>Chain Link Fence</em> Installation</h1>
+      <p class="lc-hero-sub">Strong, low-maintenance chain link fences for homes and businesses across Calgary. Galvanized and vinyl-coated options built to last in Calgary's harsh climate.</p>
+      <div class="lc-hero-actions">
+        <a href="#contact" class="lc-btn-hero">Get a Free Quote</a>
+        <a href="tel:18257366306" class="lc-btn-hero-outline">📞 +1(825)736-6306</a>
+      </div>
+      <div class="lc-hero-review">
+        <div class="stars">★★★★★</div>
+        <p>"Fast installation, great price, and the chain link fence looks perfect around our commercial property. Professional crew and zero mess left behind!"</p>
+        <span class="reviewer">— Mike D., Chain Link Fence Client</span>
+      </div>
+    </div>
+    <div class="lc-hero-visual">
+      <div class="lc-thumb">🔗<span class="lt-label">Galvanized Fence</span></div>
+      <div class="lc-thumb">🏭<span class="lt-label">Commercial</span></div>
+      <div class="lc-thumb">🏠<span class="lt-label">Residential</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="lc-stats-bar">
+  <div class="lc-stats-bar-in">
+    <div class="lc-stat-item"><strong>2,500+</strong><span>chain link fences installed in Calgary</span></div>
+    <div class="lc-stat-item"><strong>15+</strong><span>years of fencing experience</span></div>
+    <div class="lc-stat-item"><strong>1 Day</strong><span>installation for most projects</span></div>
+    <div class="lc-stat-item"><strong>100%</strong><span>satisfaction guarantee on every job</span></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="lc-sec" id="how">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Simple process</p>
+    <h2 class="lc-title fu fd1">How it works</h2>
+    <p class="lc-sub fu fd2">From your first call to your finished chain link fence — our 4-step process is simple and stress-free.</p>
+    <div class="lc-how-grid">
+      <div class="lc-how-card fu fd1">
+        <div class="lc-how-icon">📞</div>
+        <div class="lc-how-num">1</div>
+        <h3>Contact us</h3>
+        <p>Call or fill out our online form. Tell us about your property and your chain link fence needs — we'll get back to you quickly.</p>
+        <br><a href="#contact" class="lc-how-step-btn">Get in touch →</a>
+      </div>
+      <div class="lc-how-card fu fd2">
+        <div class="lc-how-icon">📐</div>
+        <div class="lc-how-num">2</div>
+        <h3>Free site assessment</h3>
+        <p>We visit your property, measure the perimeter, and discuss gauge, height, and coating options. You'll receive a free, no-obligation quote.</p>
+        <br><a href="#contact" class="lc-how-step-btn">Book assessment →</a>
+      </div>
+      <div class="lc-how-card fu fd3">
+        <div class="lc-how-icon">🔗</div>
+        <div class="lc-how-num">3</div>
+        <h3>Choose your style</h3>
+        <p>Select galvanized or vinyl-coated, fence height, and gauge. We'll help you pick the right chain link option for your budget and security needs.</p>
+        <br><a href="#services" class="lc-how-step-btn">View options →</a>
+      </div>
+      <div class="lc-how-card fu fd4">
+        <div class="lc-how-icon">🔨</div>
+        <div class="lc-how-num">4</div>
+        <h3>Professional installation</h3>
+        <p>Our experienced crew installs your chain link fence quickly and precisely, leaving your site clean and your fence properly tensioned and secured.</p>
+        <br><a href="#contact" class="lc-how-step-btn">Get started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="lc-sec lc-sec-light" id="services">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">What we offer</p>
+    <h2 class="lc-title fu fd1">Our chain link fence services</h2>
+    <p class="lc-sub fu fd2">From standard galvanized to heavy-duty commercial security fencing — we install chain link fences for every property type and budget.</p>
+    <div class="lc-services-grid">
+      <div class="lc-svc-card fu fd1">
+        <span class="lc-svc-icon">🔗</span>
+        <h3>Galvanized Chain Link Fence</h3>
+        <p>Our most affordable option — hot-dip galvanized steel chain link that resists rust and corrosion. Ideal for residential yards, pet enclosures, and property boundaries.</p>
+        <span class="lc-svc-tag">Most Affordable</span>
+      </div>
+      <div class="lc-svc-card fu fd2">
+        <span class="lc-svc-icon">🎨</span>
+        <h3>Vinyl Coated Chain Link</h3>
+        <p>Available in black, green, and brown — vinyl-coated chain link blends into your landscape while providing the same strength as galvanized with extra corrosion protection.</p>
+        <span class="lc-svc-tag">Most Popular</span>
+      </div>
+      <div class="lc-svc-card fu fd3">
+        <span class="lc-svc-icon">🏭</span>
+        <h3>Commercial Security Fencing</h3>
+        <p>Heavy-gauge chain link fencing for commercial properties, construction sites, and industrial facilities. Available with barbed wire or razor wire topping for maximum security.</p>
+        <span class="lc-svc-tag">Commercial</span>
+      </div>
+      <div class="lc-svc-card fu fd1">
+        <span class="lc-svc-icon">🚪</span>
+        <h3>Chain Link Gate Installation</h3>
+        <p>Custom walk-through and drive-through chain link gates with heavy-duty frames and hardware. Built to match your fence and provide smooth, reliable access.</p>
+        <span class="lc-svc-tag">Add-On</span>
+      </div>
+      <div class="lc-svc-card fu fd2">
+        <span class="lc-svc-icon">🐕</span>
+        <h3>Dog Run &amp; Pet Enclosures</h3>
+        <p>Safe and secure chain link enclosures for pets. Custom sizes available with kennel tops and dig-guard options to keep your animals safely contained.</p>
+        <span class="lc-svc-tag">Pet Friendly</span>
+      </div>
+      <div class="lc-svc-card fu fd3">
+        <span class="lc-svc-icon">🔧</span>
+        <h3>Chain Link Fence Repair</h3>
+        <p>Damaged mesh, bent posts, or sagging sections? We repair and restore chain link fences quickly — bringing your existing fence back to full strength and tension.</p>
+        <span class="lc-svc-tag">Repair</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="lc-sec lc-sec-light" id="why">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Why choose us</p>
+    <h2 class="lc-title fu fd1">Calgary's trusted chain link fence installers</h2>
+    <p class="lc-sub fu fd2">Over 15 years serving Calgary homeowners and businesses with affordable, durable chain link fence installations done right the first time.</p>
+    <div class="lc-why-grid">
+      <div class="lc-why-card fu fd1">
+        <span class="lc-why-icon">👷</span>
+        <h3>Experienced installers</h3>
+        <p>Our crew are trained chain link fence specialists — not general contractors. Every post, rail, and mesh panel is installed with precision and care.</p>
+      </div>
+      <div class="lc-why-card fu fd2">
+        <span class="lc-why-icon">💰</span>
+        <h3>Competitive pricing</h3>
+        <p>Chain link is one of the most cost-effective fencing options — and we keep our pricing transparent. No hidden fees, no surprises when the invoice arrives.</p>
+      </div>
+      <div class="lc-why-card fu fd3">
+        <span class="lc-why-icon">⚡</span>
+        <h3>Fast installation</h3>
+        <p>Most residential chain link fence projects are completed in a single day. We work efficiently without cutting corners so you can enjoy your new fence sooner.</p>
+      </div>
+      <div class="lc-why-card fu fd1">
+        <span class="lc-why-icon">🛡️</span>
+        <h3>Quality materials</h3>
+        <p>We use only commercial-grade galvanized and vinyl-coated chain link mesh with heavy-duty posts and hardware — built to withstand Calgary's freeze-thaw cycles.</p>
+      </div>
+      <div class="lc-why-card fu fd2">
+        <span class="lc-why-icon">✅</span>
+        <h3>Licensed &amp; insured</h3>
+        <p>Fully licensed and insured for all chain link fence installations in Calgary. Your property and our team are completely protected throughout every project.</p>
+      </div>
+      <div class="lc-why-card fu fd3">
+        <span class="lc-why-icon">🏆</span>
+        <h3>Satisfaction guaranteed</h3>
+        <p>We stand behind every fence we install. If you're not completely satisfied with our work, we'll come back and make it right — no questions asked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS -->
+<section class="lc-sec lc-sec-dark" id="process">
+  <div class="lc-sec-in">
+    <p class="lc-label fu" style="color:#4fc3f7;">Our approach</p>
+    <h2 class="lc-title lc-title-white fu fd1">How we install your chain link fence</h2>
+    <p class="lc-sub lc-sub-white fu fd2">A proven installation process that ensures your chain link fence is properly tensioned, level, and built to last for years.</p>
+    <div class="lc-proc-grid">
+      <div class="lc-proc-item fu fd1">
+        <div class="lc-proc-step"><div class="lc-proc-n">1</div><span class="lc-proc-icon">📐</span></div>
+        <h3>Layout &amp; measurement</h3>
+        <p>We mark your fence line, identify corner and gate post locations, and check for underground utilities before any digging begins — ensuring accuracy and safety.</p>
+      </div>
+      <div class="lc-proc-item fu fd2">
+        <div class="lc-proc-step"><div class="lc-proc-n">2</div><span class="lc-proc-icon">⛏️</span></div>
+        <h3>Post hole digging</h3>
+        <p>Post holes are dug below Calgary's frost line to prevent shifting and heaving through seasonal freeze-thaw cycles — giving your fence a rock-solid foundation.</p>
+      </div>
+      <div class="lc-proc-item fu fd3">
+        <div class="lc-proc-step"><div class="lc-proc-n">3</div><span class="lc-proc-icon">🏗️</span></div>
+        <h3>Post setting in concrete</h3>
+        <p>Terminal and line posts are set plumb and level in concrete. We allow adequate curing time before attaching rails and mesh for maximum stability.</p>
+      </div>
+      <div class="lc-proc-item fu fd1">
+        <div class="lc-proc-step"><div class="lc-proc-n">4</div><span class="lc-proc-icon">🔗</span></div>
+        <h3>Rail &amp; mesh installation</h3>
+        <p>Top and bottom rails are attached and the chain link mesh is stretched and fastened with tension bars and ties — properly tensioned for a clean, taut appearance.</p>
+      </div>
+      <div class="lc-proc-item fu fd2">
+        <div class="lc-proc-step"><div class="lc-proc-n">5</div><span class="lc-proc-icon">🚪</span></div>
+        <h3>Gate hanging &amp; hardware</h3>
+        <p>Gates are hung with heavy-duty hinges, tension bars, and secure latches. We test all gate operation to ensure smooth, reliable use before we leave.</p>
+      </div>
+      <div class="lc-proc-item fu fd3">
+        <div class="lc-proc-step"><div class="lc-proc-n">6</div><span class="lc-proc-icon">🧹</span></div>
+        <h3>Site cleanup &amp; inspection</h3>
+        <p>All waste and debris is removed from your property. A final walk-around ensures every section is properly installed and meets our quality standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="lc-sec lc-sec-light" id="reviews">
+  <div class="lc-sec-in">
+    <p class="lc-label fu lc-center" style="text-align:center;">Client reviews</p>
+    <h2 class="lc-title fu fd1 lc-center" style="text-align:center;">What our clients say</h2>
+    <p class="lc-sub fu fd2" style="margin:0 auto 2.5rem; text-align:center;">Hundreds of happy Calgary homeowners and businesses trust us for their chain link fence installations.</p>
+  </div>
+  <div class="lc-review-strip">
+    <div class="lc-review-track" id="reviewTrack">
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">M</div><div class="lc-review-meta"><div class="lc-review-name">Mike D.</div><div class="lc-review-tag">Commercial Chain Link</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Installed 300 feet of chain link around our commercial yard. Done in one day, looks great, and the crew was professional from start to finish. Highly recommend!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">A</div><div class="lc-review-meta"><div class="lc-review-name">Angela R.</div><div class="lc-review-tag">Residential Chain Link</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Needed a fence for our backyard to keep the dogs in. They came, measured, quoted, and installed within the week. Super fast, clean job and very affordable!"</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">T</div><div class="lc-review-meta"><div class="lc-review-name">Tony K.</div><div class="lc-review-tag">Vinyl Coated Chain Link</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Went with black vinyl-coated chain link and it blends in perfectly with the garden. Looks far more premium than I expected at such a reasonable price."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">D</div><div class="lc-review-meta"><div class="lc-review-name">Diane B.</div><div class="lc-review-tag">Dog Run Installation</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Built a large dog run for our two German Shepherds. Solid, secure, and they even added a dig guard. My dogs are safe and we couldn't be happier with the work."</p>
+      </div>
+      <div class="lc-review-card">
+        <div class="lc-review-top"><div class="lc-review-avatar">C</div><div class="lc-review-meta"><div class="lc-review-name">Carlos M.</div><div class="lc-review-tag">Fence Repair Client</div></div></div>
+        <div class="lc-review-stars">★★★★★</div>
+        <p class="lc-review-text">"Storm damaged our old chain link fence badly. They repaired and re-tensioned the entire section the same week. Excellent quality work at a fair price."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="lc-sec" id="faq">
+  <div class="lc-sec-in">
+    <p class="lc-label fu">Got questions?</p>
+    <h2 class="lc-title fu fd1">Frequently asked questions</h2>
+    <p class="lc-sub fu fd2">Everything you need to know about our chain link fence installation services in Calgary.</p>
+    <div class="lc-faq-tabs fu fd1">
+      <button class="lc-faq-tab active" onclick="switchTab('general', this)">General</button>
+      <button class="lc-faq-tab" onclick="switchTab('materials', this)">Materials</button>
+    </div>
+    <div class="lc-faq-panel active" id="faq-general">
+      <div class="lc-faq-item">
+        <details><summary>How long does chain link fence installation take?</summary>
+          <div class="lc-faq-body">Most standard residential chain link fence installations are completed in a single day. Larger commercial projects may take 2–3 days. We'll give you a clear timeline during your free assessment.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>What areas in Calgary do you service?</summary>
+          <div class="lc-faq-body">We service all residential and commercial properties throughout Calgary and surrounding areas including Airdrie, Chestermere, Cochrane, and Okotoks.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>Do I need a permit for a chain link fence in Calgary?</summary>
+          <div class="lc-faq-body">In most cases, fences under 1.85 metres (6 feet) on residential properties do not require a permit. Commercial fencing requirements vary. We can advise on permit requirements during your site assessment.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>Are you licensed and insured?</summary>
+          <div class="lc-faq-body">Yes, we are fully licensed and insured for all chain link fence installation services in Calgary. Your property and our team are fully protected on every project.</div>
+        </details>
+      </div>
+    </div>
+    <div class="lc-faq-panel" id="faq-materials">
+      <div class="lc-faq-item">
+        <details><summary>What gauge chain link do you use?</summary>
+          <div class="lc-faq-body">We use <strong>9-gauge chain link mesh</strong> for most residential projects and <strong>6-gauge</strong> for commercial and high-security applications. Heavier gauge means stronger, more durable fencing.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>What is the difference between galvanized and vinyl coated?</summary>
+          <div class="lc-faq-body"><strong>Galvanized</strong> chain link is the standard silver-grey steel option — durable and cost-effective. <strong>Vinyl coated</strong> adds a PVC coating in black, green, or brown for extra corrosion resistance and a cleaner appearance.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>How long will a chain link fence last?</summary>
+          <div class="lc-faq-body">A properly installed galvanized chain link fence typically lasts 15–20 years. Vinyl-coated chain link can last even longer due to the added corrosion protection. Low maintenance makes it one of the most cost-effective fencing options available.</div>
+        </details>
+      </div>
+      <div class="lc-faq-item">
+        <details><summary>How do I get a free quote?</summary>
+          <div class="lc-faq-body">Simply call us at +1(825)736-6306 or fill out the contact form. One of our fence specialists will visit your property and provide a detailed, no-obligation quote completely free of charge.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="lc-sec lc-sec-blue lc-cta" id="contact">
+  <div class="lc-cta-in">
+    <h2 class="fu">Ready to install your chain link fence?</h2>
+    <p class="fu fd1">Get your free, no-obligation chain link fence quote today. Fast installation, competitive pricing, and quality you can count on.</p>
+    <div class="lc-cta-btns fu fd2">
+      <a href="tel:18257366306" class="lc-cta-white">📞 +1(825)736-6306</a>
+      <a href="mailto:calgary@letsgetmoving.ca" class="lc-cta-ghost">✉️ Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="mv-footer">
+  <div class="mv-footer-in">
+    <div class="mv-footer-grid">
+      <div class="mv-footer-brand">
+        <a class="mv-logo" href="index.html"><span class="mv-logo-icon"><i class="fa-solid fa-leaf"></i></span>Lawn<span>care</span></a>
+        <p>Calgary's most trusted packing and moving service. Licensed, insured, and committed to making your move as smooth as possible.</p>
+        <div class="mv-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="mv-fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#how-it-works">How We Work</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="mv-fc">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="lawn-care.html">Lawn Care</a></li>
+          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
+          <li><a href="fence-building.html">Fence Building</a></li>
+          <li><a href="wooden-fence.html">Wooden Fence</a></li>
+          <li><a href="chain-link-fence.html">Chain Link Fence</a></li>
+        </ul>
+      </div>
+      <div class="mv-fc">
+        <h4>Contact Us</h4>
+        <div class="mv-ci"><a href="tel:18257366306"><span style="color:#ffffff;margin-right:5px;font-size:1rem;">☎</span>+1(825)736-6306</a></div>
+        <div class="mv-ci"><span class="ci">✉️</span><a href="mailto:calgary@letsgetmoving.ca">calgary@letsgetmoving.ca</a></div>
+        <div class="mv-ci"><span class="ci">🏠</span><span>95 TARARIDGE CRT NE CALGARY AB T3J 2R1</span></div>
+      </div>
+    </div>
+    <div class="mv-footer-bot">
+      <p>© 2025 Let's Move Calgary. All rights reserved.</p>
+      <div class="mv-footer-bot-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const mvToggle = document.getElementById('mvToggle');
+  const mvNav = document.getElementById('mvNavLinks');
+  if (mvToggle) mvToggle.addEventListener('click', () => mvNav.classList.toggle('open'));
+
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  function switchTab(id, btn) {
+    document.querySelectorAll('.lc-faq-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.lc-faq-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('faq-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  const track = document.getElementById('reviewTrack');
+  if (track) { const clone = track.innerHTML; track.innerHTML = clone + clone; }
+</script>
+
+<script src="//code.tidio.co/pbj18ed9woaajv4pjnjnasotkuph0y5t.js" async></script>
+</body>
+</html>
