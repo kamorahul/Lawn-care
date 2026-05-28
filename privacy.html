@@ -12,7 +12,8 @@
     /* ── HEADER ── */
     .mv-header { background: #0d1b35; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
     .mv-nav { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; gap: 2rem; height: 68px; }
-    .mv-logo { font-weight: 800; font-size: 1.25rem; color: #fff; text-decoration: none; letter-spacing: -0.01em; }
+    .mv-logo { color: #fff; font-size: 1.35rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; letter-spacing: -0.01em; }
+    .mv-logo-icon { font-size: 1.4rem; color: #4ade80; flex-shrink: 0; filter: drop-shadow(0 0 5px rgba(74,222,128,0.7)); line-height: 1; }
     .mv-logo span { color: #4fc3f7; }
     .mv-nav-links { display: flex; list-style: none; margin: 0; padding: 0; gap: 0.2rem; flex: 1; }
     .mv-nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 6px; font-size: 0.9rem; transition: color 0.2s, background 0.2s; }
@@ -85,7 +86,7 @@
 <!-- ═══ HEADER ═══ -->
 <header class="mv-header">
   <nav class="mv-nav">
-    <a class="mv-logo" href="index.html">Lawn care</a>
+    <a class="mv-logo" href="index.html"><span class="mv-logo-icon"><i class="fa-solid fa-leaf"></i></span>Lawn<span>care</span></a>
     <ul class="mv-nav-links" id="mvNavLinks">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
@@ -180,7 +181,7 @@
   <div class="mv-footer-in">
     <div class="mv-footer-grid">
       <div class="mv-footer-brand">
-        <a class="mv-logo" href="index.html">Lawn care</a>
+        <a class="mv-logo" href="index.html"><span class="mv-logo-icon"><i class="fa-solid fa-leaf"></i></span>Lawn<span>care</span></a>
         <p>Calgary's most trusted packing and moving service. Licensed, insured, and committed to making your move as smooth as possible.</p>
         <div class="mv-social">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -203,6 +204,8 @@
           <li><a href="lawn-care.html">Lawn Care</a></li>
           <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
           <li><a href="fence-building.html">Fence Building</a></li>
+          <li><a href="wooden-fence.html">Wooden Fence</a></li>
+          <li><a href="chain-link-fence.html">Chain Link Fence</a></li>
         </ul>
       </div>
       <div class="mv-fc">
@@ -216,7 +219,7 @@
       <p>© 2025 Let's Move Calgary. All rights reserved.</p>
       <div class="mv-footer-bot-links">
         <a href="privacy.html">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="terms.html">Terms of Use</a>
       </div>
     </div>
   </div>
