@@ -27,7 +27,11 @@
     .mv-nav-phone { background: #1e88e5; color: white; padding: 0.55rem 1.2rem; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; white-space: nowrap; transition: background 0.2s, transform 0.2s; }
     .mv-nav-phone:hover { background: #1565c0; transform: translateY(-1px); }
     .mv-mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
-    .mv-mobile-toggle span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: transform 0.25s; }
+    .mv-mobile-toggle span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+    .mv-call-link { display: none; }
+    .mv-mobile-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mv-mobile-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .mv-mobile-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mv-nav-links .dropdown { position: relative; }
     .mv-nav-links .dropdown > a::after { content: ' ▾'; font-size: 0.7rem; }
     .mv-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #0d1b35; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; min-width: 180px; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.3); padding: 0.4rem 0; list-style: none; }
@@ -210,6 +214,12 @@
       .mv-mobile-toggle { display: flex; }
       .mv-nav-links.open { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #0d1b35; padding: 1rem 1.5rem 1.5rem; z-index: 99; border-top: 1px solid rgba(255,255,255,0.07); }
       .mv-nav-links.open li { padding: 0.2rem 0; }
+      .mv-nav-phone { display: none; }
+      .mv-nav-links.open .mv-dropdown-menu { position: static; box-shadow: none; border: none; border-left: 2px solid rgba(255,255,255,0.15); border-radius: 0; background: transparent; min-width: 0; padding: 0 0 0.3rem 0.8rem; }
+      .mv-nav-links.open .dropdown.mob-open .mv-dropdown-menu { display: block; }
+      .mv-nav-links.open .mv-subdropdown-menu { position: static; box-shadow: none; border: none; border-left: 2px solid rgba(255,255,255,0.15); border-radius: 0; background: transparent; min-width: 0; padding: 0 0 0.3rem 0.8rem; }
+      .mv-nav-links.open .subdropdown.mob-open .mv-subdropdown-menu { display: block; }
+      .mv-call-link { display: block; background: #1e88e5; color: #fff !important; text-align: center; padding: 0.75rem !important; border-radius: 8px; font-weight: 700 !important; margin-top: 0.5rem; text-decoration: none; }
       .lc-how-grid, .lc-services-grid, .lc-why-grid, .lc-proc-grid { grid-template-columns: 1fr; }
       .lc-faq-panel.active { grid-template-columns: 1fr; }
       .mv-footer-grid { grid-template-columns: 1fr; }
@@ -613,7 +623,28 @@
 <script>
   const mvToggle = document.getElementById('mvToggle');
   const mvNav = document.getElementById('mvNavLinks');
-  if (mvToggle) mvToggle.addEventListener('click', () => mvNav.classList.toggle('open'));
+  if (mvToggle) {
+    mvToggle.addEventListener('click', () => {
+      mvNav.classList.toggle('open');
+      mvToggle.classList.toggle('open');
+    });
+    mvNav.querySelectorAll('.dropdown > a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (window.innerWidth <= 720) { e.preventDefault(); a.closest('.dropdown').classList.toggle('mob-open'); }
+      });
+    });
+    mvNav.querySelectorAll('.subdropdown > a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (window.innerWidth <= 720) { e.preventDefault(); a.closest('.subdropdown').classList.toggle('mob-open'); }
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.mv-header')) { mvNav.classList.remove('open'); mvToggle.classList.remove('open'); }
+    });
+    const callLi = document.createElement('li');
+    callLi.innerHTML = '<a class="mv-call-link" href="tel:18257366306">&#9742; +1(825)736-6306</a>';
+    mvNav.appendChild(callLi);
+  }
 
   const io = new IntersectionObserver(es => {
     es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });

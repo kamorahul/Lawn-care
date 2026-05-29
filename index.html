@@ -103,8 +103,12 @@
       height: 2px;
       background: white;
       border-radius: 2px;
-      transition: transform 0.25s;
+      transition: transform 0.25s, opacity 0.25s;
     }
+    .mv-call-link { display: none; }
+    .mv-mobile-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mv-mobile-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .mv-mobile-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── HERO ── */
     .mv-hero {
@@ -552,6 +556,12 @@
       }
       .mv-nav-links.open li { padding: 0.2rem 0; }
       .mv-mobile-toggle { display: flex; }
+      .mv-nav-phone { display: none; }
+      .mv-nav-links.open .mv-dropdown-menu { position: static; box-shadow: none; border: none; border-left: 2px solid rgba(255,255,255,0.15); border-radius: 0; background: transparent; min-width: 0; padding: 0 0 0.3rem 0.8rem; }
+      .mv-nav-links.open .dropdown.mob-open .mv-dropdown-menu { display: block; }
+      .mv-nav-links.open .mv-subdropdown-menu { position: static; box-shadow: none; border: none; border-left: 2px solid rgba(255,255,255,0.15); border-radius: 0; background: transparent; min-width: 0; padding: 0 0 0.3rem 0.8rem; }
+      .mv-nav-links.open .subdropdown.mob-open .mv-subdropdown-menu { display: block; }
+      .mv-call-link { display: block; background: #1e88e5; color: #fff !important; text-align: center; padding: 0.75rem !important; border-radius: 8px; font-weight: 700 !important; margin-top: 0.5rem; text-decoration: none; }
       .mv-services-grid, .mv-benefits-grid, .mv-materials, .mv-faq-grid, .mv-testi-grid, .mv-other-grid, .mv-packages { grid-template-columns: 1fr; }
       .mv-footer-grid { grid-template-columns: 1fr; }
       .mv-footer-bot { flex-direction: column; text-align: center; }
@@ -1105,7 +1115,26 @@
   const mvToggle = document.getElementById('mvToggle');
   const mvNav = document.getElementById('mvNavLinks');
   if (mvToggle) {
-    mvToggle.addEventListener('click', () => mvNav.classList.toggle('open'));
+    mvToggle.addEventListener('click', () => {
+      mvNav.classList.toggle('open');
+      mvToggle.classList.toggle('open');
+    });
+    mvNav.querySelectorAll('.dropdown > a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (window.innerWidth <= 720) { e.preventDefault(); a.closest('.dropdown').classList.toggle('mob-open'); }
+      });
+    });
+    mvNav.querySelectorAll('.subdropdown > a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (window.innerWidth <= 720) { e.preventDefault(); a.closest('.subdropdown').classList.toggle('mob-open'); }
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.mv-header')) { mvNav.classList.remove('open'); mvToggle.classList.remove('open'); }
+    });
+    const callLi = document.createElement('li');
+    callLi.innerHTML = '<a class="mv-call-link" href="tel:18257366306">&#9742; +1(825)736-6306</a>';
+    mvNav.appendChild(callLi);
   }
 
   // ── Scroll reveal
