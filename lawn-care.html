@@ -441,35 +441,7 @@
 <body>
 
 <!-- ═══ HEADER ═══ -->
-<header class="mv-header">
-  <nav class="mv-nav">
-    <a class="mv-logo" href="index.html"><span class="mv-logo-icon"><i class="fa-solid fa-leaf"></i></span>Lawn<span>care</span></a>
-    <ul class="mv-nav-links" id="mvNavLinks">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a href="index.html#services">Services</a>
-        <ul class="mv-dropdown-menu">
-          <li><a href="lawn-care.html">Lawn Care</a></li>
-          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
-          <li class="subdropdown">
-            <a href="fence-building.html">Fence Building</a>
-            <ul class="mv-subdropdown-menu">
-              <li><a href="wooden-fence.html">Wooden Fence</a></li>
-              <li><a href="chain-link-fence.html">Chain Link Fence</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="index.html#how-it-works">How We Work</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <a class="mv-nav-phone" href="tel:18257366306"><span style="color:#ffffff;margin-right:5px;font-size:1rem;">☎</span>+1(825)736-6306</a>
-    <button class="mv-mobile-toggle" id="mvToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</header>
+<div id="site-header"></div>
 
 <!-- ═══ HERO ═══ -->
 <section class="lc-hero">
@@ -943,80 +915,9 @@
 </section>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="mv-footer">
-  <div class="mv-footer-in">
-    <div class="mv-footer-grid">
-      <div class="mv-footer-brand">
-        <a class="mv-logo" href="index.html"><span class="mv-logo-icon"><i class="fa-solid fa-leaf"></i></span>Lawn<span>care</span></a>
-        <p>Calgary's most trusted packing and moving service. Licensed, insured, and committed to making your move as smooth as possible.</p>
-        <div class="mv-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="mv-fc">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#how-it-works">How We Work</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="mv-fc">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="lawn-care.html">Lawn Care</a></li>
-          <li><a href="packing-moving.html">Packing &amp; Moving</a></li>
-          <li><a href="fence-building.html">Fence Building</a></li>
-          <li><a href="wooden-fence.html">Wooden Fence</a></li>
-          <li><a href="chain-link-fence.html">Chain Link Fence</a></li>
-        </ul>
-      </div>
-      <div class="mv-fc">
-        <h4>Contact Us</h4>
-        <div class="mv-ci"><a href="tel:18257366306"><span style="color:#ffffff;margin-right:5px;font-size:1rem;">☎</span>+1(825)736-6306</a></div>
-        <div class="mv-ci"><span class="ci">✉️</span><a href="mailto:calgary@letsgetmoving.ca">calgary@letsgetmoving.ca</a></div>
-        <div class="mv-ci"><span class="ci">🏠</span><span>95 TARARIDGE CRT NE CALGARY AB T3J 2R1</span></div>
-      </div>
-    </div>
-    <div class="mv-footer-bot">
-      <p>© 2025 Let's Move Calgary. All rights reserved.</p>
-      <div class="mv-footer-bot-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
 <script>
-  /* ── Mobile nav ── */
-  const mvToggle = document.getElementById('mvToggle');
-  const mvNav = document.getElementById('mvNavLinks');
-  if (mvToggle) {
-    mvToggle.addEventListener('click', () => {
-      mvNav.classList.toggle('open');
-      mvToggle.classList.toggle('open');
-    });
-    mvNav.querySelectorAll('.dropdown > a').forEach(a => {
-      a.addEventListener('click', e => {
-        if (window.innerWidth <= 720) { e.preventDefault(); a.closest('.dropdown').classList.toggle('mob-open'); }
-      });
-    });
-    mvNav.querySelectorAll('.subdropdown > a').forEach(a => {
-      a.addEventListener('click', e => {
-        if (window.innerWidth <= 720) { e.preventDefault(); a.closest('.subdropdown').classList.toggle('mob-open'); }
-      });
-    });
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.mv-header')) { mvNav.classList.remove('open'); mvToggle.classList.remove('open'); }
-    });
-    const callLi = document.createElement('li');
-    callLi.innerHTML = '<a class="mv-call-link" href="tel:18257366306">&#9742; +1(825)736-6306</a>';
-    mvNav.appendChild(callLi);
-  }
 
   /* ── Scroll animations ── */
   const io = new IntersectionObserver(es => {
@@ -1057,5 +958,6 @@
 </script>
 
 <script src="//code.tidio.co/pbj18ed9woaajv4pjnjnasotkuph0y5t.js" async></script>
+<script src="components/loader.js"></script>
 </body>
 </html>
