@@ -48,7 +48,7 @@ body::before {
   overflow: hidden;
   padding: 3rem;
   border-radius: 42px;
-  background: url('banner.svg') center/cover no-repeat, var(--surface);
+  background: url('../images/hero/banner.svg') center/cover no-repeat, var(--surface);
   border: 1px solid var(--border);
   box-shadow: 0 30px 80px rgba(46, 84, 57, 0.08);
 }
